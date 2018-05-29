@@ -1,0 +1,235 @@
+
+html,body{
+        margin:0px auto;
+        font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header navigation bar stylingstarts here */
+            .navbar {
+                overflow: hidden;
+                background-color: #333;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+
+            ul{
+                list-style: none;
+            }
+            .navbar a{
+                float: left;
+                font-size: 16px;
+                color: white;
+                text-align: center;
+                padding: 20px 16px;
+                text-decoration: none;
+            }
+
+            .navbar img {
+                float: left;
+                max-width: 150px;
+            }
+
+            .dropdown {
+                float: left;
+                overflow: hidden;
+            }
+
+            .dropdown .dropbtn {
+                font-size: 16px;    
+                border: none;
+                outline: none;
+                color: white;
+                padding: 20px 16px;
+                background-color: inherit;
+                font-family: inherit;
+                margin: 0;
+            }
+
+            .navbar a:hover, .dropdown:hover .dropbtn {
+                color:orange;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+            }
+
+            .dropdown-content a {
+                float: none;
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: left;
+            }
+
+            .dropdown-content a:hover {
+                background-color: orange;
+                color:white;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            #slash{
+                font-size: 16px;
+                float: right;
+                color: #6BCDFD;
+                text-align: center;
+                padding: 20px 16px;
+                text-decoration: none;
+            }
+            .loginASignUp a{
+                float: right;
+                color: #6BCDFD;
+                padding: 14px 16px;
+                margin: 10px 0px;
+                border-radius: 10px;
+                border: 1px solid #6BCDFD;;
+            }
+            #SignUpbtn a{
+                margin: 10px 20px 10px 0px;
+            }
+
+
+            #menu-icon{
+                padding: 35px 2px;
+                display: none;
+
+            }
+            #SignUpbtn a:hover{
+                background: url(./img/Signup.png) center no-repeat;
+                display:block;
+                overflow: hidden;
+                text-indent:-99999em;
+                border-radius: none;
+
+                overflow:hidden;
+                border: none;
+
+            }
+/* end of header navigation bar styling */
+
+/*<----body styling starts here----->*/
+
+
+        .btn_adv_pod{
+            text-align: center;
+            padding:30px;
+          
+        }
+
+        .brand_heading{
+            
+            font-size: 50px;
+
+        }
+
+        .brand_caption{
+            
+            font-size: 20px;
+        }
+        
+    
+        .home_btn{
+            background-color: orange;
+            color:white;
+            border:none;
+            padding:10px;
+            border-radius:5%;
+            font-size:14px;
+            letter-spacing:1px;
+            font-weight: bold;
+            text-decoration: none;
+            
+        }
+        .home_btn:hover{
+            color:#6BCDFD;
+            text-decoration:none;
+        }
+        
+        
+
+
+
+/*<---- end of body styling----->*/
+
+/*<----footer styling starts here----->*/
+    
+
+        .copy_right{
+
+            text-align: center;
+            color:white;
+            font-size: 12px;
+
+        }
+
+        footer{
+            background-color: #08293e;
+            padding:30px;
+        }
+
+
+
+/*<--- end of footer styling---->*/
+
+
+
+
+/*--- Media Queries! styling starts here ---*/
+
+
+            @media screen and  (max-width:960px){
+                header{
+                    position: relative;
+                }
+
+                .navbar{
+                    top: 20px;
+
+                }
+                #menu-icon{
+                    /* float:right; */
+                    position: absolute;
+                    right: 5%;
+                    display: inline-block;
+                }
+                nav:hover ul{
+                    display: block;
+                }
+                nav ul, nav:active ul{
+                    display: none;
+                    z-index: 1000;
+                    position: absolute;
+                    background:  #f9f9f9;
+                    opacity: .9;
+                    width: 20%;
+                    padding: 20px 20px;
+                    right: 2px;
+                    top:85px;
+                    border: 1px solid #fff;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                    border-radius: 4px 0 4px 4px;
+                }
+                nav li{
+                    text-align: center;
+                    width: 100%;
+                }
+                .navbar a, .dropdown .dropbtn{
+                    color: black;
+                }
+                .dropdown-content {
+                    right: 90%;
+                    top: 27%;
+                }
+
+            }
+
+
+/*--- end of Media Queries! styling---*/
