@@ -11,7 +11,7 @@ $(document).ready(function() {
     }
     // If element is scrolled into view, fade it in
     $(window).scroll(function() {
-      $('.subtitle').each(function() {
+      $('.description').each(function() {
         if (isScrolledIntoView(this) === true) {
           $(this).addClass('animated fadeInRight');
         }else {
