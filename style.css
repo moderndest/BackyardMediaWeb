@@ -212,6 +212,13 @@ color:orange;
     -webkit-animation-iteration-count: infinite; */
 } 
 
+.os-animation{
+  opacity: 0;
+}
+ 
+.os-animation.animated{
+    opacity: 1;
+}
 /*--- end of About Us page styinh --*/
 
 
