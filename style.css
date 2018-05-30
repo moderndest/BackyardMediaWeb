@@ -7,113 +7,70 @@ html,body{
 /* header navigation bar stylingstarts here */
 
             
-            .bg-nav {
-                overflow: hidden;
+            .bg-custom {
                 background-color: #333;
+                /* color: #FFFFFF; */
             }
+           
+            .custom-toggler.navbar-toggler {
+                border-color: rgb(255,225,225);
+            }
+            .custom-toggler .navbar-toggler-icon {
+                background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.9)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+              }
 
             .navbar img {
-                float: left;
                 max-width: 150px;
             }
-
-            /* .dropdown {
-                float: left;
-                overflow: hidden;
+            .navbar a {
+                color: #FFFFFF;
             }
-
-            .dropdown .dropbtn {
-                font-size: 16px;    
-                border: none;
-                outline: none;
-                color: white;
-                padding: 20px 16px;
-                background-color: inherit;
-                font-family: inherit;
-                margin: 0;
+            .navbar .dropdown-menu a {
+                color: black;
             }
-
             .navbar a:hover, .dropdown:hover .dropbtn {
                 color:orange;
             }
-
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f9f9f9;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-
-            .dropdown-content a {
-                float: none;
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-                text-align: left;
-            }
-
-            .dropdown-content a:hover {
+            .dropdown-menu a:hover{
                 background-color: orange;
                 color:white;
             }
-
-            .dropdown:hover .dropdown-content {
+            .dropdown:hover>.dropdown-menu {
                 display: block;
+              }
+
+
+            /* .navbar-nav .navbar-item>.active> a, 
+            .navbar-nav .navbar-item>.active> a:focus, 
+            .navbar-nav .navbar-item>.active> a:hover {
+            background: orange; 
             }
-
-            #slash{
-                font-size: 16px;
-                float: right;
-                color: #6BCDFD;
-                text-align: center;
-                padding: 20px 16px;
-                text-decoration: none;
-            }
-            .loginASignUp a{
-                float: right;
-                color: #6BCDFD;
-                padding: 14px 16px;
-                margin: 10px 0px;
-                border-radius: 10px;
-                border: 1px solid #6BCDFD;;
-            }
-            #SignUpbtn a{
-                margin: 10px 20px 10px 0px;
-            }
-
-
-            #menu-icon{
-                padding: 35px 2px;
-                display: none;
-
-            }
-            #SignUpbtn a:hover{
-                background: url(./img/Signup.png) center no-repeat;
-                display:block;
-                overflow: hidden;
-                text-indent:-99999em;
-                border-radius: none;
-
-                overflow:hidden;
-                border: none;
-
+            .nav-item .active a{
+                color:orange;
             } */
+            .fa-user
+            {
+                display:none;
+            }
+            .blue {
+                color: 	#6BCDFD;
+              }
+
+            .loginbtn:hover>.btn,
+            {
+                display: none;
+            }
+            .loginbtn:hover>.fa-user {
+                display: inline;
+}
 /* end of header navigation bar styling */
 
 /*<----body styling starts here----->*/
 
 
-        .btn_adv_pod{
-            text-align: center;
-            padding:30px;
-          
-        }
+        
 
         .brand_heading{
-            
             font-size: 50px;
 
         }
@@ -122,23 +79,12 @@ html,body{
             
             font-size: 20px;
         }
-        
-    
-        .home_btn{
-            background-color: orange;
-            color:white;
-            border:none;
-            padding:10px;
-            border-radius:5%;
-            font-size:14px;
-            letter-spacing:1px;
-            font-weight: bold;
-            text-decoration: none;
-            
+        .btn_adv_pod a:hover{
+            color: white;
         }
-        .home_btn:hover{
-            color:#6BCDFD;
-            text-decoration:none;
+
+        .navbar-dark {
+            color: #FFFFFF;
         }
         
         
@@ -159,7 +105,7 @@ html,body{
         }
 
         footer{
-            background-color: #08293e;
+            background-color: #333;
             padding:30px;
         }
 
@@ -173,7 +119,7 @@ html,body{
 /*--- Media Queries! styling starts here ---*/
 
 
-            @media screen and  (max-width:960px){
+            /* @media screen and  (max-width:960px){
                 header{
                     position: relative;
                 }
@@ -183,7 +129,7 @@ html,body{
 
                 }
                 #menu-icon{
-                    /* float:right; */
+                    
                     position: absolute;
                     right: 5%;
                     display: inline-block;
@@ -217,7 +163,7 @@ html,body{
                     top: 27%;
                 }
 
-            }
+            } */
 
 
 /*--- end of Media Queries! styling---*/
