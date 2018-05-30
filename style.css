@@ -185,6 +185,10 @@ testarea {
 .btn-contact :hover{
     background-color:yellow;
 }
+h1{
+    color: orange;
+    text-align: center;
+}
 
 
 
