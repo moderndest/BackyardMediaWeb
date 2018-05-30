@@ -38,31 +38,16 @@ html,body{
             .dropdown:hover>.dropdown-menu {
                 display: block;
               }
-
-
-            /* .navbar-nav .navbar-item>.active> a, 
-            .navbar-nav .navbar-item>.active> a:focus, 
-            .navbar-nav .navbar-item>.active> a:hover {
-            background: orange; 
-            }
-            .nav-item .active a{
-                color:orange;
-            } */
-            .fa-user
-            {
-                display:none;
+            .navbar .btnstyle{
+                font-size: 14px;
+                color: #6BCDFD;
+                padding: 9px 16px;
+                border-radius: 4px;
+                border: 1px solid #6BCDFD;
             }
             .blue {
                 color: 	#6BCDFD;
               }
-
-            .loginbtn:hover>.btn,
-            {
-                display: none;
-            }
-            .loginbtn:hover>.fa-user {
-                display: inline;
-}
 /* end of header navigation bar styling */
 
 /*<----body styling starts here----->*/

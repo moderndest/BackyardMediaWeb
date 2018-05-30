@@ -1,10 +1,5 @@
 
-var selector = '.nav li';
 
-$(selector).on('click', function(){
-    $(selector).removeClass('active');
-    $(this).addClass('active');
-});
 
 //navbar dropdown mouse hover
   $('body').on('mouseenter mouseleave','.dropdown',function(e){
@@ -17,14 +12,22 @@ $(selector).on('click', function(){
 
 
 
-
-
   
-  $(".loginbtn").on("mouseenter", function() {
-    console.log("one");   
-  }).on('mouseleave', function() {
-    console.log("two");   
+$(document).ready(function () {
+  $('.loginbtn').hover(function () {
+    $(this).html("<a href='#' class='mx-3 fas fa-user fa-2x blue' role='button'></a>"); 
+  }, function () {
+    $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Log in</a>");   
   });
+});
+
+$(document).ready(function () {
+  $('.Signupbtn').hover(function () {
+    $(this).html("<a href='#' class='mx-3 fas fa-user-plus fa-2x blue' role='button'></a>"); 
+  }, function () {
+    $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Sign Up</a>");   
+  });
+});
 
 //   $(".fa-user").on("hover", function(e) {
 //     if (e.type == "mouseenter") {
