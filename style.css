@@ -83,9 +83,45 @@ html,body{
             color: white;
         }
 
-        .navbar-dark {
-            color: #FFFFFF;
+        
+        /*<---- slider style starts here ---->*/
+        .bg-slidebar{
+            padding:60px 0px;
+            background-color:#F3F3F3;
         }
+        .imgSlide{
+            max-width: 100%;
+        }
+
+        .media{
+            padding:50px 80px;
+        }
+        .podfeat{
+            padding:0px 80px;
+        }
+        .slide-description{
+            padding:0px 30px 0px 0px;
+        }
+
+        .black {
+            color: 	black;
+          }
+
+        .carousel-indicators .active {
+            background-color: black;
+        }
+        /* .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+        height: 100px;
+        width: 100px;
+        outline: black;
+        background-size: 100%, 100%;
+        border-radius: 50%;
+        border: 1px solid black;
+        background-color: black;
+        background-image: none;
+        } */
+        /*<---- end of slider style starts here ---->*/
         
         
 
@@ -104,9 +140,13 @@ html,body{
 
         }
 
+        footer img{
+            float: right;
+            max-width: 150px;
+        }
         footer{
             background-color: #333;
-            padding:30px;
+            padding:60px;
         }
 
 
