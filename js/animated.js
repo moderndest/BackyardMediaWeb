@@ -11,11 +11,11 @@ $(document).ready(function() {
     }
     // If element is scrolled into view, fade it in
     $(window).scroll(function() {
-      $('.description').each(function() {
+      $('.subtitle').each(function() {
         if (isScrolledIntoView(this) === true) {
           $(this).addClass('animated fadeInRight');
         }else {
-            $('.description').removeClass('animated fadeInRight');
+            $('.subtitle').removeClass('animated fadeInRight');
           }
       });
     });
