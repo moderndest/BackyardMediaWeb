@@ -2,8 +2,14 @@
 <html>
     <head>
      <link rel="stylesheet" href="style.css">
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-    <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+    <!-- Bootstrap CSS --> 
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+   <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
     <script src="js/animated.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     </head>
@@ -47,10 +53,13 @@
         <h1 id="pageTitle">MEET OUR TEAM</h1>
         <hr>
 
+        <div class="container">
         <!-- Amira info-->
-        <div class="content">
-            <img src="img/amira.jpeg"> 
-            <article>
+        <div class="row">
+            <aside class="col-md-4">
+                <img  src="img/amira.jpeg"> 
+            </aside>
+            <section class="col-md-8">
                 <h2 class="Name">Amira Valliani</h2>
                 <h4 class="subtitle">CO-FOUNDER</h4>
                 <div class="description animated fadeInRight">
@@ -71,38 +80,42 @@
                         in her spare time. 
                     </p>
                 </div>
-            </article>
+            </section>
         </div>
 
         <!-- Sanberg info-->
-        <div class="content">
-            <img src="img/sanberg.png">
-            <article>
-                    <h2 class="Name">Meredith Sandberg</h2>
-                    <h4>CO-FOUNDER</h4>
-                    <div class="description">
-                        <p>
-                                Hailing from Salt Lake City, Utah, Meredith is the co-founder of Backyard Media Company as well as a full-time student completing her MBA/MPA at the Wharton School at the University of Pennsylvania and Harvard Kennedy School of Government.
-                        </p>
-                        <p>
+        <div class="row">
+            <aside class="col-md-4">
+                <img class="aboutusPic" src="img/Sandberg_Meredith.jpg">
+            </aside>
+            <section class="col-md-8">
+                <h2 class="Name">Meredith Sandberg</h2>
+                <h4>CO-FOUNDER</h4>
+                <div class="description animated fadeInRight">
+                    <p>
+                        Hailing from Salt Lake City, Utah, Meredith is the co-founder of Backyard Media Company as well as a full-time student completing her MBA/MPA at the Wharton School at the University of Pennsylvania and Harvard Kennedy School of Government.
+                    </p>
+                    <p>
                                 Before graduate school, Meredith served in the United States Navy as a surface warfare officer with a nuclear power focus. She worked on two different ships, as well as in the Pentagon as a speechwriter for the first female four-star admiral in the Navy's history.
-                        </p>
-                        <p>
-                                Meredith graduated from Harvard with a degree in human evolutionary biology. 
-                        </p>
-                        <p>
+                    </p>
+                    <p>
+                            Meredith graduated from Harvard with a degree in human evolutionary biology. 
+                    </p>
+                    <p>
                                 Meredith loves traveling - she's proud to be able to say she's been to all 50 states and all 7 continents! In her spare time, Meredith also mentors women veterans who are transitioning from active duty - helping them to find good educational opportunities to augment their leadership experience.
-                        </p>
-                    </div>
-                    </article>
+                    </p>
+                </div>
+            </section>
         </div>
         <!-- Libby info-->
-        <div class="content">
-                <img src="img/libby.png">
-                <article>
+        <div class="row">
+                <aside class="col-md-4">
+                    <img  src="img/libby.png"> 
+                </aside>
+                <section class="col-md-8">
                     <h2 class="Name">Libby Gormley</h2>
-                    <h4>REPORTER</h4>
-                    <div class="description">
+                    <h4 class="subtitle">REPORTER</h4>
+                    <div class="description animated fadeInRight">
                         <p>A Massachusetts native, Libby is a reporter for Backyard Media. Before Backyard,
                                 Libby worked as the audio production intern for Chicago Public Media’s radio
                                 program, Sound Opinions, a show about music. Libby graduated from Elon
@@ -111,30 +124,36 @@
                         <p>In her spare time Libby enjoys scrolling PetFinder.com and reading Ina Garten
                                 cookbooks.</p>
                     </div>
-                </article>
+                </section>
         </div>
-        <div>
             <!-- Falero info-->
-            <div class="content">
-                    <img src="img/falero.jpg">
-                    <article>
-                        <h2 class="Name">Michael Falero</h2>
-                        <h4>PODCAST REPORTER</h4>
+        <div class="row">
+            <aside class="col-md-4">
+                <img  src="img/falero.jpg"> 
+            </aside>
+            <section class="col-md-8">
+                <h2 class="Name">Michael Falero</h2>
+                <h4 class="subtitle">PODCAST REPORTER</h4>
+                <div class="description animated fadeInRight">
                         <p>Originally from Charlotte, North Carolina, Michael is a podcast producer and freelance radio journalist. He produces Backyard Media's local politics podcast, Backyard Cambridge, and manages Backyard Media's blog and social media content.</p>
                         <p>Michael graduated from the University of North Carolina at Chapel Hill with a degree in Global Studies, focusing on European politics and French language. While in school he also spent time in China and the United Kingdom. Before transitioning to podcasting and radio, Michael worked in the tech industry as a content writer.</p>
                         <p>Michael loves travelling any chance he can get (his current favorite place is Iceland). He also listens to far too many podcasts, and is guaranteed to mention or suggest one in the course of a conversation</p>
-                    </article>
-            </div>
+                </div>
+            </section>
+        </div>
             <!-- Melissa info-->
-            <div class="content">
-                <img src="img/melissa.jpg">
-                <article>
+        <div class="row">
+            <aside class="col-md-4">
+                <img  src="img/melissa.jpg"> 
+            </aside>
+            <section class="col-md-8">
                     <h2 class="Name">Melissa McNickles</h2>
-                    <h4>STAFF</h4>
-                    <p>Originally from Worcester, Massachusetts, Melissa has been a Boston transplant for the past seven years. She is a full-time graduate student at Northeastern University, where is is studying professional journalism. She graduated from the University of Massachusetts Boston in 2015 with a degree in psychology. In addition to her studies, Melissa is the associate education director at the Boys & Girls Clubs of Dorchester, where is has been working since 2011. Her strong interest in local and community journalism stems from the many hours she's spent in Dorchester's vibrant neighborhoods. Melissa has previously written for the Dorchester Reporter. </p>
-                    <p>In her spare time, Melissa is a dedicated dog mom and an avid nature lover. She enjoys cycling, running, hiking and gardening.</p>
-                </article>
-
+                    <h4 class="subtitle">STAFF</h4>
+                    <div class="description animated fadeInRight">
+                        <p>Originally from Worcester, Massachusetts, Melissa has been a Boston transplant for the past seven years. She is a full-time graduate student at Northeastern University, where is is studying professional journalism. She graduated from the University of Massachusetts Boston in 2015 with a degree in psychology. In addition to her studies, Melissa is the associate education director at the Boys & Girls Clubs of Dorchester, where is has been working since 2011. Her strong interest in local and community journalism stems from the many hours she's spent in Dorchester's vibrant neighborhoods. Melissa has previously written for the Dorchester Reporter. </p>
+                        <p>In her spare time, Melissa is a dedicated dog mom and an avid nature lover. She enjoys cycling, running, hiking and gardening.</p>
+                    </div>
+            </section>
         </div>
             <!--- Footer part --->
         

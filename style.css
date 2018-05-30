@@ -240,6 +240,10 @@ html,body{
     padding: 20px 40px;
 }
 
+.container .row .aboutusPic {
+    max-width: 500px;
+    max-height: 500px;
+}
 
 .content article {
     padding: 20px 40px;
@@ -247,7 +251,6 @@ html,body{
     max-width: 90%;
 }
 .content img{
-    float: left;
     padding: 20px 40px;
     width: 300px;
     height: 350px;
@@ -279,7 +282,7 @@ color:orange;
 
 .description{
 
-    padding: 15px 20px;
+    padding: 15px 0px;
     /* -webkit-animation-duration: 3s;
     -webkit-animation-delay: 2s;
     -webkit-animation-iteration-count: infinite; */
@@ -289,11 +292,14 @@ color:orange;
 
 
 /*--- Faqs page styinh --*/
+#Faqs_intro {
+    font-style: italic;
+}
 
-.content img{
+.container .row .plus{
     max-width: 20px;
     max-height: 20px;
-    float:right;
+    
 }
 
 
