@@ -235,7 +235,69 @@ html,body{
 /*--- end of Media Queries! styling---*/
 
 
+/*--- About Us page styinh --*/
+.content{
+    padding: 20px 40px;
+}
 
+
+.content article {
+    padding: 20px 40px;
+    min-height: 400px;
+    max-width: 90%;
+}
+.content img{
+    float: left;
+    padding: 20px 40px;
+    width: 300px;
+    height: 350px;
+}
+
+hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
+}
+
+
+.Name{
+color:orange;
+}
+
+#pageTitle{
+    padding: 20px 20px;
+    text-align: center;
+    color: orange;
+}
+
+.subtitle{
+    padding: 5px 0px;
+}
+
+.description{
+
+    padding: 15px 20px;
+    /* -webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite; */
+} 
+
+/*--- end of About Us page styinh --*/
+
+
+/*--- Faqs page styinh --*/
+
+.content img{
+    max-width: 20px;
+    max-height: 20px;
+    float:right;
+}
+
+
+/*--- end of Faqs page styinh --*/
 
 
 
