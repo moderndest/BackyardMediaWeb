@@ -15,7 +15,7 @@
   
 $(document).ready(function () {
   $('.loginbtn').hover(function () {
-    $(this).html("<a href='#' class='mx-3 fas fa-user fa-2x blue' role='button'></a>"); 
+    $(this).html("<a href='#' class='mx-3' role='button'><i class='fas fa-user fa-2x blue'></i></a>"); 
   }, function () {
     $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Log in</a>");   
   });
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.Signupbtn').hover(function () {
-    $(this).html("<a href='#' class='mx-3 fas fa-user-plus fa-2x blue' role='button'></a>"); 
+    $(this).html("<a href='#' class='mx-3' role='button'><i class='fas fa-user-plus fa-2x blue'></a>"); 
   }, function () {
     $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Sign Up</a>");   
   });
