@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.Signupbtn').hover(function () {
-    $(this).html("<a href='#' class='mx-3 fas fa-user-plus fa-2x blue' role='button'></a>"); 
+    $(this).html("<a href='#' class='mx-3 fas fa-user-plus fa-2x' role='button'></a>"); 
   }, function () {
     $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Sign Up</a>");   
   });
