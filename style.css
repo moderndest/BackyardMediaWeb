@@ -94,7 +94,7 @@ html,body{
         }
 
         .media{
-            padding:50px 80px;
+            padding:50px 100px;
         }
         .podfeat{
             padding:0px 80px;
@@ -104,12 +104,10 @@ html,body{
         } */
 
         .black {
-            color: 	black;
+            color: black;
           }
 
-        .carousel-indicators .active {
-            background-color: black;
-        }
+
         /* .carousel-control-prev-icon,
         .carousel-control-next-icon {
         height: 100px;

@@ -6,7 +6,7 @@ $(selector).on('click', function(){
     $(this).addClass('active');
 });
 
-//dropdown mouse hover
+//navbar dropdown mouse hover
   $('body').on('mouseenter mouseleave','.dropdown',function(e){
     var _d=$(e.target).closest('.dropdown');_d.addClass('show');
     setTimeout(function(){
@@ -18,7 +18,9 @@ $(selector).on('click', function(){
 
 
 
-  $("#icon").on("mouseenter", function() {
+
+  
+  $(".loginbtn").on("mouseenter", function() {
     console.log("one");   
   }).on('mouseleave', function() {
     console.log("two");   
