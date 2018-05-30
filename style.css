@@ -7,18 +7,9 @@ html,body{
 /* header navigation bar stylingstarts here */
 
             
-            .navbar {
+            .bg-nav {
                 overflow: hidden;
                 background-color: #333;
-            }
-
-            .navbar a{
-                float: left;
-                font-size: 16px;
-                color: white;
-                text-align: center;
-                padding: 20px 16px;
-                text-decoration: none;
             }
 
             .navbar img {
@@ -26,7 +17,7 @@ html,body{
                 max-width: 150px;
             }
 
-            .dropdown {
+            /* .dropdown {
                 float: left;
                 overflow: hidden;
             }
@@ -109,7 +100,7 @@ html,body{
                 overflow:hidden;
                 border: none;
 
-            }
+            } */
 /* end of header navigation bar styling */
 
 /*<----body styling starts here----->*/
