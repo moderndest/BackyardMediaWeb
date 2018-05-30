@@ -15,7 +15,7 @@ $(document).ready(function() {
         if (isScrolledIntoView(this) === true) {
           $(this).addClass('animated fadeInRight');
         }else {
-            $('.subtitle').removeClass('animated fadeInRight');
+            $('.description').removeClass('animated fadeInRight');
           }
       });
     });
