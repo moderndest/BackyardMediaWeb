@@ -28,28 +28,3 @@ $(document).ready(function () {
     $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Sign Up</a>");   
   });
 });
-
-//   $(".fa-user").on("hover", function(e) {
-//     if (e.type == "mouseenter") {
-//         console.log("one");  
-//         $(this).html("<i class='fas fa-user-plus fa-2x blue'></i>"); 
-//     }
-//     else { // mouseleave
-//         console.log("two");
-//         $(this).html("<button type='button' class='loginbtn d-inline btn btn-outline-primary'>Log in</button>");   
-//     }
-// });
-
-  // $( "i.fa-user" )
-  // .mouseover(function() {
-  //   $(this).html("<i class='fas fa-user-plus fa-2x blue'></i>");
-  // })
-  // .mouseout(function() {
-  //   $(this).html("<button type='button' class='loginbtn d-inline btn btn-outline-primary'>Log in</button>");
-  // })
-
-
-// $( selector ).mouseenter( handlerIn ).mouseleave( handlerOut );
-// $(".loginbtn").hover(function(){
-//     $(this).html("<i class='fas fa-user'></i>");
-// });
