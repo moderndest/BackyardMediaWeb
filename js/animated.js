@@ -9,7 +9,7 @@
 
 
 
- $( window ).load(function() {
+ $(window).on('load', function(){
 
     function onScrollInit( items, trigger ) {
       items.each( function() {
