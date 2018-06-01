@@ -1,51 +1,35 @@
-// $(document).ready(function() {
-//     // Check if element is scrolled into view
-//     function isScrolledIntoView(elem) {
-//       var docViewTop = $(window).scrollTop();
-//       var docViewBottom = docViewTop + $(window).height();
-  
-//       var elemTop = $(elem).offset().top;
-//       var elemBottom = elemTop + $(elem).height();
-  
-//       return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-//     }
-//     // If element is scrolled into view, fade it in
-//     $(window).scroll(function() {
-//       $('.description').each(function() {
-//         if (isScrolledIntoView(this) === true) {
-//           $(this).addClass('animated fadeInRight');
-//         }else {
-//             $('.description').removeClass('animated fadeInRight');
-//           }
-//       });
-//     });
-//   });
+// Backyard Media 
+// Filename: animated.js
 
+// Author: Chatsuda Rattarasan   
+// Date: May 29 2018
 
-
+ /*waypoints ScrollInit*/
 
 $(function(){
-  function onScrollInit( items, trigger ) {
+    function onScrollInit( items, trigger ) {
       items.each( function() {
-      var osElement = $(this),
-          osAnimationClass = osElement.attr('data-os-animation'),
-          osAnimationDelay = osElement.attr('data-os-animation-delay');
-        
-          osElement.css({
+        var osElement = $(this),
+            osAnimationClass = osElement.attr('data-os-animation'),
+            osAnimationDelay = osElement.attr('data-os-animation-delay');
+          
+            osElement.css({
               '-webkit-animation-delay':  osAnimationDelay,
               '-moz-animation-delay':     osAnimationDelay,
               'animation-delay':          osAnimationDelay
-          });
-          var osTrigger = ( trigger ) ? trigger : osElement;
-          
-          osTrigger.waypoint(function() {
+            });
+    
+            var osTrigger = ( trigger ) ? trigger : osElement;
+            
+            osTrigger.waypoint(function() {
               osElement.addClass('animated').addClass(osAnimationClass);
               },{
                   triggerOnce: true,
-                  offset: '90%'
-          });
+                  offset: '70%'
+            });
       });
-  }
-  onScrollInit( $('.os-animation') );
-  onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
-});
+    }
+    
+     onScrollInit( $('.os-animation') );
+     onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
+    });
