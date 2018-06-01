@@ -9,7 +9,8 @@
 
 
 
-  $(window).on('load', function(){
+ $( window ).load(function() {
+
     function onScrollInit( items, trigger ) {
       items.each( function() {
         var osElement = $(this),
@@ -36,5 +37,3 @@
      onScrollInit( $('.os-animation') );
      onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
     });
-
-    $(window).trigger('load'); //Triggers load event manually.
