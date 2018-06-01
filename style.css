@@ -61,19 +61,6 @@ html,body{
 
 /*<----body styling starts here----->*/
 
-        body{
-            background: #000;
-
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-        .ie7 body{
-            overflow:hidden;
-        }
-        
-        .container{
-            position: relative;	
-        }
         .brand_heading{
             font-size: 50px;
             color: white;
