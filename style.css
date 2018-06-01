@@ -116,6 +116,10 @@ html,body{
 
         }
 
+        .social{
+            margin: 0, auto;
+        }
+
         footer img{
             float: right;
             max-width: 150px;
@@ -207,9 +211,7 @@ color:orange;
 .description{
 
     padding: 15px 0px;
-    /* -webkit-animation-duration: 3s;
-    -webkit-animation-delay: 2s;
-    -webkit-animation-iteration-count: infinite; */
+
 } 
 
 .os-animation{
