@@ -6,7 +6,10 @@
 
  /*waypoints ScrollInit*/
 
-$(function(){
+
+
+
+  $(window).on('load', function(){
     function onScrollInit( items, trigger ) {
       items.each( function() {
         var osElement = $(this),
@@ -33,3 +36,5 @@ $(function(){
      onScrollInit( $('.os-animation') );
      onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
     });
+
+    $(window).trigger('load'); //Triggers load event manually.
