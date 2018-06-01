@@ -1,0 +1,22 @@
+
+
+/* General Demo Style */
+body{
+	background: #000;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.ie7 body{
+	overflow:hidden;
+}
+
+.container{
+	position: relative;	
+}
+.clr{
+	clear: both;
+}
+
+
+

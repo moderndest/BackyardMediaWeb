@@ -20,7 +20,12 @@ Date: May 29 2018   -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
-        <script type="text/javascript" src="js/nav.js"></script>   
+        <script type="text/javascript" src="js/nav.js"></script>  
+        
+        <link rel="stylesheet" href="css/demo.css" />
+        <link rel="stylesheet" href="css/templatemo-style.css">
+  
+        <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
        
     </head>
    
@@ -29,7 +34,7 @@ Date: May 29 2018   -->
         <!-- header starts here -->
         <header>
             <!---  Navigation Start here---->  
-            <nav class="navbar navbar-expand-lg bg-custom">
+            <nav class=" tm-content navbar navbar-expand-lg bg-custom">
                 <a class="navbar-brand mx-md-2" href="index.html">
                     <img src="img/logo.png">
                 </a>
@@ -82,17 +87,27 @@ Date: May 29 2018   -->
     
 
         <!-- Body Content Start here -->
+        <ul class="cb-slideshow">
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	            <li></li>
+	        </ul>
         
         <!-- section1 -->
         <div class="container my-5">
-            <div class="row">
+            <div class="row cb-slideshow-text-container ">
+                <div id="particles-js"></div>
+                
                 
                 <div class="col-md-12 d-flex justify-content-center">
                     <p class="brand_heading">Back Yard Media
                     <br><span class="brand_caption">Best Marketplace for Podcast Advertisers</span></p>
                 </div>
                 
-                <div class="btn_adv_pod col-md-12 d-flex justify-content-center">
+                <div class="tm-content btn_adv_pod col-md-12 d-flex justify-content-center">
                     <a href="#" class="col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" role="button"  id="adv">ADVERTISER</a>
                     <a href="#" class="col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
                 </div>
@@ -178,7 +193,7 @@ Date: May 29 2018   -->
             </div>
         </div>
         <!-- end of section2 Slidebar -->
-    <!-- end of Body Contet -->
+     <!-- end of Body Contet -->
         
         
     <!--- Footer part -->
@@ -195,7 +210,8 @@ Date: May 29 2018   -->
         </footer>
     
     <!-- End of the footer  -->
-
+        <script type="text/javascript" src="js/particles.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
          
         
     </body>
