@@ -116,8 +116,19 @@ html,body{
 
         }
 
-        .social{
-            margin: 0, auto;
+        .facebook{
+            color: rgb(81, 125, 212) ;
+            text-decoration: none;
+        }
+
+        .twitter{
+            color: #1dcaff;
+            text-decoration: none;
+        }
+
+        .facebook:hover , .twitter:hover{
+            color: white;
+            text-decoration: none;
         }
 
         footer img{
