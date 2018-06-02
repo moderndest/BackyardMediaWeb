@@ -9,9 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Backyard Media</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/contactus.css">
         <!-- Bootstrap CSS --> 
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -79,87 +79,60 @@
     <!-- end of the header -->
      
          
+    <!-- body container-->
+        <h1 id="pagetitle">WORK WITH US</h1>
+
          
-                  <div class="container-fluid" id="contact">
-             <div class="title">
-                 <center><hz1>Work With Us</hz1></center>
+        <div class="container" style="width: 60%;">
+             <div class="row">
+                 <div class="col-sm-5 col-md-6">
+                    <div>First Name*</div>
+                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First Name" placeholder="First Name"></div>
+                 </div>
+                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                    <div>Second Name*</div>
+                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Second Name" placeholder="Second Name"></div>
+                 </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6">
+                    <div>Email*</div>
+                    <div><input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Email" placeholder="Email"></div>
+                </div>
+             </div>
+             <div class="row">
+                 <div class="col-sm-6 col-md-5 col-lg-6">
+                    <div>Name of Organizaiton</div>
+                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Name of Organizaiton" placeholder="Name of Organization"></div>
+                 </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6">
+                    <div>Are You?</div>
+                    <div><input type="radio" name="radio" value="Podcaster"> A Podcaster</div>
+                    <div><input type="radio" name="radio" value="Sponsor"> A potential Sponsor</div>
+                    <div><input type="radio" name="radio" value="Else"> Someone else</div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-sm-6 col-md-5 col-lg-6">
+                    <div>Website</div>
+                    <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
+                </div>
+             </div>
+             <div class="row">
+                 <div class="col-sm-6 col-md-5 col-lg-6">
+                     <div>Message</div>
+                     <div>How can we help you?</div>
+                     <div><textarea cols="60" rows="10" name="Message" placeholder="Message"></textarea></div>
+                </div>
              </div>
 
-                <table align="center" width="80%" height="800px" border="0">
-                    <tr>
-                        <td><h3>First Name*</h3></td>
-                        <td><h3>Last Name*</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="First Name" placeholder="First Name" required="required"></td>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Last Name" placeholder="Last Name" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Email Address*</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" class="Email" type="text" name="Email" placeholder="Email Address" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Name of Organizaiton</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Name of Organizaiton" placeholder="Name of Organizaiton" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Are You ?</h3></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="radio" name="radio" value="1">A Podcaster<br>
-                            <input type="radio" name="radio" value="2">A potential sponsor<br>
-                            <input type="radio" name="radio" value="3">Someone else
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h3>Website</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Website" placeholder="Website"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Message</h3><br>
-                            <h4>Hwo can we help you?</h4>
-                        </td>
-
-                    </tr>
-                    <tr>
-                        <td>
-                            <textarea cols="60" rows="10" name="Message" placeholder="Message"></textarea>
-                        </td>
-                    </tr>
-
-
-                </table>
-
-
-
-             </div>
          </div>
-
-         <center>
-         <button class="btn-contact" type="submit" formmethod="POST">Submit</button>
-         </center>
          
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+        <center>
+            <button class="btn_adv col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" type="submit" formmethod="POST">Submit</button>
+        </center>
          
     
     
