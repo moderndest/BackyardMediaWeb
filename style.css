@@ -61,23 +61,43 @@ html,body{
 
 /*<----body styling starts here----->*/
 
+        .branding{
+            margin-top: 50px;
+        }
+
         .brand_heading{
             font-size: 50px;
             color: white;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
         }
 
         .brand_caption{
             color: white;
-            font-size: 20px;
+            font-size: 25px;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
+            
         }
         .btn_adv_pod a:hover{
-            color: white;
+            color: white; 
         }
-
+        .btn_adv,.btn_pod {
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.527);
+            
+        }
+        .btn_adv_pod{
+            margin-top: -80px;
+        }
+        .contact {
+            background-color: white;
+            padding: 50px 0px;
+        }
+        .section1{
+            background: #000;
+        }
         
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
-            padding:60px 0px;
+            padding:130px 0px 80px 0px;
             background-color:#F3F3F3;
         }
         .imgSlide{
@@ -93,6 +113,16 @@ html,body{
         .black {
             color: black;
           }
+
+        .fa-headphones{
+            text-decoration: none;
+            color: orange;
+        }
+        .fa-headphones:hover{
+            text-decoration: none;
+            color: #ffca4c;
+        }
+       
 
         /*<---- end of slider style starts here ---->*/
         
@@ -192,32 +222,20 @@ html,body{
     height: 350px;
 }
 
-hr{
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0; 
-}
+
 
 
 .Name{
 color:orange;
 }
 
-#pageTitle{
-    padding: 20px 20px;
-    text-align: center;
-    color: orange;
-}
+
 
 .AllAboutus{
     padding: 20px 20px 50px 20px;
 }
 .info {
     padding: 20px 0px 30px 0px;
-}
 }
 
 .subtitle{

@@ -19,20 +19,7 @@
 }
 
 
-.form-control::placeholder {
-    color: white;
-}
 
-
-.tm-btn-subscribe {
-	background-color: #006699;
-	border-radius: .5rem;
-    border-color: white;
-	padding: 0.75rem 1.6rem;
-    font-weight: 300;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
 
 
 
@@ -105,16 +92,16 @@
 	}
 	8% {
 	    opacity: 1;
-	    transform: scale(1.15);
+	    transform: scale(1);
 	    animation-timing-function: ease-out;
 	}
 	17% {
 	    opacity: 1;
-	    transform: scale(1.20);
+	    transform: scale(1);
 	}
 	25% {
 	    opacity: 0;
-	    transform: scale(1.40);
+	    transform: scale(1);
 	}
 	100% { opacity: 0 }
 }
@@ -125,15 +112,9 @@
 }
 @media screen and (max-width: 600px) { 
     .cb-slideshow li div h3 { font-size: 80px }
-	.tm-content {
-		/* margin-top: 80px; */
-	}
 }
 
 @media screen and (max-width: 576px) { 
     .cb-slideshow li div h3 { font-size: 80px }
 	
-	.tm-btn-subscribe {
-		/* margin-top: 20px; */
-	}
 }

@@ -7,7 +7,7 @@
  /*waypoints ScrollInit*/
 
 
-var $popdown = $('.popdown') 
+var $submitemail = $('.submitemail') 
 
  $(function(){
   function onScrollInit( items, trigger ) {
@@ -37,3 +37,15 @@ var $popdown = $('.popdown')
    onScrollInit( $('.staggered-animation'), $('.staggered-animation-container') );
   });
 
+
+
+$submitemail.click(function(){
+ 
+  // hide our element on page load
+  // $('#element-to-animate').css('opacity', 0);
+ 
+  $submitemai.waypoint(function() {
+    $submitemai.addClass('animated ZoomOutUp');
+  }, { offset: '50%' });
+ 
+});
