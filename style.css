@@ -61,28 +61,55 @@ html,body{
 
 /*<----body styling starts here----->*/
 
-
-        
+        .branding{
+            margin-top: 50px;
+        }
 
         .brand_heading{
             font-size: 50px;
+<<<<<<< HEAD
             text-align: center;
 
+=======
+            color: white;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
+>>>>>>> 8ac9ca4548f78b696c2150ae49276cb889d98f48
         }
 
         .brand_caption{
+            color: white;
+            font-size: 25px;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
             
+<<<<<<< HEAD
             font-size: 20px;
             text-align: center;
+=======
+>>>>>>> 8ac9ca4548f78b696c2150ae49276cb889d98f48
         }
         .btn_adv_pod a:hover{
-            color: white;
+            color: white; 
         }
-
+        .btn_adv,.btn_pod {
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.527);
+            
+            
+        }
+        .btn_adv_pod{
+            margin-top: -80px;
+            color: white; 
+        }
+        .contact {
+            background-color: white;
+            padding: 50px 0px;
+        }
+        .section1{
+            background: #000;
+        }
         
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
-            padding:60px 0px;
+            padding:130px 0px 80px 0px;
             background-color:#F3F3F3;
         }
         .imgSlide{
@@ -98,6 +125,16 @@ html,body{
         .black {
             color: black;
           }
+
+        .fa-headphones{
+            text-decoration: none;
+            color: orange;
+        }
+        .fa-headphones:hover{
+            text-decoration: none;
+            color: #ffca4c;
+        }
+       
 
         /*<---- end of slider style starts here ---->*/
         
@@ -116,6 +153,21 @@ html,body{
             color:white;
             font-size: 12px;
 
+        }
+
+        .facebook{
+            color: rgb(81, 125, 212) ;
+            text-decoration: none;
+        }
+
+        .twitter{
+            color: #1dcaff;
+            text-decoration: none;
+        }
+
+        .facebook:hover , .twitter:hover{
+            color: white;
+            text-decoration: none;
         }
 
         footer img{
@@ -137,6 +189,7 @@ html,body{
 /*--- Media Queries! styling starts here ---*/
 
 
+
     @media screen and  (max-width:960px){
         .vl{
             border-left: 0px solid #6BCDFD;
@@ -144,6 +197,11 @@ html,body{
 
         }
 
+    }
+    @media screen and (max-width:760px){
+        .media-body{
+            margin:0px, 0px;
+        }
     }
     @media screen and  (max-width:488px){
         .brand_heading{
@@ -161,7 +219,80 @@ html,body{
 
 /*--- end of Media Queries! styling---*/
 
+/*--- About Us page styinh --*/
+.content{
+    padding: 20px 40px;
+}
 
+.container .row .aboutusPic {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.content article {
+    padding: 20px 40px;
+    min-height: 400px;
+    max-width: 90%;
+}
+.content img{
+    padding: 20px 40px;
+    width: 300px;
+    height: 350px;
+}
+
+
+
+
+.Name{
+color:orange;
+}
+
+
+
+.AllAboutus{
+    padding: 20px 20px 50px 20px;
+}
+.info {
+    padding: 20px 0px 30px 0px;
+}
+
+.subtitle{
+    padding: 5px 0px;
+}
+
+.description{
+
+    padding: 15px 0px;
+
+} 
+
+.os-animation{
+  opacity: 0;
+}
+ 
+.os-animation.animated{
+    opacity: 1;
+}
+/*--- end of About Us page styinh --*/
+
+
+/*--- Faqs page styinh --*/
+#Faqs_intro {
+    font-style: italic;
+    font-size: 15px;
+    padding: 20px 20px;
+}
+
+.container .row .plus{
+    max-width: 20px;
+    max-height: 20px;
+    float: right;
+    
+}
+.accordion
+{
+    padding: 10px 20px 50px 20px;
+}
 
 
 
