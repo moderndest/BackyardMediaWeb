@@ -3,8 +3,14 @@
 /*
 THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
 */
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-require 'PHPMailer.php';
+//Load Composer's autoloader
+require '../vendor/autoload.php';
+
 
 
 /*
@@ -13,12 +19,19 @@ require 'PHPMailer.php';
 
 
 // an email address that will be in the From field of the email.
-$fromEmail = 'demo@domain.com';
-$fromName = 'Demo contact form';
+$fromEmail = $_POST['uemail'];
+$fromName = $_POST['uname'];
+
+// $notes = $_POST['message'];
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'demo@domain.com';
-$sendToName = 'Demo contact form';
+$sendToEmail = 'test@domain.com';
+$sendToName = 'BackyardMedia';
+
+// smtp credentials and server
+$smtpHost = 'smtp.mailtrap.io';
+$smtpUsername = 'a618b4e9afd1d4';
+$smtpPassword = '7ac6d272ace22a';
 
 
 // subject of the email
@@ -26,7 +39,7 @@ $subject = 'New message from contact form';
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => 'Name', 'surname' => 'Surname', 'phone' => 'Phone', 'email' => 'Email', 'message' => 'Message'); 
+$fields = array('uname' => 'Name', 'uemail' => 'Email', 'message' => 'Message'); 
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
@@ -60,18 +73,50 @@ try
     
     $mail = new PHPMailer;
 
+     //Recipients
     $mail->setFrom($fromEmail, $fromName);
     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
     $mail->addReplyTo($from);
     
+     //Content
     $mail->isHTML(true);
 
     $mail->Subject = $subject;
+    $mail->Body    = $emailTextHtml;
     $mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
     
     
+    $mail->isSMTP();
+
+    //Enable SMTP debugging
+    // 0 = off (for production use)
+    // 1 = client messages
+    // 2 = client and server messages
+    $mail->SMTPDebug = 1;
+    $mail->Debugoutput = 'html';
+
+    //Set the hostname of the mail server
+    // use
+    // $mail->Host = gethostbyname('smtp.gmail.com');
+    // if your network does not support SMTP over IPv6
+    $mail->Host = gethostbyname($smtpHost);
+    
+    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+    $mail->Port = 25;
+    //Set the encryption system to use - ssl (deprecated) or tls
+    $mail->SMTPSecure = 'tls';
+    
+    //Whether to use SMTP authentication
+    $mail->SMTPAuth = true;
+    
+    //Username to use for SMTP authentication - use full email address for gmail
+    $mail->Username = $smtpHost;
+    
+    //Password to use for SMTP authentication
+    $mail->Password = $smtpPassword;
+    
     if(!$mail->send()) {
-        throw new \Exception('I could not send the email.' . $mail->ErrorInfo);
+        throw new \Exception('Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
     }
     
     $responseArray = array('type' => 'success', 'message' => $okMessage);
