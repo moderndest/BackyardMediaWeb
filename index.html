@@ -113,7 +113,7 @@ Date: May 29 2018   -->
                 
                 <div class="tm-content btn_adv_pod col-md-12 d-flex justify-content-center">
                     <a href="#" class="btn_adv col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" role="button"  id="adv">ADVERTISER</a>
-                    <a href="#" class="btn_pod col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
+                    <a href="podcaster.html" class="btn_pod col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
                 </div>
             </div>
         </div>
@@ -216,12 +216,16 @@ Date: May 29 2018   -->
             <div class="container">
                 <div class="my-4 col-sm-12 col-md-5">
                 </div>
-                <form class="my-4 col-sm-12 col-md-7">
+                <form id="contact-form" class="my-4 col-sm-12 col-md-7" action="" method="post" role="form" novalidate>
+                    <div class="messages"></div>
                     <!-- Name -->
                     <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="inputName" placeholder="Name">
+                            <input type="text" class="form-control" id="inputName" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                    Please fill out this filed.
+                            </div>
                         </div>
                     </div>
 
@@ -229,7 +233,7 @@ Date: May 29 2018   -->
                     <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email" required>
                         </div>
                     </div>
 
@@ -245,7 +249,7 @@ Date: May 29 2018   -->
                     <div class="form-group row">
                         <div class="col-sm-8"></div>
                         <div class="col-sm-2 d-flex justify-content-end">
-                        <button type="submit" class="submitemail btn btn-primary">Submit</button>
+                        <button type="submit" value="Send message" class="submitemail btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>
@@ -273,6 +277,8 @@ Date: May 29 2018   -->
     <!-- End of the footer  -->
         <script type="text/javascript" src="js/particles.js"></script>
         <script type="text/javascript" src="js/app.js"></script>
+        <script src="js/contact.js"></script>
+        <script src="js/validator.js"></script>
          
         
     </body>
