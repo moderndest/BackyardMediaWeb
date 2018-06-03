@@ -179,6 +179,7 @@ html,body{
 /*--- Media Queries! styling starts here ---*/
 
 
+
     @media screen and  (max-width:960px){
         .vl{
             border-left: 0px solid #6BCDFD;
