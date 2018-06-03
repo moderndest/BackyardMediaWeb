@@ -67,13 +67,13 @@ html,body{
 
         .brand_heading{
             font-size: 50px;
-<<<<<<< HEAD
+
             text-align: center;
 
-=======
+
             color: white;
             text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
->>>>>>> 8ac9ca4548f78b696c2150ae49276cb889d98f48
+
         }
 
         .brand_caption{
@@ -81,19 +81,19 @@ html,body{
             font-size: 25px;
             text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
             
-<<<<<<< HEAD
+
             font-size: 20px;
             text-align: center;
-=======
->>>>>>> 8ac9ca4548f78b696c2150ae49276cb889d98f48
+
         }
+
         .btn_adv_pod a:hover{
             color: white; 
+            background-color: orange;
         }
         .btn_adv,.btn_pod {
             box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.527);
-            
-            
+                     
         }
         .btn_adv_pod{
             margin-top: -80px;
@@ -107,6 +107,8 @@ html,body{
             background: #000;
         }
         
+
+
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
             padding:130px 0px 80px 0px;
