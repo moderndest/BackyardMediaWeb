@@ -132,7 +132,27 @@ html,body{
 
         /*<---- end of slider style starts here ---->*/
         
-        
+        #lottie{
+            background-color:#fff;
+            width:80%;
+            height:80%;
+            display:block;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            text-align: center;
+            opacity: 1;
+        }
+        #bg-letter{
+            background-color:#fff;
+            margin: 0px;
+            height: 100%;
+            overflow: hidden;
+        }
+        .contact-form
+        {
+            padding: 20px 0px;
+        }
+
 
 
 
