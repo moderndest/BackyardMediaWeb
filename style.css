@@ -64,7 +64,7 @@ html,body{
 /*<----body styling starts here----->*/
 
         .branding{
-            margin-top: 150px;
+            margin-top: 180px;
         }
 
         .brand_heading{
@@ -86,9 +86,11 @@ html,body{
         .btn_adv_pod a:hover{
             color: white; 
             background-color: orange;
+           
         }
         .btn_adv_pod{
             color: white; 
+            margin-top: -80px;
            
         }
         .contact {
@@ -131,25 +133,27 @@ html,body{
        
 
         /*<---- end of slider style starts here ---->*/
-        
+
+
         #lottie{
             background-color:#fff;
-            width:80%;
-            height:80%;
+            width:350px;
+            height:350px;
+            
             display:block;
             overflow: hidden;
             transform: translate3d(0,0,0);
             text-align: center;
             opacity: 1;
         }
-        #bg-letter{
+        .bg-letter{
             background-color:#fff;
             overflow: hidden;
         }
-        /* .contact-form
+        .contact-form
         {
             padding: 20px 0px;
-        } */
+        }
 
 
 
