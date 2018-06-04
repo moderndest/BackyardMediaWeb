@@ -64,7 +64,7 @@ html,body{
 /*<----body styling starts here----->*/
 
         .branding{
-            margin-top: 190px;
+            margin-top: 80px;
         }
 
         .brand_heading{
@@ -144,8 +144,6 @@ html,body{
         }
         #bg-letter{
             background-color:#fff;
-            margin: 0px;
-            height: 100%;
             overflow: hidden;
         }
         .contact-form
