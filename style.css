@@ -64,7 +64,7 @@ html,body{
 /*<----body styling starts here----->*/
 
         .branding{
-            margin-top: 80px;
+            margin-top: 190px;
         }
 
         .brand_heading{
@@ -79,7 +79,7 @@ html,body{
             color: white;
             font-size: 25px;
             text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
-         text-align: center;
+            text-align: center;
 
         }
 
@@ -103,14 +103,14 @@ html,body{
 
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
-            padding:130px 0px 80px 0px;
+            padding:140px 0px 80px 0px;
             background-color:#F3F3F3;
         }
         .imgSlide{
             max-width: 100%;
         }
         .podfeat{
-            padding-top: 20px;
+            padding-top: 40px;
         }
         .media{
             padding:50px 100px;
