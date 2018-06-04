@@ -23,7 +23,8 @@ Date: May 29 2018   -->
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script> 
         <script src="js/letter.js"></script>
-        <!-- <script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script> -->
+        
+        <!-- lottieJS -->
         <script src="js/lottie_light.min.js" type="text/javascript"></script>
         
         <link rel="stylesheet" href="css/demo.css" />
@@ -217,25 +218,26 @@ Date: May 29 2018   -->
         <div class="contact">
             
             <div class="container">
-
-                <h2 class="podfeat">
-                 Contact <i class=" mx-2 far fa-envelope-open"></i>
-
-            </h2>
-                <div class="my-4 col-sm-12 col-md-5">
-                </div>
-                <form class="contact-form my-4 col-sm-12 col-md-7" action="php/contact.php" method="post" role="form" novalidate>
-                    <div class="messages"></div>
-                    <!-- Name -->
-                    <div class="form-group row">
-                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                        <div class="col-sm-8">
-                            <input type="text" class="form-control" id="inputName" name="uname" placeholder="Name" required>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                Name is required.
+                <div class="row">
+                    <div class="my-4 col-sm-12 col-md-7">
+                        <h2 class="podfeat">
+                            Contact 
+                            <i class=" mx-2 far fa-envelope-open"></i>
+                        </h2>
+                        <form class="contact-form" action="php/contact.php" method="post" role="form" novalidate>
+                            <div class="messages"></div>
+                            <!-- Name -->
+                            <div class="form-group row">
+                                <label for="inputName" class="col-sm-2 col-form-label">Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="inputName" name="uname" placeholder="Name" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Name is required.
+                                    </div>
+                                </div>
                             </div>
 
                             <!-- Email -->
@@ -265,8 +267,8 @@ Date: May 29 2018   -->
                                     </div>
                                 </div>
                             </div>
-                            
-                                
+                                    
+                            <!-- submit button -->
                             <div class="form-group row">
                                 <div class="col-sm-8"></div>
                                 <div class="col-sm-2 d-flex justify-content-end">
@@ -275,6 +277,7 @@ Date: May 29 2018   -->
                             </div>
                         </form>
                     </div>
+                        
                     <div class="my-4 col-sm-12 col-md-5">
                         <!-- <i class="far fa-envelope-open fa-6x"></i> -->
                         <div id="bg-letter justify-content-center">
@@ -292,10 +295,9 @@ Date: May 29 2018   -->
                         </div>
                         
                     </div>
-                    
-                </div>  
-            </div>
-
+                </div>
+                
+            </div>  
         </div>
 
 
