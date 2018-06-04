@@ -229,9 +229,14 @@ html,body{
         }
 
     }
-    @media screen and (max-width:760px){
+    @media screen and (max-width:780px){
         .media-body{
             margin:0px, 0px;
+        }
+        .img-aboutus{
+            max-width: 250px;
+            max-height: 350px;
+            
         }
     }
     @media screen and  (max-width:488px){
