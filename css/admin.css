@@ -1,0 +1,10 @@
+html,body{
+    margin:0px auto;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+body{
+    background-color: #333;
+    max-width: 100%;
+    max-height: 100%;
+}
