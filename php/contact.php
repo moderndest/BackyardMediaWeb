@@ -35,22 +35,22 @@ require '../vendor/autoload.php';
 // $fromEmail = $_POST['email'];
 // $fromName = $_POST['name'];
 // $message = $_POST['notes'];
-$fromEmail = 'modern445@gmail.com';
+$fromEmail = 'from@mailtrap.io';
 $fromName = 'Hello';
 $message = 'I want to work with u';
 
 // $notes = $_POST['message'];
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'modern445@gmail.com';
+$sendToEmail = 'c260416447-a997b9@inbox.mailtrap.io';
 $sendToName = 'BackyardMedia';
 
 // smtp credentials and server
 
 
 $smtpHost = 'smtp.mailtrap.io';
-$smtpUsername = 'a618b4e9afd1d4';
-$smtpPassword = '7ac6d272ace22a';
+$smtpUsername = '04b5209f0ee57b';
+$smtpPassword = '5e93fe1c21f95b';
 
 
 
@@ -82,12 +82,12 @@ try
     $emailTextHtml = "<h1>You have a new message from your contact form</h1><hr>";
     $emailTextHtml .= "<table>";
 
-    foreach ($_POST as $key => $value) {
-        // If the field exists in the $fields array, include it in the email
-        if (isset($fields[$key])) {
-            $emailTextHtml .= "<tr><th>$fields[$key]</th><td>$value</td></tr>";
-        }
-    }
+    // foreach ($_POST as $key => $value) {
+    //     // If the field exists in the $fields array, include it in the email
+    //     if (isset($fields[$key])) {
+    //         $emailTextHtml .= "<tr><th>$fields[$key]</th><td>$value</td></tr>";
+    //     }
+    // }
     $emailTextHtml .= "</table><hr>";
     $emailTextHtml .= "<p>Have a nice day,<br>Best,<br>Backyerd Media</p>";
     
@@ -133,11 +133,11 @@ try
     // $mail->Port = 587;
 
     //Set the encryption system to use - ssl (deprecated) or tls
-    $mail->SMTPSecure = 'ssl';
+    $mail->SMTPSecure = 'tsl';
     
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
-    // $mail->AuthType = 'LOGIN';
+    $mail->AuthType = 'CRAM-MD5';
     
     //Username to use for SMTP authentication - use full email address for gmail
     $mail->Username = $smtpHost;
