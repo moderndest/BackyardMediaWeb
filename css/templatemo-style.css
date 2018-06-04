@@ -14,8 +14,13 @@
     align-items: center;
 }
 
-.tm-content {
+.tm-content1 {
     z-index: 1001;
+}
+.tm-content{
+
+    z-index: 50;
+
 }
 
 
