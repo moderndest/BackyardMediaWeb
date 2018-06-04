@@ -1,5 +1,8 @@
+//  Backyard Media 
+// Filename: nav.js
 
-
+// Author:Chatsuda Rattarasan 
+// Date: May 29 2018  
 
 //navbar dropdown mouse hover
   $('body').on('mouseenter mouseleave','.dropdown',function(e){

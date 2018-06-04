@@ -1,4 +1,9 @@
 <?php
+//  Backyard Media 
+// Filename: contact.php
+
+// Author:Chatsuda Rattarasan 
+// Date: May 29 2018  
 
 echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; 
 // $fp = fsockopen('localhost', 587, $errno, $errstr, 10);
