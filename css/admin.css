@@ -1,120 +1,59 @@
-html,body{
-    margin:0px auto;
+* {
+	margin: 0;
+	border: 0;
+    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
     color:white;
-    
 }
-.bgbody{
-    color:white;
+/* header{
+    width: 100%;
+    top:0;
+	margin: 0, auto;
+	position: relative;
+} */
+.bgcolor{
     background-color: #333;
-    /* max-width: 100%;
-    max-height: 100%; */
-}
-.Allfont{
-    color:white;
 }
 
-.Adminlogin{
+.Adminheading{
+    text-align: center;
+}
+
+/* .container{
+    position: relative;
+    
+} */
+/* .Allfont{
+    color:white;
+} */
+
+.adminloginform{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
 }
+
+/* .Adminlogin{
+    margin-top: auto;
+    margin-bottom: auto; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+/* } */
 .logo{
-    margin: 20px;
+    
     padding: 20px;
 }
 
-@media screen and (max-width: 1140px) and (max-height:1370px) { 
-    .Adminheading{
-        font-size: 45px;
-    }
-    #inputAdminEmail{
-        margin: 10px;
-        padding: 10px;
-    }
-    #inputAdminPsw{
-        padding: 10px;
-    }
-    .logo img{
-        width:20%;
-        position: absolute;
-        top: 19%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-/* IPAD PRO -----------*/ 
-@media screen and (max-width: 1140px) and (max-height:1370px) { 
-    .Adminheading{
-        font-size: 45px;
-    }
-    #inputAdminEmail{
-        margin: 10px;
-        padding: 10px;
-    }
-    #inputAdminPsw{
-        padding: 10px;
-    }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 28%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
 
 
-@media screen and (max-width: 768px) and (max-height:1240px) { 
-    .Adminheading{
-        font-size: 35px;
-    }
-    .logo img{
-        width:20%;
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-@media screen and (max-width: 960px) and (max-height:800px) { 
-    .Adminheading{
-        font-size: 35px;
-    }
-    .logo img{
-        width:20%;
-        position: absolute;
-        top: 15%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-/* IPAD */
-@media screen and (width: 768px) and (height:1024px) { 
-    .Adminheading{
-        font-size: 35px;
-    }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 26%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-
-@media screen and (width: 1024px)and (height:768px)  { 
-
-    .logo img{
-
-        top: 18%;
-    }
-}
 
 /* Horizental IPHONE X & 6,7,8 */
 @media screen and (max-width: 823px)and (height:375px)  { 
@@ -131,13 +70,6 @@ html,body{
     }
     #inputAdminPsw{
         padding: 3px;
-    }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 }
 
@@ -157,13 +89,6 @@ html,body{
     #inputAdminPsw{
         padding: 3px;
     }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 }
 
 /* Horizental IPHONE 5/SE*/
@@ -181,13 +106,6 @@ html,body{
     }
     #inputAdminPsw{
         padding: 3px;
-    }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 }
 
@@ -207,13 +125,6 @@ html,body{
     #inputAdminPsw{
         padding: 3px;
     }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 }
 
 /* Horizental PIXEL*/
@@ -231,13 +142,6 @@ html,body{
     }
     #inputAdminPsw{
         padding: 3px;
-    }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
     }
 }
 
@@ -257,33 +161,29 @@ html,body{
     #inputAdminPsw{
         padding: 3px;
     }
-    .logo img{
-        width:25%;
-        position: absolute;
-        top: 29%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
 }
 
 /* Small screen */
 @media screen and (max-width: 576px) { 
     .logo img{
-        width:30%;
-        top: 20%;
-        
+        position: relative;
+        width:35%;
     }
     
     .Adminheading{
-        font-size: 28px;
+        font-size: 25px;
     }
     #inputAdminEmail{
-        margin: 0px;
-        padding: 5px;
+       font-size: 13px;
         
     }
     #inputAdminPsw{
-        padding: 5px;
+        font-size: 13px;
     }
 	
 }
+@media screen and (max-width: 768px) { 
+    .Adminheading{
+        font-size: 30px;
+    }
+} 
