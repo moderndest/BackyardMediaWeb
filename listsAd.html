@@ -1,0 +1,101 @@
+<!Doctype html>
+<!-- Backyard Media 
+Filename: admin.html
+
+Author: Chatsuda Rattarasan   
+Date: May 29 2018   -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Backyard Media Administrators</title>
+        <link rel="stylesheet" href="css/admin.css">
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
+            
+    </head>
+    <body class="bgcolor">
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <a class="logo col-md-10" href="admindashboard.html"><img src="img/logo.png" width="180px"></a>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <p>username</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <h1 class="Adminheading col-12">Advertisers Dashboard</h1>
+       
+        <div class="container ">
+            <div class="row my-4">
+
+                <form id="shopping-cart col-12" action="" method="post">
+                    <ul id="shopping-cart-actions col-12">
+                        <li>
+                        <button id="clear-cart" class="btn">Back</buttion>
+                            <!-- <button class="btn" id="clear-cart">Empty Cart</button> -->
+                        </li>
+                        <li>
+                        <!-- href="javascript:history.go(-1)" -->
+                            <a href="Menu.php" class="btn">Empty</a>
+                        </li>
+                        <li>
+                                <!-- href="javascript:history.go(-1)" -->
+                                    <a href="Menu.php" class="btn">save</a>
+                                </li>
+                        <li>
+                            <a href="CheckOut.php" class="btn">Edit</a>
+                        </li>
+                    </ul>
+                
+                    <table class="table table-light table-responsive table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">First</th>
+                                <th scope="col">Last</th>
+                                <th scope="col">Handle</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mark</td>
+                                <td>Otto</td>
+                                <td>@mdo</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Jacob</td>
+                                <td>Thornton</td>
+                                <td>@fat</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </form>
+            
+            </div>
+
+        </div>
+        
+
+    </body>
+
+
+
+</html>
