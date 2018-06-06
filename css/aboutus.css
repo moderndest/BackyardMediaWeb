@@ -19,13 +19,7 @@ p{
     font-weight: bold;
 }
 
-#pageTitle{
-    padding: 20px 20px;
-    text-align: center;
-    color: orange;
-    text-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.281);
-    margin-top: 100px;
-}
+
 
 .subtitle{
     padding: 5px 0px;

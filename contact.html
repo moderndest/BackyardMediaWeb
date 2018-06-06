@@ -88,58 +88,72 @@ Date: May 29 2018   -->
 
          
         <div class="container" style="width: 60%;">
-             <div class="row">
-                 <div class="col-sm-5 col-md-6">
-                    <h5>First Name*</h5>
-                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First Name" placeholder="First Name"></div>
-                 </div>
-                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-                    <h5>Second Name*</h5>
-                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Second Name" placeholder="Second Name"></div>
-                 </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Email*</h5>
-                    <div><input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Email" placeholder="Email"></div>
+            <form>
+                <!-- first name -->
+                <div class="row p-4">
+                    <div class="col-sm-5 col-md-6">
+                        <h5>First Name*</h5>
+                        <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First Name" placeholder="First Name"></div>
+                    </div>
+                    <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
+                        <h5>Last Name*</h5>
+                        <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Last Name" placeholder="Last Name"></div>
+                    </div>
                 </div>
-             </div>
-             <div class="row">
-                 <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Name of Organizaiton</h5>
-                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Name of Organizaiton" placeholder="Name of Organization"></div>
-                 </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Are You?</h5>
-                    <div><input type="radio" name="radio" value="Podcaster"> A Podcaster</div>
-                    <div><input type="radio" name="radio" value="Sponsor"> A potential Sponsor</div>
-                    <div><input type="radio" name="radio" value="Else"> Someone else</div>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Website</h5>
-                    <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
-                </div>
-             </div>
-             <div class="row">
-                 <div class="col-sm-6 col-md-5 col-lg-6">
-                     <h5>Message</h5>
-                     <h6>How can we help you?</h6>
-                     <div><textarea cols="60" rows="10" name="Message" placeholder="Message"></textarea></div>
-                </div>
-             </div>
 
-         </div>
-         
-        <center>
-            <div classs="btn_adv_pod">
-                <button class=" col-5 col-md-4 mr-4 btn btn-outline-warning btn-md"  type="submit" formmethod="POST">Submit</button>
-            </div>
-        </center>
-         
+                <!--email  -->
+                <div class="row p-4">
+                    <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                        <h5>Email*</h5>
+                        <div><input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Email" placeholder="Email"></div>
+                    </div>
+                </div>
+                <!--nameofcontract  -->
+                <div class="row p-4">
+                    <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                        <h5>Name of Organizaiton</h5>
+                        <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Name of Organizaiton" placeholder="Name of Organization"></div>
+                    </div>
+                </div>
+                <!-- are you -->
+                <div class="row p-4">
+                    <div class="col-sm-6 col-md-5 col-lg-6">
+                        <h5>Are You?</h5>
+                        <div><input type="radio" name="radio" value="Podcaster"> A Podcaster</div>
+                        <div><input type="radio" name="radio" value="Sponsor"> A potential Sponsor</div>
+                        <div><input type="radio" name="radio" value="Else"> Someone else</div>
+                    </div>
+                </div>
+
+                <!-- website -->
+                <div class="row p-4">
+                    <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                        <h5>Website</h5>
+                        <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
+                    </div>
+                </div>
+                <!-- message -->
+                <div class="row p-4">
+                    <div class="col-12 col-sm-6 col-md-8 col-lg-10">
+                        <h5>Message</h5>
+                        <p><i>How can we help you?</i></p>
+                        <div><textarea cols="60" rows="10" name="Message" placeholder="Message"></textarea></div>
+                    </div>
+                </div>
+
+                 <!-- submit -->
+                <div class="form-group row my-4">
+                    <div class="col-sm-6">
+                    </div>
+                    <div class="col-sm-4 d-flex justify-content-end">
+                        <button type="submit" class="btn btn-outline-warning pdsubmitbtn btn-md">Submit</button>
+                    </div>
+            
+                 </div>
+            </form>
+        </div>
+
+
     
     
     <!--- Footer part -->
