@@ -23,73 +23,64 @@ Date: May 29 2018   -->
             
     </head>
     <body class="bgcolor">
+        <!-- header Start here -->
         <header>
             <div class="container-fluid">
                 <div class="row">
                     <a class="logo col-md-10" href="admindashboard.html"><img src="img/logo.png" width="180px"></a>
                     <div class="col-md-2 d-flex justify-content-center">
-                        <p>username</p>
+                        <i class="usericon far fa-user-circle blue mx-3"></i>
+                        <p class="blue">username</p>
                     </div>
                 </div>
             </div>
         </header>
+        <!-- end of header Start here -->
+        
         <h1 class="Adminheading col-12">Advertisers Dashboard</h1>
        
-        <div class="container ">
-            <div class="row my-4">
+        <div class="container">
 
-                <form id="shopping-cart col-12" action="" method="post">
-                    <ul id="shopping-cart-actions col-12">
-                        <li>
-                        <button id="clear-cart" class="btn">Back</buttion>
-                            <!-- <button class="btn" id="clear-cart">Empty Cart</button> -->
-                        </li>
-                        <li>
-                        <!-- href="javascript:history.go(-1)" -->
-                            <a href="Menu.php" class="btn">Empty</a>
-                        </li>
-                        <li>
-                                <!-- href="javascript:history.go(-1)" -->
-                                    <a href="Menu.php" class="btn">save</a>
-                                </li>
-                        <li>
-                            <a href="CheckOut.php" class="btn">Edit</a>
-                        </li>
-                    </ul>
-                
-                    <table class="table table-light table-responsive table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">First</th>
-                                <th scope="col">Last</th>
-                                <th scope="col">Handle</th>
-                            </tr>
-                        </thead>
-                        <tbody id="tbody">
-                            <tr>
-                                <th scope="row">1</th>
+            <!-- Advertisers form start here -->
+                <form id="adform" class="my-4" action="" method="post">
+                    <div class="table-responsive col-12">
+                        <table class="table table-light">
+                            <thead>
+                                <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Show</th>
+                                        <th scope="col">Topic</th>
+                                        <th scope="col">Host Names</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Web</th>
+                                        <th scope="col">Release schedule</th>
+                                        <th scope="col">Downloads/Episode</th>
+                                        <th scope="col">Publish date of first episode</th>
+                                        <th scope="col">Episode length (minutes)</th>
+                                        <th scope="col">Available 30s prerolls per episode</th>
+                                        <th scope="col">Available 60s prerolls per episode</th>
+                                        <th scope="col">Total PreRoll Cost/Episode</th>
+                                        <th scope="col">Total MidRoll Cost/Episode</th>
+                                        <th scope="col">Demographic/listenership data</th>
+                                        <th scope="col">Willing to do host-read ads</th>
+                                        <th scope="col">Willing In-content ad reads</th>
+                                        <th scope="col">Willing Endorsements</th>
+                                        <th scope="col">Willing to do Keep ad in show in perpetuity</th>
+                                        <th scope="col">Willing to do Prep calls with sponsors</th>
+                                    </tr>
+                            </thead>
+                            <tbody id="tbody">
+                                <tr>
+                                <!-- <th scope="row">1</th>
                                 <td>Mark</td>
                                 <td>Otto</td>
-                                <td>@mdo</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
+                                <td>@mdo</td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </form>
-            
-            </div>
+            <!-- end of Advertisers form here -->
 
         </div>
         
