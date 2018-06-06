@@ -367,8 +367,8 @@ color:orange;
     }
 
 
-#pagetitle{
-    margin-top: 100px;
+.pagetitle{
+    margin-top  :100px;
     padding: 20px 20px;
     text-align: center;
     color: orange;
