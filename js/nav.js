@@ -18,16 +18,16 @@
   
 $(document).ready(function () {
   $('.loginbtn').hover(function () {
-    $(this).html("<a href='#' class='mx-3' role='button'><i class='fas fa-user fa-2x blue'></i></a>"); 
+    $(this).html("<a href='login.html' class='mx-3' role='button'><i class='fas fa-user fa-2x blue'></i></a>"); 
   }, function () {
-    $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Log in</a>");   
+    $(this).html("<a href='login.html' class='d-inline btnstyle' role='button'>Log in</a>");   
   });
 });
 
 $(document).ready(function () {
   $('.Signupbtn').hover(function () {
-    $(this).html("<a href='#' class='mx-3' role='button'><i class='fas fa-user-plus fa-2x blue'></a>"); 
+    $(this).html("<a href='Signup.html' class='mx-3' role='button'><i class='fas fa-user-plus fa-2x blue'></a>"); 
   }, function () {
-    $(this).html("<a href='#' class='d-inline btnstyle' role='button'>Sign Up</a>");   
+    $(this).html("<a href='Signup.html' class='d-inline btnstyle' role='button'>Sign Up</a>");   
   });
 });
