@@ -23,7 +23,7 @@ THIS FILE USES PHPMAILER INSTEAD OF THE PHP MAIL() FUNCTION
 // Import PHPMailer classes into the global namespace
 // These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
+// use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
@@ -54,8 +54,8 @@ $sendToName = 'BackyardMedia';
 
 
 $smtpHost = 'smtp.mailtrap.io';
-$smtpUsername = '04b5209f0ee57b';
-$smtpPassword = '5e93fe1c21f95b';
+$smtpUsername = "984aeb99a24159";
+$smtpPassword = "4076ee85617fac";
 
 
 
@@ -97,60 +97,64 @@ try
     $emailTextHtml .= "<p>Have a nice day,<br>Best,<br>Backyerd Media</p>";
     
     $mail = new PHPMailer;
-
-     //Recipients
-    $mail->setFrom($fromEmail, $fromName);
-    $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
-    $mail->addReplyTo($from);
-    
-     //Content
-    $mail->isHTML(true);
-
-    $mail->Subject = $subject;
-    $mail->Body    = $emailTextHtml;
-    $mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
-    
     
     $mail->isSMTP();
-    $mail->SMTPOptions = array(
-        'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-        )
-    );
+    // $mail->SMTPOptions = array(
+    //     'tls' => array(
+    //         'verify_peer' => false,
+    //         'verify_peer_name' => false,
+    //         'allow_self_signed' => true
+    //     )
+    // );
 
     //Enable SMTP debugging
     // 0 = off (for production use)
     // 1 = client messages
     // 2 = client and server messages
-    $mail->SMTPDebug = 2;
-    //$mail->Debugoutput = 'html';
+    $mail->SMTPDebug = 3;
+    $mail->Debugoutput = 'html';
 
     //Set the hostname of the mail server
     // use
     // $mail->Host = gethostbyname('smtp.gmail.com');
     // if your network does not support SMTP over IPv6
     $mail->Host = gethostbyname($smtpHost);
+
+
+     //Username to use for SMTP authentication - use full email address for gmail
+     $mail->Username = $smtpHost;
+    
+     //Password to use for SMTP authentication
+     $mail->Password = $smtpPassword;
+
+    
+     //Set the encryption system to use - ssl (deprecated) or tls
+     $mail->SMTPSecure = 'tls';
     
     //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
     $mail->Port = 2525;
     // $mail->Port = 587;
-
-    //Set the encryption system to use - ssl (deprecated) or tls
-    $mail->SMTPSecure = 'tsl';
     
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
-    $mail->AuthType = 'CRAM-MD5';
+    $mail->SMTPSecure = false;
+    $mail->AuthType = 'LOGIN';
     
-    //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = $smtpHost;
-    
-    //Password to use for SMTP authentication
-    $mail->Password = $smtpPassword;
+   
     $mail->SMTPAutoTLS = false;
-  
+    
+     //Recipients
+     $mail->setFrom($fromEmail, $fromName);
+     $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
+     $mail->addReplyTo($from);
+     
+      //Content
+     $mail->isHTML(true);
+ 
+     $mail->Subject = $subject;
+     $mail->Body    = $emailTextHtml;
+     $mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
+     
     
     if(!$mail->send()) {
         throw new \Exception('Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
