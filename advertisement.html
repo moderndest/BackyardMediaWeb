@@ -1,0 +1,106 @@
+<!Doctype html>
+<!-- Backyard Media 
+Filename: admin.html
+
+Author: Chatsuda Rattarasan   
+Date: May 29 2018   -->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Backyard Media Administrators</title>
+        <link rel="stylesheet" href="css/admin.css">
+        <!-- Bootstrap CSS --> 
+        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
+            
+    </head>
+    <body class="bgcolor">
+
+        <!-- header Start here -->
+        <header>
+            <div class="container-fluid">
+                <div class="row">
+                    <a class="logo col-md-10" href="admindashboard.html"><img src="img/logo.png" width="180px"></a>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <p class="blue"><i class="far fa-user-circle  blue mx-3"></i>username</p>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end of header Start here -->
+
+        <!-- Body Content Start here -->
+        <h1 class="Adminheading col-12">Advertisements Dashboard</h1>
+       
+        <div class="container">
+            <form id="podform" class="my-4" action="" method="post">
+                <ul id="shopping-cart-actions">
+                    <li>
+                        <a href="admindashboard.html" class="button">Back</a>
+                        <!-- <button class="btn" id="clear-cart">Empty Cart</button> -->
+                    </li>
+                    <li>
+                    <!-- href="javascript:history.go(-1)" -->
+                        <button id="clear-cart" class="button"> Empty All</buttion>
+                    </li>
+                    <li>
+                        <a href="CheckOut.php" class="button">Edit</a>
+                    </li>
+                </ul>
+                <div class="table-responsive col-12">
+                    <table class="table table-light">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name of theShow</th>
+                                <th scope="col">Advertiser</th>
+                                <th scope="col">Type of Ad</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">$Sold For</th>
+                                <th scope="col">Has the Sponsor Been Invoiced?</th>
+                                <th scope="col">Invoice Name</th>
+                                <th scope="col">IO Number (if issued by BYM)</th>
+                                <th scope="col">Has the Sponsor paid?</th>
+                                <th scope="col">BYM Commission</th>
+                                <th scope="col">Amount Net to BYM</th>
+                                <th scope="col">Amount Net to Podcast</th>
+                                <th scope="col">Has the Podcast been Paid</th>
+                                <th scope="col">Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                            <!-- <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto</td>
+                            <td>@mdo</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <!-- end of Body Content here -->
+           
+       
+        
+ <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
+    </body>
+
+
+
+</html>

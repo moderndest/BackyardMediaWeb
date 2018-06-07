@@ -1,0 +1,210 @@
+* {
+	margin: 0;
+	border: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:white;
+}
+
+.bgcolor{
+    background-color: #333;
+}
+
+.Adminheading{
+    text-align: center;
+    color:white;
+}
+header{
+    padding: 30px;
+}
+
+/* .container{
+    position: relative;
+    
+} */
+
+.adminloginform{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    color:white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* .Adminlogin{
+    margin-top: auto;
+    margin-bottom: auto; */
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+/* } */
+.dash{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+.dash a{
+    color: white;
+    
+}
+
+.dash a:hover{
+    color: white;
+
+    
+}
+
+table th{
+    color: black;
+}
+
+
+
+/* Horizental IPHONE X & 6,7,8 */
+@media screen and (max-width: 823px)and (height:375px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Horizental IPHONE 6+,7+,8+*/
+@media screen and (width: 736px)and (height:414px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Horizental IPHONE 5/SE*/
+@media screen and (width: 568px)and (height:320px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Horizental PIXEL2XL*/
+@media screen and (width: 823px)and (height:411px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Horizental PIXEL*/
+@media screen and (width: 731px)and (height:411px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Horizental Galaxy S5*/
+@media screen and (width: 640px)and (height:360px)  { 
+
+    .logo img{
+        display: none;  
+    }
+    .Adminheading{
+        font-size: 20px;
+    }
+    #inputAdminEmail{
+        margin: 3px;
+        padding: 3px;
+    }
+    #inputAdminPsw{
+        padding: 3px;
+    }
+}
+
+/* Small screen */
+@media screen and (max-width: 576px) { 
+    .logo img{
+        position: relative;
+        width:35%;
+    }
+    
+    .Adminheading{
+        font-size: 25px;
+    }
+    #inputAdminEmail{
+       font-size: 13px;
+        
+    }
+    #inputAdminPsw{
+        font-size: 13px;
+    }
+	
+}
+@media screen and (max-width: 768px) { 
+    .Adminheading{
+        font-size: 30px;
+    }
+} 
+
+/* Podcast Admin page */
+.blue{
+    color: #6BCDFD;
+}
+
+.usericon i{
+    color: #6BCDFD;
+}
