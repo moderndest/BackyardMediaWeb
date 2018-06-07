@@ -40,22 +40,28 @@ require '../vendor/autoload.php';
 // $fromEmail = $_POST['email'];
 // $fromName = $_POST['name'];
 // $message = $_POST['notes'];
-$fromEmail = 'from@mailtrap.io';
+if(isset($_POST['submit'])){
+    $fromEmail = $_POST['email'];
+    $fromName = $_POST['name'];
+    $message = $_POST['notes'];
+}
+
+$fromEmail = 'modern445@gmail.com';
 $fromName = 'Hello';
 $message = 'I want to work with u';
 
 // $notes = $_POST['message'];
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'c260416447-a997b9@inbox.mailtrap.io';
+$sendToEmail = 'modern445@gmail.com';
 $sendToName = 'BackyardMedia';
 
 // smtp credentials and server
 
 
 $smtpHost = 'smtp.mailtrap.io';
-$smtpUsername = "984aeb99a24159";
-$smtpPassword = "4076ee85617fac";
+$smtpUsername = "6c7f550429c56b";
+$smtpPassword = "a91307364d02a3";
 
 
 
@@ -100,7 +106,7 @@ try
     
     $mail->isSMTP();
     // $mail->SMTPOptions = array(
-    //     'tls' => array(
+    //     'ssl' => array(
     //         'verify_peer' => false,
     //         'verify_peer_name' => false,
     //         'allow_self_signed' => true
@@ -111,7 +117,7 @@ try
     // 0 = off (for production use)
     // 1 = client messages
     // 2 = client and server messages
-    $mail->SMTPDebug = 3;
+    $mail->SMTPDebug = 4;
     $mail->Debugoutput = 'html';
 
     //Set the hostname of the mail server
@@ -132,18 +138,18 @@ try
      $mail->SMTPSecure = 'tls';
     
     //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+    // $mail->Port = 2525;
     $mail->Port = 2525;
-    // $mail->Port = 587;
     
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = false;
+    // $mail->SMTPSecure = false;
     $mail->AuthType = 'LOGIN';
     
    
     $mail->SMTPAutoTLS = false;
     
-     //Recipients
+     //Recipients 
      $mail->setFrom($fromEmail, $fromName);
      $mail->addAddress($sendToEmail, $sendToName); // you can add more addresses by simply adding another line with $mail->addAddress();
      $mail->addReplyTo($from);
