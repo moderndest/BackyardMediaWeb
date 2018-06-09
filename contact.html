@@ -91,7 +91,7 @@ Date: May 29 2018   -->
          
         <div class="container">
             <div class="row justify-content-center">
-                <form class="col-9 contact-form" action="php/contact.php" method="post" role="form" novalidate>
+                <form class="col-9 contact-form" action="" method="post" role="form" novalidate>
                     
                     <!-- Alert Message -->
                     <div class="messages"></div>
@@ -101,7 +101,7 @@ Date: May 29 2018   -->
                         <div class="col-sm-6 my-3 col-md-6">
                             <h5>First Name*</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First Name" placeholder="First Name"  required>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="FirstName" placeholder="First Name"  required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -113,7 +113,7 @@ Date: May 29 2018   -->
                         <div class="col-sm-6 my-3 offset-sm-0 col-md-6 offset-md-0">
                             <h5>Last Name*</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Last Name" placeholder="Last Name"  required>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="LastName" placeholder="Last Name"  required>
                                 <div class="valid-feedback">
                                         Looks good!
                                 </div>
@@ -129,7 +129,7 @@ Date: May 29 2018   -->
                         <div class="col-12">
                             <h5>Email*</h5>
                             <div>
-                                <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Email" placeholder="Email" required>
+                                <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email" placeholder="Email" required>
                                 <div class="valid-feedback">
                                         Looks good!
                                 </div>
@@ -144,17 +144,27 @@ Date: May 29 2018   -->
                         <div class="col-12 ">
                             <h5>Name of Organizaiton</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Name of Organizaiton" placeholder="Name of Organization">
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="NameOfOrganizaiton" placeholder="Name of Organization">
                             </div>
                         </div>
                     </div>
                     <!-- are you -->
-                    <div class="form-group row p-4">
-                        <div class="col-sm-6 col-md-5 col-lg-6" >
-                            <h5>Are You?*</h5>
-                            <div><input type="radio" name="radio" value="Podcaster"> A Podcaster</div>
-                            <div><input type="radio" name="radio" value="Sponsor"> A potential Sponsor</div>
-                            <div><input type="radio" name="radio" value="Else"> Someone else</div>
+                    <fieldset class="form-group row p-4">
+                        <h5 class="col-12">Are You?*</h5>
+                        <div class="col-sm-5 " >
+                            
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Podcaster" id="Podcaster" required>
+                                <label class="form-check-label" for="Podcaster">A Podcaster</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Sponsor"  id="Sponsor" required>
+                                <label class="form-check-label" for="Sponsor">A potential Sponsor</label> 
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Else"  id="Else"required >
+                                <label class="form-check-label" for="Else">Someone else</label> 
+                            </div>
 
                             <div class="valid-feedback">
                                         Looks good!
@@ -163,7 +173,7 @@ Date: May 29 2018   -->
                                     Are you? is required.
                             </div>
                         </div>
-                    </div>
+                    </fieldset>
 
                     <!-- website -->
                     <div class="form-group row p-4">
@@ -177,7 +187,7 @@ Date: May 29 2018   -->
                         <div class="col-12">
                             <h5>Message</h5>
                             <p><i>How can we help you?</i></p>
-                            <div><textarea class="col-12" rows="10" name="Message" placeholder="Message"></textarea></div>
+                            <div><textarea class="col-12 form-control" rows="10" name="Message" placeholder="Message"></textarea></div>
                         </div>
                     </div>
 
