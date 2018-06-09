@@ -224,13 +224,14 @@ Date: May 29 2018   -->
                             Contact Us
                             <i class=" mx-2 far fa-envelope-open"></i>
                         </h2>
-                        <form class="contact-form" action="php/contact.php" method="post" role="form" novalidate>
+                        <!-- Contact Form Start here -->
+                        <form class="contact-form " action="php/contact.php" method="post" role="form" novalidate>
                             <div class="messages"></div>
                             <!-- Name -->
                             <div class="form-group row">
                                 <label for="inputName" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" required>
+                                    <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" required >
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -258,7 +259,7 @@ Date: May 29 2018   -->
                             <div class="form-group row">
                                 <label for="inputNote" class="col-sm-2 col-form-label">Notes</label>
                                 <div class="col-sm-8">
-                                    <textarea type="text" class="form-control" name="message" id="inputNote" rows="5" required></textarea>
+                                    <textarea type="text" class="form-control" name="notes" id="inputNote" rows="5" required></textarea>
                                     <div class="valid-feedback">
                                         Looks good!
                                     </div>
@@ -272,12 +273,14 @@ Date: May 29 2018   -->
                             <div class="form-group row">
                                 <div class="col-sm-8"></div>
                                 <div class="col-sm-2 d-flex justify-content-end">
-                                <button type="submit" value="Send message" class="submitemail btn btn-primary">Submit</button>
+                                <button type="submit" formnovalidate="formnovalidate" value="Send message" class="submitemail btn btn-primary">Submit</button>
                                 </div>
                             </div>
                         </form>
+                         <!-- End of Contact Form here -->
                     </div>
                         
+                    <!-- Animtion letter -->
                     <div class="my-5 letterani col-12 col-sm-12 col-md-5 justify-content-center">
                         <!-- <i class="far fa-envelope-open fa-6x"></i> -->
                         <div class="bg-letter d-flex justify-content-center">
@@ -295,6 +298,7 @@ Date: May 29 2018   -->
                         </div>
                         
                     </div>
+                     <!-- Animtion letter -->
                 </div>
                 
             </div>  
