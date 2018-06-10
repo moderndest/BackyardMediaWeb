@@ -1,0 +1,19 @@
+# Google credentials and configuration
+google_client_id:      YOUR_CLIENT_ID
+google_client_secret:  YOUR_CLIENT_SECRET
+google_project_id:     marketplace-northeastern-xn-v1
+
+# options are "mysql", "postgres", "mongodb", or "datastore"
+bookshelf_backend: mysql
+
+# configure CloudSQL for MySQL or PostgreSQL backend
+cloudsql_connection_name: marketplace-northeastern-xn-v1:us-east4:backyardmedia-mysql-db
+cloudsql_database_name: BackyardMedia
+cloudsql_user: backyardmedia
+cloudsql_password: backyardmedia2018
+cloudsql_port: 3306
+
+# configure Mongo backend
+mongo_url: YOUR_MONGODB_URL
+mongo_database: YOUR_MONGO_DATABASE
+mongo_collection: YOUR_MONGO_COLLECTION

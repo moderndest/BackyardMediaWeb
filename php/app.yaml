@@ -1,16 +1,38 @@
 runtime: php55
-api_version: 1
-threadsafe: true
+env: flex
 
-handlers:
-- url: /.*
-  script: index.php
+runtime_config:
+  document_root: web
 
-# [START env]
-env_variables:
-  # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
-  # values obtained when configuring your Cloud SQL instance.
-  MYSQL_DSN: mysql:unix_socket=/cloudsql/marketplace-northeastern-xn-v1:us-east4:backyardmedia-mysql-db;dbname=BackyardMedia
-  MYSQL_USER: backyardmedia
-  MYSQL_PASSWORD: backyardmedia2018
-# [END env]
+## Uncomment for Cloud SQL
+ beta_settings:
+ cloud_sql_instances: "marketplace-northeastern-xn-v1:us-east4:backyardmedia-mysql-db"
+
+# This sample incurs costs to run on the App Engine flexible environment.
+# The settings below are to reduce costs during testing and are not appropriate
+# for production use. For more information, see:
+# https://cloud.google.com/appengine/docs/flexible/python/configuring-your-app-with-app-yaml
+manual_scaling:
+  instances: 1
+resources:
+  cpu: 1
+  memory_gb: 0.5
+  disk_size_gb: 10
+
+
+# runtime: php55
+# api_version: 1
+# threadsafe: true
+
+# handlers:
+# - url: /.*
+#   script: index.php
+
+# # [START env]
+# env_variables:
+#   # Replace USER, PASSWORD, DATABASE, and CONNECTION_NAME with the
+#   # values obtained when configuring your Cloud SQL instance.
+#   MYSQL_DSN: mysql:unix_socket=/cloudsql/marketplace-northeastern-xn-v1:us-east4:backyardmedia-mysql-db;dbname=BackyardMedia
+#   MYSQL_USER: backyardmedia
+#   MYSQL_PASSWORD: backyardmedia2018
+# # [END env]
