@@ -64,7 +64,6 @@ class ComposerStaticInit7dd899f5a8745eba4697def546971657
             'Goutte\\' => 7,
             'Google\\Cloud\\Utils\\' => 19,
             'Google\\Cloud\\TestUtils\\' => 23,
-            'Google\\Cloud\\Samples\\Bookshelf\\' => 31,
             'Google\\Cloud\\' => 13,
             'Google\\Auth\\' => 12,
         ),
@@ -201,11 +200,6 @@ class ComposerStaticInit7dd899f5a8745eba4697def546971657
         'Google\\Cloud\\TestUtils\\' => 
         array (
             0 => __DIR__ . '/..' . '/google/cloud-tools/src/TestUtils',
-        ),
-        'Google\\Cloud\\Samples\\Bookshelf\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-            1 => __DIR__ . '/../..' . '/test/lib',
         ),
         'Google\\Cloud\\' => 
         array (

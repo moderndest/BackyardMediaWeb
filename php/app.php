@@ -1,13 +1,12 @@
 <?php
-
-/*
- * Copyright 2015 Google Inc. All Rights Reserved.
+/**
+ * Copyright 2016 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,115 +15,83 @@
  * limitations under the License.
  */
 
+# [START all]
+use Google\Cloud\Samples\Bookshelf\DataModel\Sql;
+use Silex\Application;
+use Silex\Provider\TwigServiceProvider;
 
 
-/*
- * Adds all the controllers to $app.  Follows Silex Skeleton pattern.
- */
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Google\Cloud\Samples\Bookshelf\DataModel\DataModelInterface;
+// create the Silex application
+$app = new Application();
+$app->register(new TwigServiceProvider());
+$app['twig.path'] = [ __DIR__ ];
 
-$app->get('/', function (Request $request) use ($app) {
-    return $app->redirect('/books/');
-});
-
-// [START index]
-$app->get('/books/', function (Request $request) use ($app) {
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    /** @var Twig_Environment $twig */
-    $twig = $app['twig'];
-    $token = $request->query->get('page_token');
-    $bookList = $model->listBooks($app['bookshelf.page_size'], $token);
-
-    return $twig->render('list.html.twig', array(
-        'books' => $bookList['books'],
-        'next_page_token' => $bookList['cursor'],
-    ));
-});
-// [END index]
-
-// [START add]
-$app->get('/books/add', function () use ($app) {
+$app->get('/', function () use ($app) {
+    /** @var PDO $db */
+    $db = $app['database'];
     /** @var Twig_Environment $twig */
     $twig = $app['twig'];
 
-    return $twig->render('form.html.twig', array(
-        'action' => 'Add',
-        'book' => array(),
-    ));
+    // Show existing guestbook entries.
+    $results = $db->query('SELECT * from entries');
+
+    return $twig->render('cloudsql.html.twig', [
+        'results' => $results,
+    ]);
 });
 
-$app->post('/books/add', function (Request $request) use ($app) {
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    $book = $request->request->all();
-    $id = $model->create($book);
+// $app->post('/', function (Request $request) use ($app) {
+//     /** @var PDO $db */
+//     $db = $app['database'];
 
-    return $app->redirect("/books/$id");
-});
-// [END add]
+//     $name = $request->request->get('show');
+//     $content = $request->request->get('Topics');
 
-// [START show]
-$app->get('/books/{id}', function ($id) use ($app) {
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    $book = $model->read($id);
-    if (!$book) {
-        return new Response('', Response::HTTP_NOT_FOUND);
-    }
-    /** @var Twig_Environment $twig */
-    $twig = $app['twig'];
+//     if ($name && $content) {
+//         $stmt = $db->prepare('INSERT INTO entries (guestName, content) VALUES (:name, :content)');
+//         $stmt->execute([
+//             ':name' => $name,
+//             ':content' => $content,
+//         ]);
+//     }
 
-    return $twig->render('view.html.twig', array('book' => $book));
-});
-// [END show]
+//     return $app->redirect('/');
+// });
 
-// [START edit]
-$app->get('/books/{id}/edit', function ($id) use ($app) {
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    $book = $model->read($id);
-    if (!$book) {
-        return new Response('', Response::HTTP_NOT_FOUND);
-    }
-    /** @var Twig_Environment $twig */
-    $twig = $app['twig'];
-
-    return $twig->render('form.html.twig', array(
-        'action' => 'Edit',
-        'book' => $book,
-    ));
-});
-
-$app->post('/books/{id}/edit', function (Request $request, $id) use ($app) {
-    $book = $request->request->all();
-    $book['id'] = $id;
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    if (!$model->read($id)) {
-        return new Response('', Response::HTTP_NOT_FOUND);
-    }
-    if ($model->update($book)) {
-        return $app->redirect("/books/$id");
+// function to return the PDO instance
+$app['database'] = function () use ($app) {
+    // Connect to CloudSQL from App Engine.
+    $dsn = getenv('MYSQL_DSN');
+    $user = getenv('MYSQL_USER');
+    $password = getenv('MYSQL_PASSWORD');
+    if (!isset($dsn, $user) || false === $password) {
+        throw new Exception('Set MYSQL_DSN, MYSQL_USER, and MYSQL_PASSWORD environment variables');
     }
 
-    return new Response('Could not update book');
-});
-// [END edit]
+    $db = new PDO($dsn, $user, $password);
 
-// [START delete]
-$app->post('/books/{id}/delete', function ($id) use ($app) {
-    /** @var DataModelInterface $model */
-    $model = $app['bookshelf.model'];
-    $book = $model->read($id);
-    if ($book) {
-        $model->delete($id);
+    return $db;
+};
+# [END all]
 
-        return $app->redirect('/books/', Response::HTTP_SEE_OTHER);
-    }
+// $app->get('create_tables', function () use ($app) {
+//     /** @var PDO $db */
+//     $db = $app['database'];
+//     # [START create_tables]
+//     // create the tables
+//     $stmt = $db->prepare('CREATE TABLE IF NOT EXISTS entries ('
+//         . 'entryID INT NOT NULL AUTO_INCREMENT, '
+//         . 'guestName VARCHAR(255), '
+//         . 'content VARCHAR(255), '
+//         . 'PRIMARY KEY(entryID))');
+//     $result = $stmt->execute();
+//     # [END create_tables]
 
-    return new Response('', Response::HTTP_NOT_FOUND);
-});
-// [END delete]
+//     if (false === $result) {
+//         return sprintf("Error: %s\n", $stmt->errorInfo()[2]);
+//     } else {
+//         return 'Tables created';
+//     }
+// });
+
+return $app;

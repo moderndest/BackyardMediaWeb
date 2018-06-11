@@ -35,7 +35,6 @@ return array(
     'Goutte\\' => array($vendorDir . '/fabpot/goutte/Goutte'),
     'Google\\Cloud\\Utils\\' => array($vendorDir . '/google/cloud-tools/src/Utils'),
     'Google\\Cloud\\TestUtils\\' => array($vendorDir . '/google/cloud-tools/src/TestUtils'),
-    'Google\\Cloud\\Samples\\Bookshelf\\' => array($baseDir . '/src', $baseDir . '/test/lib'),
     'Google\\Cloud\\' => array($vendorDir . '/google/cloud/src'),
     'Google\\Auth\\' => array($vendorDir . '/google/auth/src'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),

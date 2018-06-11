@@ -1,32 +1,49 @@
 <?php
-/**
- * Copyright 2016 Google Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-// Install composer dependencies with "composer install"
-// @see http://getcomposer.org for more information.
-require __DIR__ . '/../vendor/autoload.php';
 
-/** @var Silex\Application $app */
-$app = require __DIR__ . '/app.php';
+    include ('Connectdb.php');
+    $sql='SELECT * FROM BackyardMedia.Podcasters';
+    $result = $conn->prepare($sql);
+    $result->execute();
+     unset($data);
+     $i=0;
+     $data = array();
+        echo '<table>';
+        echo '<tr>';
+        echo '<th>Show</th><th>Topic</th><th>Host_Name</th>';
+        echo '</tr>';
+        foreach ($result->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        echo '<tr>';
+        echo '<td>'.$row['Show'] ."</td><td>". $row['Topic']."</td><td>".$row['Host_Names'].'</td>';
+        echo '</tr>';
+        // print_r($row);
+     }
+     echo '</table>';
+ echo ($number);
+ $number++;
+ echo ($number);
 
-require __DIR__ . '/controllers.php';
+//  $dbh->query("UPDATE runningNo SET MAX = '{$number}' WHERE Name= 'R'");	
 
-// Run the app!
-// use "gcloud app deploy" or run "php -S localhost:8080"
-// and browse to "index.php"
-$app['debug'] = true;
-$app->run();
 
+
+
+
+    // $rs=$conn->query($sql);
+    // if($rs === false) {
+    //   trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
+    // } else {
+    //   $rows_returned = $rs->num_rows;
+    // }
+    
+    // $rs->data_seek(0);
+    //    echo '<table>';
+    //    echo '<tr>';
+    //    echo '<th>Name</th><th>Registered</th>';
+    //    echo '</tr>';
+    // while($row = $rs->fetch_assoc()){
+    //    echo '<tr>';
+    //    echo '<td>'.$row['firstname'] ."  ". $row['lastname']."</td><td>".$row['registered'].'</td>';
+    //    echo '</tr>';
+    // }
+    //    echo '</table>';
