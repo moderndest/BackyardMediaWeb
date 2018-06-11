@@ -117,12 +117,12 @@ try
 
     $emailTextHtml .= "<br><table>";
 
-    //foreach ($_POST as $key => $value) {
+    foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
             $emailTextHtml .= "<tr><th>$key : </th><td> $value</td></tr>";
         }
-    //}
+    }
     $emailTextHtml .= "</table><br><hr>";
     $emailTextHtml .="<p><strong>message : </strong></p>";
     $emailTextHtml .=" <p>$message </p><hr></div>";
