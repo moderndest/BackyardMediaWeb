@@ -2,7 +2,7 @@
 
 
     include ('Connectdb.php');
-    $sql='SELECT * FROM BackyardMedia.Podcasters';
+    $sql='SELECT * FROM Podcasters';
     $result = $conn->prepare($sql);
     $result->execute();
      unset($data);

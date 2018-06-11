@@ -1,9 +1,9 @@
 <?php
-    $dbhost = "MYSQL_HOST"; //Defaults to mysqli.default_host
-	$username = "MYSQL_USER";
-	$password = "MYSQL_PASSWORD";
+    $dbhost = "35.186.178.70"; //Defaults to mysqli.default_host
+	$username = getenv('MYSQL_USER');
+	$password = getenv('MYSQL_PASSWORD');
 	$database = "BackyardMedia"; 
-	$socket = "mysql:host=$dbhost;dbname=BackyardMedia";
+	$socket = "mysql:host=$dbhost;dbname=$database";
     
     global $conn;
     try {
