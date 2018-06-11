@@ -1,4 +1,16 @@
-
+/**
+ * 
+ * Backyard Media 
+ * Filename: aboutus.css
+ * @author Chatsuda Rattarasan
+ * @author Ngoc Tran
+ * @author Haocheng Li
+ * @author Veena Govada
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ * Date: May 29 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
 html,body{
         margin:0px auto;
         font-family: Arial, Helvetica, sans-serif;
@@ -71,6 +83,9 @@ html,body{
 
         .branding{
             margin-top: 180px;
+            /* top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
         }
 
         .brand_heading{
@@ -96,7 +111,8 @@ html,body{
         }
         .btn_adv_pod{
             color: white; 
-            margin-top: -80px;
+            /* margin-top: -80px; */
+            margin-top:-15%;
            
         }
         .contact {
@@ -111,7 +127,8 @@ html,body{
 
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
-            padding:130px 0px 50px 0px;
+            position: relative;
+            padding:10px 0px 50px 0px;
             background-color:#F3F3F3;
         }
         .imgSlide{
@@ -219,7 +236,70 @@ html,body{
 
 /*--- Media Queries! styling starts here ---*/
 
+    /*IPad Pro*/
+    /* @media screen and(min-width:1024px) and(min-height:1366px){
 
+        .branding {
+            margin-top: 300px;
+        }
+
+        .btn_adv_pod{
+            margin-top: -30%;
+        }
+       
+       
+    }
+     */
+
+
+     /* Horizental IPHONE X & 6,7,8 */
+    @media screen and (max-width: 823px)and (height:375px)  { 
+
+        .brand_heading{
+            font-size: 150%;
+
+        }
+
+        .brand_caption{
+
+            font-size: 17px;
+        }
+        /* .btn_adv_pod{
+            margin-top: -100%;
+        } */
+
+    }
+   
+    /* @media screen and  (max-height:420px){
+       
+
+        
+        .btn_adv_pod{
+            margin-top: -12%;
+        }
+
+    } */
+
+    @media screen and  (max-height:420px){
+        /* .cb-slideshow-text-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        } */
+        
+        .btn_adv_pod{
+            margin-top: -10%;
+        }
+
+    }
+
+
+    @media screen and  (max-height:660px){
+        .btn_adv_pod{
+            margin-top: 12%;
+        }
+
+    }
 
     @media screen and  (max-width:960px){
         .vl{
@@ -236,17 +316,17 @@ html,body{
         .img-aboutus{
             max-width: 250px;
             max-height: 350px;
-            
+              
         }
     }
     @media screen and  (max-width:488px){
         .brand_heading{
-            font-size: 45px;
+            font-size: 200%;
 
         }
 
         .brand_caption{
-            
+
             font-size: 17px;
         }
 
@@ -367,8 +447,8 @@ color:orange;
     }
 
 
-#pagetitle{
-    margin-top: 100px;
+.pagetitle{
+    margin-top  :100px;
     padding: 20px 20px;
     text-align: center;
     color: orange;

@@ -1,18 +1,24 @@
+/**
+ * 
+ * Backyard Media 
+ * Filename: contact.js
+ *  @author Chatsuda Rattarasan
+ * (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ * Date: June 1 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
+
+
 $(function () {
-
-    // init the validator
-    // validator files are included in the download package
-    // otherwise download from http://1000hz.github.io/bootstrap-validator
-
-    //$('.contact-form').validator();
-
 
     // when the form is submitted
     $('.contact-form').on('submit', function (e) {
 
+      // $('.contact-form').validator();
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
-            var url =  $(this).attr("action");
+           var url =  $(this).attr("action");
 
             // POST values in the background the the script URL
             $.ajax({
@@ -24,6 +30,7 @@ $(function () {
                     // data = JSON object that contact.php returns
 
                     // we recieve the type of the message: success x danger and apply it to the 
+
                     var messageAlert = 'alert-' + data.type;
                     var messageText = data.message;
 
@@ -37,6 +44,9 @@ $(function () {
                         // empty the form
                         $('.contact-form')[0].reset();
                     }
+                
+
+                    
                 }
             });
             return false;
