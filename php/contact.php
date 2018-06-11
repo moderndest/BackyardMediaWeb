@@ -21,9 +21,9 @@ if(count($_POST) == 0) {
     throw new \Exception('Form is empty');
 }
 else{
-    $fromEmail = $_POST['email'];
-    $fromName = $_POST['name'];
-    $message = $_POST['notes'];
+    $fromEmail = htmlentities($_POST['email']) ;
+    $fromName = htmlentities($_POST['name']);
+    $message = htmlentities($_POST['notes']);
 
     // $fromEmail = 'frommail@gmail.com';
     // $fromName = 'ssafas';
@@ -37,9 +37,9 @@ $okMessage = 'Contact form successfully submitted. Thank you, I will get back to
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
 //smtp credentials and server
-$smtpHost = 'smtp.mailtrap.io';
-$smtpUsername = '6c7f550429c56b';
-$smtpPassword = 'a91307364d02a3';
+$smtpHost = htmlentities('smtp.mailtrap.io');
+$smtpUsername = htmlentities( '6c7f550429c56b');
+$smtpPassword = htmlentities('a91307364d02a3');
 //smtp credentials and server
 // $smtpHost = 'smtp.gmail.com';
 // $smtpUsername = 'urmail@gmail.com';
