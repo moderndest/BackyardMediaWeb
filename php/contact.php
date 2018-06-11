@@ -25,7 +25,7 @@ else{
     $fromName = $_POST['name'];
     $message = $_POST['notes'];
 
-    // $fromEmail = 'modern445@gmail.com';
+    // $fromEmail = 'frommail@gmail.com';
     // $fromName = 'ssafas';
     // $message ='sfadfasdfas';
 }
@@ -85,13 +85,13 @@ try
     //Custom connection options
     //Note that these settings are INSECURE
     $mail->SMTPOptions = array(
-        'ssl' => [
-            'verify_peer' => true,
-            'verify_depth' => 3,
-            'allow_self_signed' => true,
-            'peer_name' => 'smtp.mailtrap.io',
-            'cafile' => '/opt/lampp/etc/ssl.crt/cacert.pem',
-        ],
+        // 'ssl' => [
+        //     'verify_peer' => true,
+        //     'verify_depth' => 3,
+        //     'allow_self_signed' => true,
+        //     'peer_name' => 'smtp.mailtrap.io',
+        //     'cafile' => '/opt/lampp/etc/ssl.crt/cacert.pem',
+        // ],
     );
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
@@ -117,12 +117,12 @@ try
 
     $emailTextHtml .= "<br><table>";
 
-    foreach ($_POST as $key => $value) {
+    //foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
             $emailTextHtml .= "<tr><th>$key : </th><td> $value</td></tr>";
         }
-    }
+    //}
     $emailTextHtml .= "</table><br><hr>";
     $emailTextHtml .="<p><strong>message : </strong></p>";
     $emailTextHtml .=" <p>$message </p><hr></div>";
