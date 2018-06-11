@@ -19,9 +19,9 @@
         // print_r($row);
      }
      echo '</table>';
- echo ($number);
- $number++;
- echo ($number);
+//  echo ($number);
+//  $number++;
+//  echo ($number);
 
 //  $dbh->query("UPDATE runningNo SET MAX = '{$number}' WHERE Name= 'R'");	
 
