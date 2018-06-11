@@ -5,16 +5,15 @@
  * Credits
  * 
  * 
- * This class was created by Fabien Potencier, Michael Williams,and Tobias Schultze 
- * For the Managing PHP Persistent Session on Backyard Media sites and Backyard Media Admin site.
+ * This class was created by Chatsuda Rattarasan For the Managing 
+ * PHP Persistent Session on Backyard Media sites and Backyard Media Admin site.
  * It's based on PDOSessionHandler in the Symfony HttpFoundation component 
  * (https://github.com/symfony/http-foundation/tree/master/Session/Storage/Handler/PdoSessionHandler.php)
  * 
  * 
  * Copyright (c) 2004-2018 Fabien Potencier
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * 
- *
- * (c) Fabien Potencier <fabien@symfony.com>
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal

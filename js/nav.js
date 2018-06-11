@@ -1,8 +1,14 @@
-//  Backyard Media 
-// Filename: nav.js
+/**
+ * 
+ * Backyard Media 
+ * Filename: nav.js
+ *  @author Chatsuda Rattarasan
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ *  Date: May 29 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
 
-// Author:Chatsuda Rattarasan 
-// Date: May 29 2018  
 
 //navbar dropdown mouse hover
   $('body').on('mouseenter mouseleave','.dropdown',function(e){

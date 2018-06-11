@@ -1,9 +1,11 @@
 <!Doctype html>
-<!-- Backyard Media 
-Filename: admin.html
-
-Author: Chatsuda Rattarasan   
-Date: May 29 2018   -->
+<!--
+    - Backyard Media 
+    - Filename: index.html
+    - @author: Chatsuda Rattarasan
+    - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+    - Date: May 29 2018   
+-->
 <html>
     <head>
         <meta charset="utf-8">

@@ -1,3 +1,15 @@
+/**
+ * 
+ * Backyard Media 
+ * Filename: contact.js
+ *  @author Chatsuda Rattarasan
+ * (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ * Date: June 1 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
+
+
 $(function () {
 
     // when the form is submitted
