@@ -1,7 +1,14 @@
 
 <!Doctype html>
 <html>
-
+<!--
+    - Backyard Media 
+    - Filename: contact.html
+    - @author: Haocheng Li
+    - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+    - Date: May 29 2018    
+    - For the full copyright and license information, please view the LICENSE
+-->
     
     <head>
         
@@ -9,13 +16,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Backyard Media</title>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/contactus.css">
         <!-- Bootstrap CSS --> 
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
-        
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
@@ -28,12 +36,12 @@
      <!-- header starts here -->
         <header>
             
-        <nav class="navbar navbar-expand-lg bg-custom">
+        <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.html">
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <span class="fas fa-bars fa-2x white"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
@@ -49,6 +57,7 @@
                                 <a class="dropdown-item" href="#">Laws</a>
                                 <a class="dropdown-item" href="#">Technology</a>
                                 <a class="dropdown-item" href="#">Art</a>
+                                <a class="dropdown-item" href="#">All</a>
                             </li>
                     <li class="nav-item mr-md-4 mx-0">
                             <a class="nav-link" href="#">Blog</a>
@@ -60,14 +69,14 @@
                             <a class="nav-link" href="contact.html">Contact Us</a>
                     </li>
                 </ul>
-                    <div class="loginbtn my-4">
-                        <a href="#" class="d-inline btnstyle" role="button">Log in</a>
+                    <div class="loginbtn">
+                        <a href="login.html" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
                     <!-- <i class="fas fa-user fa-2x blue"></i> -->
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
-                        <a href="#" class="d-inline btnstyle" role="button">Sign Up</a>
+                        <a href="Signup.html" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
         </nav>
@@ -79,99 +88,143 @@
     <!-- end of the header -->
      
          
-         
-                  <div class="container-fluid" id="contact">
-             <div class="title">
-                 <center><hz1>Work With Us</hz1></center>
-             </div>
+    <!-- body container-->
+        <h1 id="pagetitle">WORK WITH US</h1>
 
-                <table align="center" width="80%" height="800px" border="0">
-                    <tr>
-                        <td><h3>First Name*</h3></td>
-                        <td><h3>Last Name*</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="First Name" placeholder="First Name" required="required"></td>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Last Name" placeholder="Last Name" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Email Address*</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" class="Email" type="text" name="Email" placeholder="Email Address" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Name of Organizaiton</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Name of Organizaiton" placeholder="Name of Organizaiton" required="required"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Are You ?</h3></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="radio" name="radio" value="1">A Podcaster<br>
-                            <input type="radio" name="radio" value="2">A potential sponsor<br>
-                            <input type="radio" name="radio" value="3">Someone else
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><h3>Website</h3></td>
-                    </tr>
-                    <tr>
-                        <td><input style="width: 300px; height: 40px;" type="text" name="Website" placeholder="Website"></td>
-                    </tr>
-                    <tr>
-                        <td><h3>Message</h3><br>
-                            <h4>Hwo can we help you?</h4>
-                        </td>
+         
+        <div class="container">
+            <div class="row justify-content-center">
+                <form class="col-9 contact-form" action="" method="post" role="form" novalidate>
+                    
+                    <!-- Alert Message -->
+                    <div class="messages"></div>
 
-                    </tr>
-                    <tr>
-                        <td>
-                            <textarea cols="60" rows="10" name="Message" placeholder="Message"></textarea>
-                        </td>
-                    </tr>
+                    <!-- first name -->
+                    <div class="form-group row p-4">
+                        <div class="col-sm-6 my-3 col-md-6">
+                            <h5>First Name*</h5>
+                            <div>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="FirstName" placeholder="First Name"  required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Last Name is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 my-3 offset-sm-0 col-md-6 offset-md-0">
+                            <h5>Last Name*</h5>
+                            <div>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="LastName" placeholder="Last Name"  required>
+                                <div class="valid-feedback">
+                                        Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                        Last Name is required.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--email  -->
+                    <div class="form-group row p-4">
+                        <div class="col-12">
+                            <h5>Email*</h5>
+                            <div>
+                                <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email" placeholder="Email" required>
+                                <div class="valid-feedback">
+                                        Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Valid email is required.
+                                </div>
+                        </div>
+                        </div>
+                    </div>
+                    <!--nameofcontract  -->
+                    <div class="form-group row p-4">
+                        <div class="col-12 ">
+                            <h5>Name of Organizaiton</h5>
+                            <div>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="NameOfOrganizaiton" placeholder="Name of Organization">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- are you -->
+                    <fieldset class="form-group row p-4">
+                        <h5 class="col-12">Are You?*</h5>
+                        <div class="col-sm-5 " >
+                            
+                            <div class="form-check ">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Podcaster" id="Podcaster" required>
+                                <label class="form-check-label" for="Podcaster">A Podcaster</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Sponsor"  id="Sponsor" required>
+                                <label class="form-check-label" for="Sponsor">A potential Sponsor</label> 
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Else"  id="Else"required >
+                                <label class="form-check-label" for="Else">Someone else</label> 
+                            </div>
+
+                            <div class="valid-feedback">
+                                        Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                    Are you? is required.
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- website -->
+                    <div class="form-group row p-4">
+                        <div class="col-12">
+                            <h5>Website</h5>
+                            <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
+                        </div>
+                    </div>
+                    <!-- message -->
+                    <div class="form-group row p-4">
+                        <div class="col-12">
+                            <h5>Message</h5>
+                            <p><i>How can we help you?</i></p>
+                            <div><textarea class="col-12 form-control" rows="10" name="Message" placeholder="Message"></textarea></div>
+                        </div>
+                    </div>
+
+                    <!-- submit -->
+                    <div class="form-group row p-4">
+                        <div class="col-sm-8">
+                        </div>
+                        <div class="col-sm-4 d-flex justify-content-end">
+                            <button type="submit" class="btn btn-outline-warning pdsubmitbtn btn-lg">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
 
 
-                </table>
-
-
-
-             </div>
-         </div>
-
-         <center>
-         <button class="btn-contact" type="submit" formmethod="POST">Submit</button>
-         </center>
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
     
     
-    <!--- Footer part --->
-    
-            <footer>
-                <div>
-                    <p class="copy_right">Copyright © Backyard Media 2017</p>
-                </div>
-            </footer>
-    
-    <!----- End of the footer---->
+    <!--- Footer part -->
+        
+    <footer>
+        <div>
+            <!-- <img src="img/logo.png"> -->
+            <p class="copy_right">Copyright © Backyard Media 2018</p>
+            <div class="d-flex justify-content-center">
+            <a href="https://www.facebook.com/backyardmediacompany/" class="facebook fab fa-facebook-square fa-2x mr-2"></a>
+            <a href="#" class="twitter fab fa-twitter-square fa-2x"></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- End of the footer  -->
+
+    <script src="js/validator.js"></script>
     
     
     

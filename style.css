@@ -1,4 +1,16 @@
-
+/**
+ * 
+ * Backyard Media 
+ * Filename: aboutus.css
+ * @author Chatsuda Rattarasan
+ * @author Ngoc Tran
+ * @author Haocheng Li
+ * @author Veena Govada
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ * Date: May 29 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
 html,body{
         margin:0px auto;
         font-family: Arial, Helvetica, sans-serif;
@@ -14,10 +26,14 @@ html,body{
            
             .custom-toggler.navbar-toggler {
                 border-color: rgb(255, 255, 255);
+                
             }
-            .custom-toggler .navbar-toggler-icon {
+
+            /* .custom-toggler .navbar-toggler-icon {
                 background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(255, 255, 255, 0.9)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-              }
+              } */
+            
+           
 
             .navbar img {
                 max-width: 150px;
@@ -50,7 +66,11 @@ html,body{
                 text-decoration: none;
             }
             .blue{
-                color: 	#6BCDFD;
+                color: #6BCDFD;
+            }
+
+            .white{
+                color: white;
               }
             .vl{
                 border-left: 2px solid #6BCDFD;
@@ -61,45 +81,103 @@ html,body{
 
 /*<----body styling starts here----->*/
 
-
-        
+        .branding{
+            margin-top: 180px;
+            /* top: 20%;
+            left: 50%;
+            transform: translate(-50%, -50%); */
+        }
 
         .brand_heading{
             font-size: 50px;
+            text-align: center;
+            color: white;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
 
         }
 
         .brand_caption{
-            
-            font-size: 20px;
-        }
-        .btn_adv_pod a:hover{
             color: white;
+            font-size: 25px;
+            text-shadow: 2.5px 2.5px rgba(0, 0, 0, 0.479);
+            text-align: center;
+
         }
 
+        .btn_adv_pod a:hover{
+            color: white; 
+            background-color: orange;
+           
+        }
+        .btn_adv_pod{
+            color: white; 
+            /* margin-top: -80px; */
+            margin-top:-15%;
+           
+        }
+        .contact {
+            background-color: white;
+            padding: 10px 0px;
+        }
+        .section1{
+            background: #000;
+        }
         
+
+
         /*<---- slider style starts here ---->*/
         .bg-slidebar{
-            padding:60px 0px;
+            position: relative;
+            padding:10px 0px 50px 0px;
             background-color:#F3F3F3;
         }
         .imgSlide{
             max-width: 100%;
         }
-
+        .podfeat{
+            padding-top: 40px;
+        }
         .media{
             padding:50px 100px;
         }
-        .podfeat{
-            padding:0px 80px;
-        }
+        
         .black {
             color: black;
           }
 
+        .fa-headphones{
+            text-decoration: none;
+            color: orange;
+        }
+        .fa-headphones:hover{
+            text-decoration: none;
+            color: #ffca4c;
+        }
+       
+
         /*<---- end of slider style starts here ---->*/
-        
-        
+
+
+        #lottie{
+            background-color:#fff;
+            width:350px;
+            height:350px;
+            
+            display:block;
+            overflow: hidden;
+            transform: translate3d(0,0,0);
+            text-align: center;
+            opacity: 1;
+        }
+        .bg-letter{
+            background-color:#fff;
+            overflow: hidden;
+        }
+        .contact-form
+        {
+            padding: 20px 0px;
+        }
+
 
 
 
@@ -116,6 +194,21 @@ html,body{
 
         }
 
+        .facebook{
+            color: rgb(81, 125, 212) ;
+            text-decoration: none;
+        }
+
+        .twitter{
+            color: #1dcaff;
+            text-decoration: none;
+        }
+
+        .facebook:hover , .twitter:hover{
+            color: white;
+            text-decoration: none;
+        }
+
         footer img{
             float: right;
             max-width: 150px;
@@ -129,11 +222,84 @@ html,body{
 
 /*<--- end of footer styling---->*/
 
+/*<-----Avdertiserpage styling---->*/
+
+            .adv_cap{
+                 color: black;
+                font-size: 25px;
+                text-align: center;
+            }
 
 
+
+/*<-----end of Avdertiserpage styling---->*/
 
 /*--- Media Queries! styling starts here ---*/
 
+    /*IPad Pro*/
+    /* @media screen and(min-width:1024px) and(min-height:1366px){
+
+        .branding {
+            margin-top: 300px;
+        }
+
+        .btn_adv_pod{
+            margin-top: -30%;
+        }
+       
+       
+    }
+     */
+
+
+     /* Horizental IPHONE X & 6,7,8 */
+    @media screen and (max-width: 823px)and (height:375px)  { 
+
+        .brand_heading{
+            font-size: 150%;
+
+        }
+
+        .brand_caption{
+
+            font-size: 17px;
+        }
+        /* .btn_adv_pod{
+            margin-top: -100%;
+        } */
+
+    }
+   
+    /* @media screen and  (max-height:420px){
+       
+
+        
+        .btn_adv_pod{
+            margin-top: -12%;
+        }
+
+    } */
+
+    @media screen and  (max-height:420px){
+        /* .cb-slideshow-text-container {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        } */
+        
+        .btn_adv_pod{
+            margin-top: -10%;
+        }
+
+    }
+
+
+    @media screen and  (max-height:660px){
+        .btn_adv_pod{
+            margin-top: 12%;
+        }
+
+    }
 
     @media screen and  (max-width:960px){
         .vl{
@@ -143,14 +309,24 @@ html,body{
         }
 
     }
+    @media screen and (max-width:780px){
+        .media-body{
+            margin:0px, 0px;
+        }
+        .img-aboutus{
+            max-width: 250px;
+            max-height: 350px;
+              
+        }
+    }
     @media screen and  (max-width:488px){
         .brand_heading{
-            font-size: 45px;
+            font-size: 200%;
 
         }
 
         .brand_caption{
-            
+
             font-size: 17px;
         }
 
@@ -159,7 +335,80 @@ html,body{
 
 /*--- end of Media Queries! styling---*/
 
+/*--- About Us page styinh --*/
+.content{
+    padding: 20px 40px;
+}
 
+.container .row .aboutusPic {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.content article {
+    padding: 20px 40px;
+    min-height: 400px;
+    max-width: 90%;
+}
+.content img{
+    padding: 20px 40px;
+    width: 300px;
+    height: 350px;
+}
+
+
+
+
+.Name{
+color:orange;
+}
+
+
+
+.AllAboutus{
+    padding: 20px 20px 50px 20px;
+}
+.info {
+    padding: 20px 0px 30px 0px;
+}
+
+.subtitle{
+    padding: 5px 0px;
+}
+
+.description{
+
+    padding: 15px 0px;
+
+} 
+
+.os-animation{
+  opacity: 0;
+}
+ 
+.os-animation.animated{
+    opacity: 1;
+}
+/*--- end of About Us page styinh --*/
+
+
+/*--- Faqs page styinh --*/
+#Faqs_intro {
+    font-style: italic;
+    font-size: 15px;
+    padding: 20px 20px;
+}
+
+.container .row .plus{
+    max-width: 20px;
+    max-height: 20px;
+    float: right;
+    
+}
+.accordion
+{
+    padding: 10px 20px 50px 20px;
+}
 
 
 
@@ -168,29 +417,42 @@ html,body{
 /*--- contact page styling-----*/
 
 
-.btn-contact {
-	background-color: #006699;
-	border-radius: .5rem;
-    border-color: white;
-	padding: 0.75rem 1.6rem;
-    font-weight: 800;
-    font-size: 1.4rem;
-    cursor: pointer;
+        .btn-contact {
+            background-color: #006699;
+            border-radius: .5rem;
+            border-color: white;
+            padding: 0.75rem 1.6rem;
+            font-weight: 800;
+            font-size: 1.4rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        testarea {
+            min-width: 100%;
+            min-height: 80%;
+        }
+        .btn-contact :hover{
+            background-color:white;
+        }
+        hz1{
+            color: orange;
+            text-align: center;
+            font-size: 80px;
+        }
+
+    center{
+        padding-bottom: 30px;
+        padding-top: 30px;
+
+    }
+
+
+.pagetitle{
+    margin-top  :100px;
+    padding: 20px 20px;
     text-align: center;
-}
-testarea {
-    min-width: 100%;
-    min-height: 80%;
-}
-.btn-contact :hover{
-    background-color:white;
-}
-hz1{
     color: orange;
-    text-align: center;
-    font-size: 80px;
+    text-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.281);
 }
-
-
 
 /*--- contact page styling-----*/

@@ -1,18 +1,16 @@
-*{
-    margin: 0;
-	border: 0;
-	padding: 0;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
-}
+/**
+ * 
+ * Backyard Media 
+ * Filename: aboutus.css
+ * @author Chatsuda Rattarasan
+ * @author Ngoc Tran
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ * Date: May 29 2018 
+ * 
+ * For the full copyright and license information, please view the LICENSE
+ */
 
-hr{
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0; 
-}
+
 p{
     font-size: 14px;
 }
@@ -32,11 +30,7 @@ p{
     font-weight: bold;
 }
 
-#pageTitle{
-    padding: 20px 20px;
-    text-align: center;
-    color: orange;
-}
+
 
 .subtitle{
     padding: 5px 0px;
@@ -47,7 +41,4 @@ p{
 .description{
 
     padding: 15px 20px;
-    /* -webkit-animation-duration: 3s;
-    -webkit-animation-delay: 2s;
-    -webkit-animation-iteration-count: infinite; */
 } 
