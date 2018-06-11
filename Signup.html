@@ -1,11 +1,14 @@
 
 <!Doctype html>
 <html>
-<!-- Backyard Media 
-Filename: register.html
-
-Author: Haocheng Li   
-Date: June 5 2018   -->
+<!--
+    - Backyard Media 
+    - Filename: Signup.html
+    - @author: Haocheng Li
+    - (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+    - Date: June 5 2018    
+    - For the full copyright and license information, please view the LICENSE
+-->
     
     <head>
         
@@ -53,6 +56,7 @@ Date: June 5 2018   -->
                                 <a class="dropdown-item" href="#">Laws</a>
                                 <a class="dropdown-item" href="#">Technology</a>
                                 <a class="dropdown-item" href="#">Art</a>
+                                <a class="dropdown-item" href="#">All</a>
                             </li>
                     <li class="nav-item mr-md-4 mx-0">
                             <a class="nav-link" href="#">Blog</a>
@@ -86,45 +90,83 @@ Date: June 5 2018   -->
     <!-- body container-->
         <h1 id="pagetitle">Sign Up</h1>
 
+
+        <div class="container">
+            <div class="row">
+                <form class="col-md-12">
+                    <div class="form-group row justify-content-center">
+                        <div class="dropdown">
+                            <select id="type">
+                                <option selected>Select Account Type</option>
+                                <option value="Advertiser">Advertiser</option>
+                                <option value="Podcaster">Podcaster</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="firstname" class="ml-2 col-sm-2 col-form-label">First Name</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="lastname" class="ml-2 col-sm-2 col-form-label">Last Name</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="Phone" class="ml-2 col-sm-2 col-form-label">Phone</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="Company" class="ml-2 col-sm-2 col-form-label">Company/Agency</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="text" class="form-control" id="Company" placeholder="Company/Agency">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="username" class="ml-2 col-sm-2 col-form-label">Username</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="text" class="form-control" id="username" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="Password1" class="ml-2 col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="password" id="Password1" placeholder="Password" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="Password2" class="ml-2 col-sm-2 col-form-label">Verify Password</label>
+                        <div class="col-sm-6 mr-2">
+                            <input id="Password2" class="form-control" type="password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <label for="email" class="ml-2 col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-6 mr-2">
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row justify-content-center">
+                        <div class="form-group row justify-content-center">
+                            <label>By Sign up you agree to iterms <a href="#">term of service</a></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
          
-        <div class="container" style="width: 60%;">
-             <div class="row">
-                 <div class="col-sm-5 col-md-6">
-                    <h5>First Name*</h5>
-                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="First Name" placeholder="First Name"></div>
-                 </div>
-                 <div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-                    <h5>Second Name*</h5>
-                    <div><input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Second Name" placeholder="Second Name"></div>
-                 </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Password</h5>
-                    <div><input type="password" class="form-control" aria-describedby="inputGroup-sizing-default" aria-label="Default" name="Password1"></div>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Password Again</h5>
-                    <div><input type="password" class="form-control" aria-describedby="inputGroup-sizing-default" aria-label="Default" name="Password2"></div>
-                </div>
-             </div>
-             <div class="row">
-                <div class="col-sm-6 col-md-5 col-lg-6">
-                    <h5>Email*</h5>
-                    <div><input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="Email" placeholder="Email"></div>
-                </div>
-             </div>
-         </div>
+
          
         <center>
             <div classs="btn_adv_pod">
                 <button class=" col-5 col-md-4 mr-4 btn btn-outline-warning btn-md"  type="submit" formmethod="POST">Submit</button>
             </div>
-            <div class="btn_adv_pod">
-                <button class="col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" type="reset">Reset</button>
-            </div>
+            <p>Already have an account?<a href="login.html">Log In</a></p>
         </center>
          
     
