@@ -82,6 +82,7 @@ html,body{
 /*<----body styling starts here----->*/
 
         .branding{
+            position: relative;
             margin-top: 180px;
             /* top: 20%;
             left: 50%;
@@ -110,6 +111,7 @@ html,body{
            
         }
         .btn_adv_pod{
+            position: relative;
             color: white; 
             /* margin-top: -80px; */
             margin-top:-15%;
@@ -236,22 +238,6 @@ html,body{
 
 /*--- Media Queries! styling starts here ---*/
 
-    /*IPad Pro*/
-    /* @media screen and(min-width:1024px) and(min-height:1366px){
-
-        .branding {
-            margin-top: 300px;
-        }
-
-        .btn_adv_pod{
-            margin-top: -30%;
-        }
-       
-       
-    }
-     */
-
-
      /* Horizental IPHONE X & 6,7,8 */
     @media screen and (max-width: 823px)and (height:375px)  { 
 
@@ -270,23 +256,12 @@ html,body{
 
     }
    
-    /* @media screen and  (max-height:420px){
-       
-
-        
-        .btn_adv_pod{
-            margin-top: -12%;
-        }
-
-    } */
 
     @media screen and  (max-height:420px){
-        /* .cb-slideshow-text-container {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        } */
-        
+        .brand_heading{
+            font-size: 180%;
+            margin-top:-13%;
+        }
         .btn_adv_pod{
             margin-top: -10%;
         }
