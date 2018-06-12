@@ -296,7 +296,7 @@ html,body{
 
     @media screen and  (max-height:660px){
         .btn_adv_pod{
-            margin-top: 12%;
+            margin-top: -10%;
         }
 
     }
