@@ -301,11 +301,15 @@ html,body{
 
     }
 
-    @media screen and  (max-width:960px){
-        .vl{
+    @media screen and  (max-width:990px){
+        .navbar .vl{
             border-left: 0px solid #6BCDFD;
             height: 0px;
+        }
 
+        .navbar .loginbtn,  .navbar .Signupbtn{
+            position: relative;
+            padding: 10px 0px;
         }
 
     }
