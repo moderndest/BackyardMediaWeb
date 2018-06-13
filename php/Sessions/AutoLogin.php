@@ -154,6 +154,18 @@ class AutoLogin
      */
     public function logout($all = true)
     {
+        if($all) {
+            $this->deleteAll();
+        } else {
+            $token = $this->parseCookie();
+            $sql = "UPDATE $this->table_autologin SET $this->col_used =1
+                    WHERE $this->col_token = :token";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':token', $token);
+            $stmt->execute();
+        }
+        setcookie($this->cookie, '', time() - 86400, $this->cookiePath,
+            $this->domain, $this->secure, $this->httponly);
 
     }
 
@@ -254,7 +266,18 @@ class AutoLogin
      */
     protected function parseCookie()
     {
-        
+        // Seperate the username and submitted token
+        $parts = explode('|', $_COOKIE[$this->cookie]);
+        $_SESSION[$this->sess_uname] = $parts[0];
+        $token = $parts[1];
+
+        // Proceed only if the username is valid
+        if ($_SESSION[$this->sess_ukey] = $this->getUserKey()){
+            // Remove the user's ID from the submitted cookie token
+            return str_replace($_SESSION[$this->sess_ukey], '', $token);
+        } else {
+            return false;
+        }
 
     }
 
@@ -263,9 +286,84 @@ class AutoLogin
      */
     protected function clearOld()
     {
+        $sql = "DELETE FROM $this->table_autologin
+                WHERE DATE_ADD($this->col_created, INTERVAL :expiry DAY) < NOW()";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':expiry', $this->lifetimeDays);
+        $stmt->execute();
+
+    }
+
+    /**
+     * Checks wether the single-use token has already been used
+     * 
+     * @param string $token 32-digit single-use token
+     * @param bool $used
+     * @return bool Depends on calue of $used
+     */
+    protected function checkCookieToken($token, $used)
+    {
+        $sql = "SELECT COUNT(*) FROM $this->table_autologin
+                WHERE $this->col_ukey = :key AND $this->col_token = :token
+                AND $this->col_used = :used";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':key', $_SESSION[$this->sess_ukey]);
+        $stmt->bindParam(':token', $token);
+        $stmt->bindParam(':used', $used, \PDO::PARAM_BOOL);
+        $stmt->execute();
+        if ($stmt->fetchColumn() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * 
+     */
+    protected function deleteAll()
+    {
+        $sql = "DELETE FROM $this->table_autologin WHERE $this->col_ukey = :key";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':key', $_SESSION[$this->sess_ukey]);
+        $stmt->execute();
+    }
+
+    /**
+     * 
+     */
+    protected function cookieLogin($token)
+    {
+        try{
+            $this->getExistingData($_SESSION[$this->sess_ukey]);
+
+            $sql = "UPDATE $this->table_autologin SET $this->col_used = 1
+                    WHERE $this->col_ukey = :key AND $this->col_token = :token";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindParam(':key', $_SESSION[$this->sess_ukey]);
+            $stmt->bindParam(':token', $token);
+            $stmt->execute();
+
+            session_regenerate_id(true);
+
+            $_SESSION[$this->cookie] = true;
+            unset($_SESSION[$this->sess_auth]);
+            unset($_SESSION[$this->sess_revalid]);
+            unset($_SESSION[$this->sess_persist]);
+
+        } catch(\PDOException $e){
+            if($this->db->inTransaction()){
+                $this->db->rollBack();
+            }
+            throw $e;
+
+        }
         
 
     }
+
+
 
 }
 

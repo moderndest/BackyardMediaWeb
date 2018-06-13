@@ -1,7 +1,7 @@
 <?php
 use php\Sessions\MysqlSessionHandler;
 
-require_once './connectDB.php';
+require_once './Includes/connectDB.php';
 require_once './Sessions/MysqlSessionHandler.php';
 
 $handler = new MysqlSessionHandler($db);
