@@ -10,30 +10,18 @@ session_set_save_handler($handler);
 // initialize session
 session_start();
 
-if (isset($_SESSION['test']))
-{
-	echo $_SESSION['test'];
+if (isset($_POST['logout'])){
+    $_SESSION = [];
+    $params = session_get_cookie_params();
+    setcookie(session_name(),'',time() - 86400, $params['path'],
+        $params['domain'], $params['secure'],$params['httponly']);
+    session_destroy();
+    header('Location: session_01.php');
+    exit;
 }
-else
-{
-	echo "session variable was not set";
-}
-
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
-// if (isset($_POST['logout'])){
-//     $_SESSION = [];
-//     $params = session_get_cookie_params();
-//     setcookie(session_name(),'',time() - 86400, $params['path'],
-//         $params['domain'], $params['secure'],$params['httponly']);
-//     session_destroy();
-//     header('Location: session_01.php');
-//     exit;
-// }
 
 ?>
-<!-- <!Doctype html>
+<!Doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -41,17 +29,17 @@ echo '</pre>';
 </head>
 <body>
     <p>Hello<?php
-    // print($_SESSION['first_name']);
-    // if(isset($_SESSION['first_name'])){
-    //     echo ' again, '. $_SESSION['first_name'];
+    print($_SESSION['first_name']);
+    if(isset($_SESSION['first_name'])){
+        echo ' again, '. $_SESSION['first_name'];
 
-    // } else {
-    //     echo ', stranger.';
-    // }
+    } else {
+        echo ', stranger.';
+    }
     ?></p>
     <form method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
         <p><input type="submit" name="logout" value="Log Out"></p>
     </form>
   
 </body>
-</html> -->
+</html>

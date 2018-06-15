@@ -25,16 +25,12 @@ if (isset($_POST['login'])){
         $_SESSION['username'] = $username;
         $_SESSION['authenticated'] = true;
 
-        print_r($_SESSION);
-        // print( $_SESSION['username']. '\n');
-        // print( $_SESSION['authenticated'].'\n');
-
         if(isset($_POST['remember'])){
             //create persistent login
             $autologin = new Autologin($db);
             $autologin->persistentLogin();
         }
-        // session_write_close(); 
+       
         header('Location: index.php');
         exit();
            
@@ -75,8 +71,8 @@ if (isset($_POST['login'])){
      <!-- header starts here -->
         <header>
             
-        <!-- <nav class="navbar fixed-top navbar-expand-lg bg-custom">
-            <a class="navbar-brand mx-md-2" href="index.html">
+        <nav class="navbar fixed-top navbar-expand-lg bg-custom">
+            <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -118,7 +114,7 @@ if (isset($_POST['login'])){
                         <a href="#" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
-        </nav> -->
+        </nav>
 
         <!--- end of header Navigation---->
         
