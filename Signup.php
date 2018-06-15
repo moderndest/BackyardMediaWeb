@@ -1,15 +1,90 @@
-
-<!Doctype html>
-<html>
 <!--
     - Backyard Media 
     - Filename: Signup.html
     - @author: Haocheng Li
+    - @author: Chatsuda Rattarasan
     - (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: June 5 2018    
     - For the full copyright and license information, please view the LICENSE
 -->
+
+
+<?php 
+$errors = [];
+if (isset($_POST['register'])) {
+    require_once './php/includes/connectDB.php';
+     // insert a row
+    $expected = ['username', 'pwd', 'confirm','name','email','company'];
+    $phone = htmlentities($_POST['phone']);
+
+    // Assign $_POST variables to simple variables and check all fields have values
+    foreach ($_POST as $key => $value){
+        if(in_array($key, $expected)){
+            $$key = trim($value);
+            if (empty($$key)){
+                $errors[$key] = 'This field requires a value.';
+            }
+        }   
+              
+    }
+
     
+
+
+    // Proceed only if there are no errors
+    if(!$errors){
+            // Check that the username hasn't already been registered
+            $sql = 'SELECT COUNT(*) FROM users WHERE username = :username';
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username);
+            $stmt->execute();
+            if($stmt->fetchColumn() != 0) {
+                $errors['failed'] = "$username is already registerd. Choose another name.";
+            } else {
+                try{
+                    // Generate a random 8-character user key and insert values into the database
+                    $user_key = hash('crc32', microtime(true) . mt_rand() . $username);
+                    
+                    $sql = 'INSERT INTO users (user_key, username, pwd, name, email, phone, company)
+                            VALUES (:key, :username, :pwd, :names, :email, :phone, :company)';
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':key', $user_key);
+                    $stmt->bindParam(':username', $username);
+                    // Store an encrypted version of the password
+                    $stmt->bindValue(':pwd', password_hash($pwd, PASSWORD_DEFAULT));
+                    $stmt->bindParam(':names', $name);
+                    $stmt->bindParam(':email', $email);
+                    $stmt->bindValue(':phone', $phone);
+                    $stmt->bindParam(':company', $company);
+                    $stmt->execute();
+
+
+                } catch(\PDOException $e){
+
+                    if(0 === strpos($e->getCode(), '23')){
+                        // If the user key is a duplicate, regenerate, and execute INSERT statement agian
+                        $user_key = hash('crc32', microtime(true) . mt_rand() . $username);
+                        if(!$stmt->execute()){
+                            echo "Error: " . $e->getMessage();
+                            throw $e;
+                        }
+                    }
+
+                }
+                // The rowCount() method return 1 if the record is inserted.
+                // so redirect the user to the login page
+                if($stmt->rowCount()){
+                    header('Location: login.php');
+                    exit;
+                }
+            
+            }
+    }
+}
+?>
+<!Doctype html>
+<html>
+
     <head>
         
         <meta charset="utf-8">
@@ -23,10 +98,12 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
-       
+
     </head>
     
   
@@ -49,7 +126,9 @@
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Podcast
+
+                                Podcasts
+
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
@@ -69,13 +148,14 @@
                     </li>
                 </ul>
                     <div class="loginbtn">
-                        <a href="login.html" class="d-inline btnstyle" role="button">Log in</a>
+
+                        <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
-                    <!-- <i class="fas fa-user fa-2x blue"></i> -->
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
-                        <a href="Signup.html" class="d-inline btnstyle" role="button">Sign Up</a>
+                        <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
+
                     </div>
             </div>
         </nav>
@@ -88,87 +168,169 @@
      
          
     <!-- body container-->
-        <h1 id="pagetitle">Sign Up</h1>
 
-
+        <h1 id="pagetitle">Advertisers<p>Sign up</p></h1>
+        
         <div class="container">
-            <div class="row">
-                <form class="col-md-12">
+            <div class="row col-md-12 justify-content-center ">
+                <!-- Alert -->
+                <?php
+                        if (isset($errors['failed'])){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                            echo "<span aria-hidden='true'>&times;</span>";
+                            echo "</button>";
+                            echo $errors['failed'];
+                            echo "</div>";
+                        }
+                ?>  
+                <!-- Sign up form start here -->
+                <form class="col-md-12 contact-form" action ="<?= $_SERVER['PHP_SELF']; ?>" method="post" role="form" novalidate>
+                    
+                    <!-- Name -->
                     <div class="form-group row justify-content-center">
-                        <div class="dropdown">
-                            <select id="type">
-                                <option selected>Select Account Type</option>
-                                <option value="Advertiser">Advertiser</option>
-                                <option value="Podcaster">Podcaster</option>
-                            </select>
+                        <label for="name" class="ml-2 col-md-2 col-form-label">Name *</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="text" class="form-control" id="name" name="name"placeholder="FirstName LastName" required>
+
+                            <div class="valid-feedback">
+                                       
+                            </div>
+                            <div class="invalid-feedback">
+                                        Name is required.
+                            </div>
+                            
+                           
                         </div>
                     </div>
+
+                    <!-- email -->
                     <div class="form-group row justify-content-center">
-                        <label for="firstname" class="ml-2 col-sm-2 col-form-label">First Name</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                        <label for="email" class="ml-2 col-md-2 col-form-label">Email *</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
+                            <div class="valid-feedback">
+                                       
+                            </div>
+                            <div class="invalid-feedback">
+                                        Valid email is required.
+                            </div>
                         </div>
                     </div>
+
+                    <!-- phone -->
                     <div class="form-group row justify-content-center">
-                        <label for="lastname" class="ml-2 col-sm-2 col-form-label">Last Name</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                        <label for="phone" class="ml-2 col-md-2 col-form-label">Phone</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="Phone (format: xxx-xxx-xxxx):">
+                            <div class="valid-feedback">
+                                      
+                            </div>
+                            <div class="invalid-feedback">
+                                    Valid phoe is required [123-456-7890].
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Company name -->
                     <div class="form-group row justify-content-center">
-                        <label for="Phone" class="ml-2 col-sm-2 col-form-label">Phone</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="Phone" placeholder="Phone">
+                        <label for="company" class="ml-2 col-md-2 col-form-label">Company/Agency *</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Company/Agency" required>
+                            <div class="valid-feedback">
+                                        
+                            </div>
+                            <div class="invalid-feedback">
+                                        Company is required.
+                            </div>
                         </div>
                     </div>
+
+
+                    <!-- username -->
                     <div class="form-group row justify-content-center">
-                        <label for="Company" class="ml-2 col-sm-2 col-form-label">Company/Agency</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="Company" placeholder="Company/Agency">
+                        <label for="username" class="ml-2 col-md-2 col-form-label">Username *</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                <div class="valid-feedback">
+                                </div>
+                                <div class="invalid-feedback">
+                                            username is required.
+                                   
+                                </div>
                         </div>
                     </div>
+
+                    <!-- password -->
                     <div class="form-group row justify-content-center">
-                        <label for="username" class="ml-2 col-sm-2 col-form-label">Username</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="username" placeholder="Username">
+                        <label for="pwd" class="ml-2 col-md-2 col-form-label">Password *</label>
+                        <div class="col-md-6 mr-2">
+                            <input type="password" id="pwd" class="form-control pwd" name="pwd" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
+
+                            <div class="valid-feedback">
+                                       
+                            </div>
+
+                            <div class="invalid-feedback">
+                                        password is required
+                            </div>
+                            <div id="message">
+                                    <h6>Password must contain the following:</h6>
+                                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                    <p id="number" class="invalid">A <b>number</b></p>
+                                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                    <p id="space" class="invalid"><b>use [~,!,@,#,$,%,^,&,*,-,=,.,;,']</b></p>
+                            </div>
+                            
                         </div>
                     </div>
+
+                    <!-- confirm password -->
                     <div class="form-group row justify-content-center">
-                        <label for="Password1" class="ml-2 col-sm-2 col-form-label">Password</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="password" id="Password1" placeholder="Password" class="form-control">
+                        <label for="confirm" class="ml-2 col-md-2 col-form-label">Verify Password *</label>
+                        <div class="col-md-6 mr-2">
+                            <input id="confirm" name="confirm" class="confirm form-control" type="password" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     password is required
+                            </div>
+                            <div id="messages">
+                                    <p id="match" class="invalid"><b>Pasword match</b></p> 
+                            </div>
+                          
                         </div>
                     </div>
-                    <div class="form-group row justify-content-center">
-                        <label for="Password2" class="ml-2 col-sm-2 col-form-label">Verify Password</label>
-                        <div class="col-sm-6 mr-2">
-                            <input id="Password2" class="form-control" type="password" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="form-group row justify-content-center">
-                        <label for="email" class="ml-2 col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-6 mr-2">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
-                        </div>
-                    </div>
+
+                    <!-- term of service -->
                     <div class="form-group row justify-content-center">
                         <div class="form-group row justify-content-center">
                             <label>By Sign up you agree to iterms <a href="#">term of service</a></label>
                         </div>
+                    </div>
+                    
+                     <!-- signup btn -->
+                    <div class="form-group row justify-content-center">
+                        <div class="col-12 d-flex justify-content-center">
+                            <input class=" col-5 col-md-4 btn btn-outline-warning btn-md"  type="submit" name="register" id="register" value="Submit">
+                        </div>
+                    </div>
+
+                    <div class="col-12 p-4 d-flex justify-content-center">
+                        <p>Already have an account?<a href="login.php">Log In</a></p>
                     </div>
                 </form>
             </div>
         </div>
          
 
-         
-        <center>
-            <div classs="btn_adv_pod">
-                <button class=" col-5 col-md-4 mr-4 btn btn-outline-warning btn-md"  type="submit" formmethod="POST">Submit</button>
-            </div>
-            <p>Already have an account?<a href="login.html">Log In</a></p>
-        </center>
-         
+
+
     
     
     <!--- Footer part -->
@@ -187,6 +349,8 @@
     <!-- End of the footer  -->
     
     
-    
+
+    <script src="js/validator.js"></script>
+
     </body>
 </html>

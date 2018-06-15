@@ -11,9 +11,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Backyard Media Administrators</title>
-        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="../css/admin.css">
         <!-- Bootstrap CSS --> 
-        <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../bootstrap/dist/css/bootstrap.min.css">
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Optional JavaScript -->
@@ -26,7 +26,7 @@
     </head>
     <body class="bgcolor">
         <header>
-                <a class="logo" href="BymAdmin.html"><img src="img/logo.png" width="180px"></a>
+                <a class="logo" href="BymAdmin.html"><img src="../img/logo.png" width="180px"></a>
         </header>
        
         <div class="container h-100">
