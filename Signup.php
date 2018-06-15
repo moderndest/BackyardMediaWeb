@@ -8,6 +8,7 @@
     - For the full copyright and license information, please view the LICENSE
 -->
 
+
 <?php 
 $errors = [];
 if (isset($_POST['register'])) {
@@ -83,6 +84,7 @@ if (isset($_POST['register'])) {
 ?>
 <!Doctype html>
 <html>
+
     <head>
         
         <meta charset="utf-8">
@@ -96,10 +98,12 @@ if (isset($_POST['register'])) {
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
+
     </head>
     
   
@@ -122,7 +126,9 @@ if (isset($_POST['register'])) {
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                                 Podcasts
+
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
@@ -142,12 +148,14 @@ if (isset($_POST['register'])) {
                     </li>
                 </ul>
                     <div class="loginbtn">
+
                         <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
                         <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
+
                     </div>
             </div>
         </nav>
@@ -160,6 +168,7 @@ if (isset($_POST['register'])) {
      
          
     <!-- body container-->
+
         <h1 id="pagetitle">Advertisers<p>Sign up</p></h1>
         
         <div class="container">
@@ -320,7 +329,8 @@ if (isset($_POST['register'])) {
         </div>
          
 
-         
+
+
     
     
     <!--- Footer part -->
@@ -339,6 +349,8 @@ if (isset($_POST['register'])) {
     <!-- End of the footer  -->
     
     
+
     <script src="js/validator.js"></script>
+
     </body>
 </html>

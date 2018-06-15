@@ -1,3 +1,5 @@
+
+
 <!--
     - Backyard Media 
     - Filename: login.html
@@ -6,6 +8,7 @@
     - Date: June 5 2018    
     - For the full copyright and license information, please view the LICENSE
 -->
+
 
 <?php
 require_once './php/includes/init.php';
@@ -44,6 +47,7 @@ if (isset($_POST['login'])){
 <!Doctype html>
 <html>
 
+
     
     <head>
         
@@ -58,7 +62,9 @@ if (isset($_POST['login'])){
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
@@ -72,7 +78,9 @@ if (isset($_POST['login'])){
         <header>
             
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
+
             <a class="navbar-brand mx-md-2" href="index.php">
+
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,7 +93,9 @@ if (isset($_POST['login'])){
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                                 Podcasts
+
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
@@ -108,6 +118,8 @@ if (isset($_POST['login'])){
                         <a href="#" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
 
+
+
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
@@ -124,6 +136,7 @@ if (isset($_POST['login'])){
      
          
     <!-- body container-->
+
         <h1 id="pagetitle">Advetisers Login</h1>
 
         <div class="container mh-100" >
@@ -191,6 +204,7 @@ if (isset($_POST['login'])){
         </div>
 
 
+
     
     <!--- Footer part -->
         
@@ -207,7 +221,8 @@ if (isset($_POST['login'])){
 
     <!-- End of the footer  -->
     
-    
+
     <script src="js/validator.js"></script>
+
     </body>
 </html>

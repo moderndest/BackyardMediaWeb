@@ -6,11 +6,13 @@
     - Date: May 29 2018 
     - For the full copyright and license information, please view the LICENSE  
 -->
+
 <?php
 require_once './php/includes/authenticate.php'
 ?>
 
 <!Doctype html>
+
 
 <html>
     <head>
@@ -60,7 +62,9 @@ require_once './php/includes/authenticate.php'
                         </li>
                         <li class="nav-item dropdown mr-md-4 mx-0">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
                                     Podcasters
+
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">News</a>
@@ -79,6 +83,7 @@ require_once './php/includes/authenticate.php'
                                 <a class="nav-link" href="contact.html">Contact Us</a>
                         </li>
                     </ul>
+
                         
                       
                         <?php
@@ -103,6 +108,7 @@ require_once './php/includes/authenticate.php'
                                 echo "</div>";
                             }
                         ?>
+
                 </div>
             </nav>
 
