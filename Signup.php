@@ -14,8 +14,7 @@ if (isset($_POST['register'])) {
     require_once './php/includes/connectDB.php';
      // insert a row
     $expected = ['username', 'pwd', 'confirm','name','email','company'];
-
-    $phone = $_POST['phone'];
+    $phone = htmlentities($_POST['phone']);
 
     // Assign $_POST variables to simple variables and check all fields have values
     foreach ($_POST as $key => $value){
@@ -24,15 +23,15 @@ if (isset($_POST['register'])) {
             if (empty($$key)){
                 $errors[$key] = 'This field requires a value.';
             }
-        }
+        }   
+              
     }
+
+    
+
+
     // Proceed only if there are no errors
     if(!$errors){
-        if($pwd != $confirm){
-            echo'1';
-            $errors['nomatch'] = 'Paswords do not match.';
-        }else {
-            echo'2';
             // Check that the username hasn't already been registered
             $sql = 'SELECT COUNT(*) FROM users WHERE username = :username';
             $stmt = $db->prepare($sql);
@@ -45,25 +44,22 @@ if (isset($_POST['register'])) {
                     // Generate a random 8-character user key and insert values into the database
                     $user_key = hash('crc32', microtime(true) . mt_rand() . $username);
                     
-                    $sql = 'INSERT INTO users (user_key, username, pwd, name, email, phone, conmpany)
-                            VALUES (:key, :username, :pwd, :name, :email, :phone, :company)';
+                    $sql = 'INSERT INTO users (user_key, username, pwd, name, email, phone, company)
+                            VALUES (:key, :username, :pwd, :names, :email, :phone, :company)';
                     $stmt = $db->prepare($sql);
                     $stmt->bindParam(':key', $user_key);
                     $stmt->bindParam(':username', $username);
                     // Store an encrypted version of the password
                     $stmt->bindValue(':pwd', password_hash($pwd, PASSWORD_DEFAULT));
-                    $stmt->bindParam(':name', $name);
-                    echo $name;
-                    $stmt->bindParam(':email', $email;
-                    echo $email;
-                    $stmt->bindParam(':phone', $phone);
-                    echo $phone;
-                    $stmt->bindParam(':company', $);
-                    echo $company;
+                    $stmt->bindParam(':names', $name);
+                    $stmt->bindParam(':email', $email);
+                    $stmt->bindValue(':phone', $phone);
+                    $stmt->bindParam(':company', $company);
                     $stmt->execute();
-                    echo "New records created successfully";
+
 
                 } catch(\PDOException $e){
+
                     if(0 === strpos($e->getCode(), '23')){
                         // If the user key is a duplicate, regenerate, and execute INSERT statement agian
                         $user_key = hash('crc32', microtime(true) . mt_rand() . $username);
@@ -80,8 +76,8 @@ if (isset($_POST['register'])) {
                     header('Location: login.php');
                     exit;
                 }
+            
             }
-        }
     }
 }
 ?>
@@ -104,7 +100,6 @@ if (isset($_POST['register'])) {
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
-       
     </head>
     
   
@@ -113,7 +108,7 @@ if (isset($_POST['register'])) {
      <!-- header starts here -->
         <header>
             
-        <!-- <nav class="navbar fixed-top navbar-expand-lg bg-custom">
+        <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.html">
                 <img src="img/logo.png">
             </a>
@@ -155,7 +150,7 @@ if (isset($_POST['register'])) {
                         <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
-        </nav> -->
+        </nav>
 
         <!--- end of header Navigation---->
         
@@ -167,24 +162,35 @@ if (isset($_POST['register'])) {
     <!-- body container-->
         <h1 id="pagetitle">Advertisers<p>Sign up</p></h1>
         
-
-
         <div class="container">
-            <div class="row">
-
+            <div class="row col-md-12 justify-content-center ">
+                <!-- Alert -->
+                <?php
+                        if (isset($errors['failed'])){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                            echo "<span aria-hidden='true'>&times;</span>";
+                            echo "</button>";
+                            echo $errors['failed'];
+                            echo "</div>";
+                        }
+                ?>  
                 <!-- Sign up form start here -->
-                <form class="col-md-12" action ="<?= $_SERVER['PHP_SELF']; ?>" method="post" novalidate>
+                <form class="col-md-12 contact-form" action ="<?= $_SERVER['PHP_SELF']; ?>" method="post" role="form" novalidate>
                     
                     <!-- Name -->
                     <div class="form-group row justify-content-center">
                         <label for="name" class="ml-2 col-md-2 col-form-label">Name *</label>
                         <div class="col-md-6 mr-2">
-                            <input type="text" class="form-control" id="name" name="name"placeholder="Name">
-                            <?php
-                                if (isset($errors['name'])){
-                                    echo $errors['name'];
-                                }
-                            ?>
+                            <input type="text" class="form-control" id="name" name="name"placeholder="FirstName LastName" required>
+
+                            <div class="valid-feedback">
+                                       
+                            </div>
+                            <div class="invalid-feedback">
+                                        Name is required.
+                            </div>
+                            
                            
                         </div>
                     </div>
@@ -193,12 +199,13 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="email" class="ml-2 col-md-2 col-form-label">Email *</label>
                         <div class="col-md-6 mr-2">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
-                            <?php
-                                if (isset($errors['email'])){
-                                    echo $errors['email'];
-                                }
-                            ?>
+                            <input type="email" class="form-control" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" placeholder="Email" required>
+                            <div class="valid-feedback">
+                                       
+                            </div>
+                            <div class="invalid-feedback">
+                                        Valid email is required.
+                            </div>
                         </div>
                     </div>
 
@@ -206,7 +213,13 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="phone" class="ml-2 col-md-2 col-form-label">Phone</label>
                         <div class="col-md-6 mr-2">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                            <input type="tel" class="form-control" id="phone" name="phone" pattern="^\d{3}-\d{3}-\d{4}$" placeholder="Phone (format: xxx-xxx-xxxx):">
+                            <div class="valid-feedback">
+                                      
+                            </div>
+                            <div class="invalid-feedback">
+                                    Valid phoe is required [123-456-7890].
+                            </div>
                         </div>
                     </div>
 
@@ -214,12 +227,13 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="company" class="ml-2 col-md-2 col-form-label">Company/Agency *</label>
                         <div class="col-md-6 mr-2">
-                            <input type="text" class="form-control" id="company" name="company" placeholder="Company/Agency">
-                            <?php
-                                if (isset($errors['company'])){
-                                    echo $errors['company'];
-                                }
-                            ?>
+                            <input type="text" class="form-control" id="company" name="company" placeholder="Company/Agency" required>
+                            <div class="valid-feedback">
+                                        
+                            </div>
+                            <div class="invalid-feedback">
+                                        Company is required.
+                            </div>
                         </div>
                     </div>
 
@@ -228,20 +242,13 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="username" class="ml-2 col-md-2 col-form-label">Username *</label>
                         <div class="col-md-6 mr-2">
-                            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
-
-                
-                                <?php
-                                    if (isset($username) &&  !isset($errors['username'])) {
-                                        echo 'value="' . htmlentities($username) .'"';
-                                    }
-                                    if (isset($errors['username'])) {
-                                        echo $errors['username'];
-                                    } elseif (isset($errors['failed'])){
-                                        echo $errors['failed'];
-                                    }
-                                ?>                 
-                            
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                <div class="valid-feedback">
+                                </div>
+                                <div class="invalid-feedback">
+                                            username is required.
+                                   
+                                </div>
                         </div>
                     </div>
 
@@ -249,14 +256,25 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="pwd" class="ml-2 col-md-2 col-form-label">Password *</label>
                         <div class="col-md-6 mr-2">
-                            <input type="password" id="pwd" class="form-control" name="pwd" placeholder="Password">
-                            <div>
-                                <?php
-                                    if (isset($errors['pwd'])){
-                                        echo $errors['pwd'];
-                                    }
-                                ?>
+                            <input type="password" id="pwd" class="form-control pwd" name="pwd" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  required>
+
+                            <div class="valid-feedback">
+                                       
                             </div>
+
+                            <div class="invalid-feedback">
+                                        password is required
+                            </div>
+                            <div id="message">
+                                    <h6>Password must contain the following:</h6>
+                                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                    <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                    <p id="number" class="invalid">A <b>number</b></p>
+                                    <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                    <p id="space" class="invalid"><b>use [~,!,@,#,$,%,^,&,*,-,=,.,;,']</b></p>
+                            </div>
+                            
                         </div>
                     </div>
 
@@ -264,16 +282,19 @@ if (isset($_POST['register'])) {
                     <div class="form-group row justify-content-center">
                         <label for="confirm" class="ml-2 col-md-2 col-form-label">Verify Password *</label>
                         <div class="col-md-6 mr-2">
-                            <input id="confirm" name="confirm" class="form-control" type="password" placeholder="Password">
-                            <div>
-                                <?php
-                                    if (isset($errors['confirm'])){
-                                        echo $errors['confirm'];
-                                    } elseif (isset($errors['nomatch'])){
-                                        echo $errors['nomatch'];
-                                    }
-                                ?>
+                            <input id="confirm" name="confirm" class="confirm form-control" type="password" placeholder="Password"
+                            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                            <div class="valid-feedback">
+                                    
                             </div>
+
+                            <div class="invalid-feedback">
+                                     password is required
+                            </div>
+                            <div id="messages">
+                                    <p id="match" class="invalid"><b>Pasword match</b></p> 
+                            </div>
+                          
                         </div>
                     </div>
 
@@ -292,7 +313,7 @@ if (isset($_POST['register'])) {
                     </div>
 
                     <div class="col-12 p-4 d-flex justify-content-center">
-                        <p>Already have an account?<a href="login.html">Log In</a></p>
+                        <p>Already have an account?<a href="login.php">Log In</a></p>
                     </div>
                 </form>
             </div>

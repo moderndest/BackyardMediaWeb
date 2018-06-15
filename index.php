@@ -1,4 +1,3 @@
-<!Doctype html>
 <!--
     - Backyard Media 
     - Filename: index.html
@@ -7,6 +6,10 @@
     - Date: May 29 2018 
     - For the full copyright and license information, please view the LICENSE  
 -->
+
+
+<!Doctype html>
+
 <html>
     <head>
         
@@ -75,6 +78,7 @@
                         </li>
                     </ul>
                         <div class="loginbtn">
+                        <!--  -->
                             <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
                         </div>
                         <div class="vl mx-2"></div>

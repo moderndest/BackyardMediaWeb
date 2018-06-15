@@ -49,6 +49,12 @@ trait PersistentProperties
     protected $col_ukey = 'user_key';
 
     /**
+     * @var string Name of table column that stores 32-character single-use tokens.
+     */
+    protected $col_token = 'token';
+
+
+    /**
      * @var string Name of table column that stores when the record was created as a MySQL timestamp
      */
     protected $col_created = 'created';

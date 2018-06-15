@@ -76,7 +76,7 @@ class AutoLogin
             $this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
         }
         $this->token_idex = ($token_index <= 31) ? $token_index : 31;
-        $this->expiry = time() + ($this-lifetimeDays * 60 * 60 * 24);
+        $this->expiry = time() + ($this->lifetimeDays * 60 * 60 * 24);
 
     }
 
@@ -92,7 +92,7 @@ class AutoLogin
     public function persistentLogin()
     {
         // Get the user's ID
-        if ($SESSION[$this->sess_ukey] = $this->getUserkey()){
+        if ($_SESSION[$this->sess_ukey] = $this->getUserkey()){
             $this->getExistingData();
             //Generate a random 32-digit hexadecimal token
             $token = $this->generateToken();
@@ -213,7 +213,7 @@ class AutoLogin
      */
     protected function generateToken()
     {
-        return bin2hex(openssl_random_pseudo_byte(16));
+        return bin2hex(openssl_random_pseudo_bytes(16));
     }
 
 

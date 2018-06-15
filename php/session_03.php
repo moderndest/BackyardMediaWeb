@@ -28,6 +28,7 @@ if (isset($_POST['logout'])){
 </head>
 <body>
     <p>Hello<?php
+    print($_SESSION['first_name']);
     if(isset($_SESSION['first_name'])){
         echo ' again, '. $_SESSION['first_name'];
 

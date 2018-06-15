@@ -1,6 +1,3 @@
-
-<!Doctype html>
-<html>
 <!--
     - Backyard Media 
     - Filename: login.html
@@ -9,6 +6,47 @@
     - Date: June 5 2018    
     - For the full copyright and license information, please view the LICENSE
 -->
+
+<?php
+require_once './php/includes/init.php';
+use php\Sessions\AutoLogin;
+
+if (isset($_POST['login'])){
+    $username = trim($_POST['username']);
+    $pwd = trim($_POST['pwd']);
+    $stmt = $db->prepare('SELECT pwd FROM users WHERE username = :username');
+    $stmt->bindParam(':username', $username);
+    $stmt->execute();
+    $stored = $stmt->fetchColumn();
+    print("name = $stored\n");
+
+    if(password_verify ($pwd,$stored)){
+        session_regenerate_id(true);
+        $_SESSION['username'] = $username;
+        $_SESSION['authenticated'] = true;
+
+        print( $_SESSION['username']. '\n');
+        print( $_SESSION['authenticated'].'\n');
+
+        if(isset($_POST['remember'])){
+            //create persistent login
+            $autologin = new Autologin($db);
+            $autologin->persistentLogin();
+        }
+        session_write_close(); 
+        header('Location: restricted1.php');
+        exit();
+           
+    }else {
+        $error = 'Login failed. Check username and password.';
+    }
+}
+
+?>
+
+<!Doctype html>
+<html>
+
     
     <head>
         
@@ -23,6 +61,7 @@
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
@@ -35,7 +74,7 @@
      <!-- header starts here -->
         <header>
             
-        <nav class="navbar fixed-top navbar-expand-lg bg-custom">
+        <!-- <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.html">
                 <img src="img/logo.png">
             </a>
@@ -49,7 +88,7 @@
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Podcasters
+                                Podcasts
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
@@ -71,14 +110,14 @@
                     <div class="loginbtn">
                         <a href="#" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
-                    <!-- <i class="fas fa-user fa-2x blue"></i> -->
+
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
                         <a href="#" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
-        </nav>
+        </nav> -->
 
         <!--- end of header Navigation---->
         
@@ -88,34 +127,72 @@
      
          
     <!-- body container-->
-        <h1 id="pagetitle">Login</h1>
+        <h1 id="pagetitle">Advetisers Login</h1>
 
-        <div class="container" style="width: 60%">
-            <div class="row">
-            <form class="col-md-12">
-                <div class="form-group row justify-content-center">
-                    <label for="Username" class="ml-2 col-sm-2 col-form-label">Username</label>
-                    <div class="col-sm-6 mr-2">
-                        <input type="text" class="form-control" id="Username" placeholder="Username">
+        <div class="container mh-100" >
+            <div class="row justify-content-center">
+                 <!-- Alert -->
+                 <?php
+                        if (isset($error)){
+                            echo "<div class='alert alert-danger' role='alert'>";
+                            echo "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
+                            echo "<span aria-hidden='true'>&times;</span>";
+                            echo "</button>";
+                            echo $error;
+                            echo "</div>";
+                        }
+                ?>
+                <form class="col-md-12 contact-form" action="<?= $_SERVER['PHP_SELF']?>" method="post" novalidate>
+
+                    <!-- Username -->
+                    <div class="form-group row justify-content-center">
+                        <label for="username" class="ml-3 col-sm-2 col-md-2 col-lg-1 col-form-label">Username</label>
+                        <div class="col-sm-5 mr-2">
+                            <input type="text" class="form-control col-lg-10" id="username" name= "username" placeholder="Username" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     username is required.
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row justify-content-center">
-                    <label for="Password" class="ml-2 col-sm-2 col-form-label">Password</label>
-                    <div class="col-sm-6 mr-2">
-                        <input type="password" class="form-control" id="Password" placeholder="Password">
+
+                    <!-- Password -->
+                    <div class="form-group row justify-content-center">
+                        <label for="pwd" class="ml-3 col-sm-2 col-md-2 col-lg-1 col-form-label">Password</label>
+                        <div class="col-sm-5 mr-2">
+                            <input type="password" class="form-control col-lg-10" id="pwd" name="pwd" placeholder="Password" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     password is required.
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Remember Me -->
+                    <div class="form-check row d-flex justify-content-center">
+                        <input type="checkbox" class="form-check-input" name="remember" id="remember">
+                        <label class="form-check-label" for="remember">Remember me</label>
+                    </div>
+
+                    <!-- SignIn btn -->
+                    <div classs="form-group row justify-content-center">
+                        <div class="col-12 d-flex justify-content-center">
+                            <input class=" col-5 col-md-4 col-lg-3 btn btn-outline-warning btn-md" name="login" id="login" type="submit" value="Sign In">
+                        </div>
+                    </div>
+                </form>
+                <div class="col-12 p-4 d-flex justify-content-center">
+                    <p>Do you have an account? <a rel="nofollow" href="Signup.php" target="_parent">Sign Up</a></p>
                 </div>
-            </form>
             </div>
         </div>
-        <center>
-                <div classs="btn_adv_pod" style="width: 80%">
-                    <button class=" col-5 col-md-4 mr-4 btn btn-outline-warning btn-md"  type="submit" formmethod="POST">Sign In</button>
-                </div>
-                <div>
-                    <p>Do you have an account? <a rel="nofollow" href="Signup.html" target="_parent">Sign Up</a></p>
-                </div>
-            </center>
+
 
     
     <!--- Footer part -->
@@ -134,6 +211,6 @@
     <!-- End of the footer  -->
     
     
-    
+    <script src="js/validator.js"></script>
     </body>
 </html>
