@@ -2,8 +2,9 @@
 
 <!--
     - Backyard Media 
-    - Filename: login.html
+    - Filename: login.php
     - @author: Haocheng Li
+    - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: June 5 2018    
     - For the full copyright and license information, please view the LICENSE

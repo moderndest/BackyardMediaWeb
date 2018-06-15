@@ -1,4 +1,19 @@
 <?php
+/**
+ * Backyard Media 
+ * Filename: PersistentSessionHandler.php
+ * 
+ * @author Chatsuda Rattarasan
+ * 
+ * Credits
+ * 
+ * Created for the Everything About Backyard Media Sites
+ * 
+ * Date created: June 13 2018 
+ * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
+ *
+ * For the full copyright and license information, please view the LICENSE
+ */
 namespace php\Sessions;
 
 class PersistentSessionHandler extends MysqlSessionHandler

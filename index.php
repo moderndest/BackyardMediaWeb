@@ -1,6 +1,6 @@
 <!--
     - Backyard Media 
-    - Filename: index.html
+    - Filename: index.php
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: May 29 2018 

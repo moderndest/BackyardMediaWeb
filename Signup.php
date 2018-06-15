@@ -1,6 +1,6 @@
 <!--
     - Backyard Media 
-    - Filename: Signup.html
+    - Filename: Signup.php
     - @author: Haocheng Li
     - @author: Chatsuda Rattarasan
     - (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
