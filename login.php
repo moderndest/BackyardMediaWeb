@@ -21,20 +21,21 @@ if (isset($_POST['login'])){
     print("name = $stored\n");
 
     if(password_verify ($pwd,$stored)){
-        session_regenerate_id(true);
+        //session_regenerate_id(true);
         $_SESSION['username'] = $username;
         $_SESSION['authenticated'] = true;
 
-        print( $_SESSION['username']. '\n');
-        print( $_SESSION['authenticated'].'\n');
+        print_r($_SESSION);
+        // print( $_SESSION['username']. '\n');
+        // print( $_SESSION['authenticated'].'\n');
 
         if(isset($_POST['remember'])){
             //create persistent login
             $autologin = new Autologin($db);
             $autologin->persistentLogin();
         }
-        session_write_close(); 
-        header('Location: restricted1.php');
+        // session_write_close(); 
+        header('Location: index.php');
         exit();
            
     }else {
