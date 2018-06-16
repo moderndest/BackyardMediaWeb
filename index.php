@@ -49,7 +49,7 @@ require_once './php/includes/authenticate.php'
         <header>
             <!---  Navigation Start here---->  
             <nav class="tm-content1 navbar fixed-top navbar-expand-lg bg-custom">
-                <a class="navbar-brand mx-md-2" href="index.html">
+                <a class="navbar-brand mx-md-2" href="index.php">
                     <img src="img/logo.png">
                 </a>
                 <button class="navbar-toggler  custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@ require_once './php/includes/authenticate.php'
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mr-md-4 mx-0">
-                            <a class="nav-link" href="AboutUs.html">AboutUs</a>
+                            <a class="nav-link" href="AboutUs.php">AboutUs</a>
                         </li>
                         <li class="nav-item dropdown mr-md-4 mx-0">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -77,10 +77,10 @@ require_once './php/includes/authenticate.php'
                                 <a class="nav-link" href="#">Blog</a>
                             </li>
                         <li class="nav-item mr-md-4 mx-0">
-                            <a class="nav-link" href="Faqs.html">Faqs</a>
+                            <a class="nav-link" href="Faqs.php">Faqs</a>
                         </li>
                         <li class="nav-item mr-md-4 mx-0">
-                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                     </ul>
 

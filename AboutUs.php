@@ -8,6 +8,10 @@
     - Date: May 29 2018   
     - For the full copyright and license information, please view the LICENSE
 -->
+
+<?php
+require_once './php/includes/authenticate.php'
+?>
 <!Doctype html>
 <html>
    
@@ -47,7 +51,7 @@
         <header>
             
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
-            <a class="navbar-brand mx-md-2" href="index.html">
+            <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +60,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="AboutUs.html">AboutUs</a>
+                        <a class="nav-link" href="AboutUs.php">AboutUs</a>
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,21 +77,34 @@
                             <a class="nav-link" href="#">Blog</a>
                         </li>
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="Faqs.html">Faqs</a>
+                        <a class="nav-link" href="Faqs.php">Faqs</a>
                     </li>
                     <li class="nav-item mr-md-4 mx-0">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
-                    <div class="loginbtn">
-                        <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
-                    </div>
-                    <!-- <i class="fas fa-user fa-2x blue"></i> -->
-                    <div class="vl mx-2"></div>
+                <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        
+                        echo "<p class='blue'>";
+                        echo "<i class='fas fa-user fa-2x blue mr-2'></i>";
+                        echo   htmlentities($_SESSION['username']);
+                        echo "</p>";
 
-                    <div class="Signupbtn"> 
-                        <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
-                    </div>
+                        include './php/includes/logout_button.php';
+                    
+                    }
+                    else{
+                        echo "<div class='loginbtn'>";
+                        echo "<a href='login.php' class='d-inline btnstyle' role='button'>Log in</a>";
+                        echo "</div>";
+                        echo "<div class='vl mx-2'></div>";
+                        echo "<div class='Signupbtn'> ";
+                        echo  "<a href='Signup.php' class='d-inline btnstyle' role='button'>Sign Up</a>";
+                        echo "</div>";
+                    }
+                ?>
             </div>
         </nav>
 

@@ -22,8 +22,6 @@ if (isset($_POST['login'])){
     $stmt->bindParam(':username', $username);
     $stmt->execute();
     $stored = $stmt->fetchColumn();
-    print("name = $stored\n");
-
     if(password_verify ($pwd,$stored)){
         //session_regenerate_id(true);
         $_SESSION['username'] = $username;
@@ -36,7 +34,7 @@ if (isset($_POST['login'])){
         }
        
         header('Location: index.php');
-        exit();
+        exit;
            
     }else {
         $error = 'Login failed. Check username and password.';

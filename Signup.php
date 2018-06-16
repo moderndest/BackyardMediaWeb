@@ -113,7 +113,7 @@ if (isset($_POST['register'])) {
         <header>
             
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
-            <a class="navbar-brand mx-md-2" href="index.html">
+            <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

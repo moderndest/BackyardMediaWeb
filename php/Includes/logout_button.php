@@ -13,9 +13,13 @@
  -
  - For the full copyright and license information, please view the LICENSE 
 -->
- 
-<form action="logout.php" method="post">   
-    <button class='mx-3 d-inline btnstyle' type = "submit" name="logout"><i class='fas fa-sign-out-alt fa blue'></i> Exit</button>
-    
+<!Doctype html>
+
+
+<html>
+<head> 
+</head>
+<form class="d-inline" action="logout.php" method="post">   
+    <button class=' fas fa-sign-out-alt fa-2x logout blue' type = "submit" name="logout"></button>
     <?php $_SESSION['return_to'] = $_SERVER['PHP_SELF']; ?>
 </form>
