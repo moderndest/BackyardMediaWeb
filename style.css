@@ -14,7 +14,6 @@
 html,body{
         margin:0px auto;
         font-family: Arial, Helvetica, sans-serif;
-        height: 100%;
 }
 
 
@@ -455,6 +454,19 @@ color:orange;
 
 /*--- SingUp page ----- */
 
+.form-group .Submitbtn, .container-fluid .loginform .Submitloginbtn {
+    border-color:orange;
+    color: orange;
+    background-color: Transparent;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.form-group .Submitbtn:hover, .container-fluid .loginform .Submitloginbtn:hover  {
+    background-color:orange;
+    color: white;
+}
 
 /* The message box is shown when the user clicks on the password field */
 #message {
@@ -506,4 +518,13 @@ color:orange;
     content: "✖";
 
 }
-/*  */
+/*--- End of SingUp page ----- */
+
+
+/*----------- Login Page  ___________*/
+.container-fluid .loginform {
+    padding: 30px;
+
+}
+/*-------- End of Login Page __________*/
+

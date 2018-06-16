@@ -54,7 +54,6 @@ if (isset($_POST['login'])){
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Backyard Media</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/contactus.css">
         <!-- Bootstrap CSS --> 
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -88,7 +87,7 @@ if (isset($_POST['login'])){
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="AboutUs.html">AboutUs</a>
+                        <a class="nav-link" href="AboutUs.php">AboutUs</a>
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,14 +106,14 @@ if (isset($_POST['login'])){
                             <a class="nav-link" href="#">Blog</a>
                         </li>
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="Faqs.html">Faqs</a>
+                        <a class="nav-link" href="Faqs.php">Faqs</a>
                     </li>
                     <li class="nav-item mr-md-4 mx-0">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
                     <div class="loginbtn">
-                        <a href="#" class="d-inline btnstyle" role="button">Log in</a>
+                        <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
 
 
@@ -122,7 +121,7 @@ if (isset($_POST['login'])){
                     <div class="vl mx-2"></div>
 
                     <div class="Signupbtn"> 
-                        <a href="#" class="d-inline btnstyle" role="button">Sign Up</a>
+                        <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
         </nav>
@@ -136,10 +135,10 @@ if (isset($_POST['login'])){
          
     <!-- body container-->
 
-        <h1 id="pagetitle">Advetisers Login</h1>
+        <div class="container-fluid " >
+            <h1 class="pagetitle">Advetisers Login</h1>
 
-        <div class="container mh-100" >
-            <div class="row justify-content-center">
+            <div class="row loginform justify-content-center">
                  <!-- Alert -->
                  <?php
                         if (isset($error)){
@@ -182,17 +181,23 @@ if (isset($_POST['login'])){
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Remember Me -->
-                    <div class="form-check row d-flex justify-content-center">
-                        <input type="checkbox" class="form-check-input" name="remember" id="remember">
-                        <label class="form-check-label" for="remember">Remember me</label>
-                    </div>
+                    <div class="form-check row d-flex justify-content-center my-3">
+                        
+                            <div>
+                                <input type="checkbox" class="form-check-input d-inline justify-content-center" name="remember" id="remember">
+                            </div>
+                            <div>
+                                <label class="form-check-label d-inline justify-content-center" for="remember">Remember me</label>
+                            </div>
 
-                    <!-- SignIn btn -->
+                    </div>
+                    
+                    <!-- SignIn btn --> 
                     <div classs="form-group row justify-content-center">
                         <div class="col-12 d-flex justify-content-center">
-                            <input class=" col-5 col-md-4 col-lg-3 btn btn-outline-warning btn-md" name="login" id="login" type="submit" value="Sign In">
+                            <input class=" col-5 col-md-4 col-lg-3 btn btn-md Submitloginbtn " name="login" id="login" type="submit" value="Sign In">
                         </div>
                     </div>
                 </form>
@@ -219,9 +224,7 @@ if (isset($_POST['login'])){
     </footer>
 
     <!-- End of the footer  -->
-    
 
     <script src="js/validator.js"></script>
-
     </body>
 </html>

@@ -21,7 +21,6 @@ require_once './php/includes/authenticate.php'
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Backyard Media</title>
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="css/contactus.css">
         <!-- Bootstrap CSS --> 
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
@@ -107,7 +106,7 @@ require_once './php/includes/authenticate.php'
      
          
     <!-- body container-->
-        <h1 id="pagetitle">WORK WITH US</h1>
+        <h1 class="pagetitle">WORK WITH US</h1>
 
          
         <div class="container">
@@ -118,7 +117,7 @@ require_once './php/includes/authenticate.php'
                     <div class="messages"></div>
 
                     <!-- first name -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-sm-6 my-3 col-md-6">
                             <h5>First Name*</h5>
                             <div>
@@ -146,7 +145,7 @@ require_once './php/includes/authenticate.php'
                     </div>
 
                     <!--email  -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-12">
                             <h5>Email*</h5>
                             <div>
@@ -161,7 +160,7 @@ require_once './php/includes/authenticate.php'
                         </div>
                     </div>
                     <!--nameofcontract  -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-12 ">
                             <h5>Name of Organizaiton</h5>
                             <div>
@@ -170,7 +169,7 @@ require_once './php/includes/authenticate.php'
                         </div>
                     </div>
                     <!-- are you -->
-                    <fieldset class="form-group row p-4">
+                    <fieldset class="form-group row p-2">
                         <h5 class="col-12">Are You?*</h5>
                         <div class="col-sm-5 " >
                             
@@ -197,14 +196,14 @@ require_once './php/includes/authenticate.php'
                     </fieldset>
 
                     <!-- website -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-12">
                             <h5>Website</h5>
                             <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
                         </div>
                     </div>
                     <!-- message -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-12">
                             <h5>Message</h5>
                             <p><i>How can we help you?</i></p>
@@ -213,11 +212,11 @@ require_once './php/includes/authenticate.php'
                     </div>
 
                     <!-- submit -->
-                    <div class="form-group row p-4">
+                    <div class="form-group row p-2">
                         <div class="col-sm-8">
                         </div>
                         <div class="col-sm-4 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-outline-warning pdsubmitbtn btn-lg">Submit</button>
+                            <button type="submit" class="btn btn-outline Submitbtn btn-lg">Submit</button>
                         </div>
                     </div>
                 </form>
