@@ -38,7 +38,7 @@
      <header>
             
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
-            <a class="navbar-brand mx-md-2" href="index.html">
+            <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
             </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="AboutUs.html">AboutUs</a>
+                        <a class="nav-link" href="AboutUs.php">AboutUs</a>
                     </li>
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,10 +64,10 @@
                             <a class="nav-link" href="#">Blog</a>
                         </li>
                     <li class="nav-item mr-md-4 mx-0">
-                        <a class="nav-link" href="Faqs.html">Faqs</a>
+                        <a class="nav-link" href="Faqs.php">Faqs</a>
                     </li>
                     <li class="nav-item mr-md-4 mx-0">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
+                            <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
                     <div class="loginbtn">
@@ -96,89 +96,190 @@
 
         <div class="container my-4">
             <div class="row">
-                <form class="col-md-12">
+                <form class="col-md-12 contact-form" action="php/podcasterMail.php" method="post" role="form" novalidate >
+
+
                     <!-- Contact Name -->
                     <div class="form-group row justify-content-center">
-                        <label for="inputContactName" class="ml-2 col-sm-2 col-form-label">Contact Name</label>
+                        <label for="inputContactName" class=" col-sm-2 col-form-label">Contact Name</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="inputContactName" placeholder="Contact Name">
+                            <input type="text" class="form-control" name="contactname" id="inputContactName" placeholder="Contact Name" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     Contact Name is required.
+                            </div>
                         </div>
                     </div>
+
+
                     <!--email  -->
                     <div class="form-group row justify-content-center">
                         <label for="inputContactEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="email" class="form-control" id="inputContactEmail" placeholder="Email">
+                            <input type="email" class="form-control" name="email" id="inputContactEmail" placeholder="Email" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     Email is required.
+                            </div>
                         </div>
+
+
                     <!--Name of podcast-->
                     </div>
                     <div class="form-group row justify-content-center">
                         <label for="inputNameOfPodcast" class="col-sm-2 col-form-label">Name of Podcast</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="inputNameOfPodcast" placeholder="Name of Podcast">
+                            <input type="text" class="form-control" name="podname" id="inputNameOfPodcast" placeholder="Name of Podcast" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     Podcast Name is required.
+                            </div>
                         </div>
                     </div>
+
+
                     <!--Link to podcast-->
                     <div class="form-group row justify-content-center">
                         <label for="inputLinktoPodcast" class="col-sm-2 col-form-label">Link to Podcast</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="link" class="form-control" id="inputLinktoPodcast" placeholder="Link to Podcast">
+                            <input type="link" class="form-control" name="link" id="inputLinktoPodcast" placeholder="Link to Podcast" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     Link to podcast is required.
+                            </div>
                         </div>
                     </div>
+
+
                     <!--Description podcast-->
                     <div class="form-group row justify-content-center">
                             <label for="inputPodcastDescription" class="col-sm-2 col-form-label">Podcast Description</label>
                             <div class="col-sm-6 mr-2">
-                                <input type="text" class="form-control" id="inputPodcastDescription" placeholder="Podcast Description">
+                                <input type="text" class="form-control" name="description" id="inputPodcastDescription" placeholder="Podcast Description" required>
+                                <div class="valid-feedback">
+                                    
+                                </div>
+
+                                <div class="invalid-feedback">
+                                        Description is required.
+                                </div>
                             </div>
                     </div>
+
+
                     <!--Graphic-->
                     <div class="form-group row justify-content-center">
-                            <label for="inputGraphic/Logo" class="col-sm-2 col-form-label">Graphic/Logo</label>
+                            <label  class="col-sm-2 col-form-label">Graphic/Logo</label>
                             <div class="col-sm-6 mr-2">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile03">
-                                    <label class="custom-file-label" for="inputGroupFile03">Choose file</label>
+                                    <input type="file" class="custom-file-input" name="fileupload" id="uploadfile">
+                                    <label class="custom-file-label" for="uploadfile">Choose file</label>
+                                    <div class="valid-feedback">
+                                    
+                                    </div>
+
+                                    <div class="invalid-feedback">
+                                            password is required.
+                                    </div>
                                 </div>
                                 
                             </div>
 
                     </div>
+
+
                     <!--date of resealse-->
                     <div class="form-group row justify-content-center">
                         <label for="inputDateofFirstRelease" class="col-sm-2 col-form-label">Date of First Release</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="date" class="form-control" id="inputDateofFirstReleas">
+                            <input type="date" class="form-control" name="firstrelease" id="inputDateofFirstReleas" required>
+
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                        Date of First Release is required.
+                            </div>
                         </div>
                     </div>
+
+
                     <!--Release Schedule-->
                     <div class="form-group row justify-content-center">
                         <label for="inputReleaseSchedule" class="col-sm-2 col-form-label">Release Schedule</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="inputReleaseSchedule" placeholder="Release Schedule">
+                            <input type="text" class="form-control" id="inputReleaseSchedule" name="Release" placeholder="Release Schedule" required>
+                            <div class="valid-feedback">
+                                    
+                            </div>
+
+                            <div class="invalid-feedback">
+                                     Release Schedule is required.
+                            </div>
                         </div>
                     </div>
+
+
                     <!--Download per episode-->
                     <div class="form-group row justify-content-center">
                         <label for="inputDownloadPerEpisode" class="col-sm-2 col-form-label">Download Per Episode</label>
                             <div class="col-sm-6 mr-2">
-                                <input type="text" class="form-control" id="inputDownloadPerEpisode" placeholder="Download Per Episode">
+                                <input type="text" class="form-control" name="download" id="inputDownloadPerEpisode" placeholder="Download Per Episode" required>
+                                <div class="valid-feedback">
+                                        
+                                </div>
+
+                                <div class="invalid-feedback">
+                                        Download Per Episode is required.
+                                </div>
                             </div>
                     </div> 
+
+
                     <!--other audience metrix-->
                     <div class="form-group row justify-content-center">
                             <label for="inputAudienceMetrix" class="col-sm-2 col-form-label">Audience Metrix</label>
                                 <div class="col-sm-6 mr-2">
-                                    <input type="text" class="form-control" id="inputAudienceMetrix" placeholder="Audience Metrix">
+                                    <input type="text" class="form-control" name="audienceMetrix" id="inputAudienceMetrix" placeholder="Audience Metrix" required>
+                                    <div class="valid-feedback">
+                                    
+                                    </div>
+
+                                    <div class="invalid-feedback">
+                                            password is required.
+                                    </div>
                                 </div>
                         </div> 
+
+
                     <!--Comment-->
                     <div class="form-group row justify-content-center">
                         <label for="inputComment" class="col-sm-2 col-form-label">Comment</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="inputComment" placeholder="Comment">
+                            <textarea type="text" class="form-control" name="comment" id="inputComment" rows="5"  placeholder="Comment"></textarea>
+                            <div class="valid-feedback">
+                            </div>
+                            <div class="invalid-feedback">
+                                Please,leave us a message.
+                            </div>
                         </div>
-                    </div> 
+                    </div>
+                    
+
+
                     <!--submit-->    
                     <div class="form-group row my-4">
                         <div class="col-sm-6">
@@ -208,7 +309,8 @@
     </footer>
 
     <!-- End of the footer  -->
-    
+    <script src="js/validator.js"></script>
+    <script src="js/podcasters.js"></script>
     
     
     </body>

@@ -148,7 +148,7 @@ require_once './php/includes/authenticate.php'
                 
                 <div class="tm-content btn_adv_pod col-md-12 d-flex justify-content-center">
                     <a href="advertiser.html" class="col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" role="button"  id="adv">ADVERTISER</a>
-                    <a href="podcaster.html" class="col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
+                    <a href="podcaster.php" class="col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
 
                 </div>
                 

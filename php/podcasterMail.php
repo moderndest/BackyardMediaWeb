@@ -3,10 +3,10 @@
 /**
  * 
  * Backyard Media 
- * Filename: contact.php
+ * Filename: podcasterMail.php
  * @author Chatsuda Rattarasan
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
- * Date: June 1 2018 
+ * Date: June 16 2018 
  * 
  * For the full copyright and license information, please view the LICENSE
  */
@@ -17,7 +17,6 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
@@ -31,6 +30,9 @@ else{
     $fromName = htmlentities($_POST['name']);
     $message = htmlentities($_POST['notes']);
 
+    // $fromEmail = 'frommail@gmail.com';
+    // $fromName = 'ssafas';
+    // $message ='sfadfasdfas';
 }
 
 
