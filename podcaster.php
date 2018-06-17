@@ -96,7 +96,7 @@
 
         <div class="container my-4">
             <div class="row">
-                <form class="col-md-12 contact-form" action="php/podcasterMail.php" method="post" role="form" novalidate >
+                <form class="col-md-12 contact-form" action="php/podcasterMail.php" method="post" role="form" enctype="multipart/form-data" novalidate >
 
 
                     <!-- Contact Name -->
@@ -125,7 +125,7 @@
                             </div>
 
                             <div class="invalid-feedback">
-                                     Email is required.
+                                    Valid Email is required.
                             </div>
                         </div>
 
@@ -151,13 +151,13 @@
                     <div class="form-group row justify-content-center">
                         <label for="inputLinktoPodcast" class="col-sm-2 col-form-label">Link to Podcast</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="link" class="form-control" name="link" id="inputLinktoPodcast" placeholder="Link to Podcast" required>
+                            <input type="url" class="form-control" name="link" id="inputLinktoPodcast" pattern="https?://.+" placeholder="https://example.com/" required>
                             <div class="valid-feedback">
                                     
                             </div>
 
                             <div class="invalid-feedback">
-                                     Link to podcast is required.
+                                    Valid Link is required.
                             </div>
                         </div>
                     </div>
@@ -184,7 +184,7 @@
                             <label  class="col-sm-2 col-form-label">Graphic/Logo</label>
                             <div class="col-sm-6 mr-2">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="fileupload" id="uploadfile">
+                                    <input type="file" class="custom-file-input" name="uploadfile" id="uploadfile">
                                     <label class="custom-file-label" for="uploadfile">Choose file</label>
                                     <div class="valid-feedback">
                                     
@@ -221,7 +221,7 @@
                     <div class="form-group row justify-content-center">
                         <label for="inputReleaseSchedule" class="col-sm-2 col-form-label">Release Schedule</label>
                         <div class="col-sm-6 mr-2">
-                            <input type="text" class="form-control" id="inputReleaseSchedule" name="Release" placeholder="Release Schedule" required>
+                            <input type="text" class="form-control" id="inputReleaseSchedule" name="release" placeholder="Release Schedule" required>
                             <div class="valid-feedback">
                                     
                             </div>
@@ -253,13 +253,13 @@
                     <div class="form-group row justify-content-center">
                             <label for="inputAudienceMetrix" class="col-sm-2 col-form-label">Audience Metrix</label>
                                 <div class="col-sm-6 mr-2">
-                                    <input type="text" class="form-control" name="audienceMetrix" id="inputAudienceMetrix" placeholder="Audience Metrix" required>
+                                    <input type="text" class="form-control" name="audiencemetrix" id="inputAudienceMetrix" placeholder="Audience Metrix" required>
                                     <div class="valid-feedback">
                                     
                                     </div>
 
                                     <div class="invalid-feedback">
-                                            password is required.
+                                            Audience Metrix is required.
                                     </div>
                                 </div>
                         </div> 
@@ -288,6 +288,8 @@
                             <button type="submit" class="btn btn-outline-warning pdsubmitbtn btn-md">Submit</button>
                         </div>
                     </div>
+                     <!-- Alert Message -->
+                     <div class="messages"></div>
                 </form>
             </div>
         </div>
@@ -310,6 +312,7 @@
 
     <!-- End of the footer  -->
     <script src="js/validator.js"></script>
+    <!-- <script src="js/contact.js"></script> -->
     <script src="js/podcasters.js"></script>
     
     
