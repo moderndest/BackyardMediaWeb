@@ -14,14 +14,14 @@
  *
  * For the full copyright and license information, please view the LICENSE
  */
-use php\Sessions\PersistentSessionHandler;
+use phpControl\Sessions\PersistentSessionHandler;
 
 require_once __DIR__ . '/Psr4AutoloaderClass.php';
 require_once __DIR__ . '/connectDB.php';
 
 $loader = new Psr4AutoloaderClass();
 $loader->register();
-$loader->addNamespace('php', __DIR__ . '/../../php');
+$loader->addNamespace('phpControl', __DIR__ . '/../../phpControl');
 
 $handler = new PersistentSessionHandler ($db);
 session_set_save_handler($handler);

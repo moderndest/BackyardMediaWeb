@@ -36,7 +36,7 @@
  * 
  */
 
-namespace php\Sessions;
+namespace phpControl\Sessions;
 
 /**
  * Class MysqlSessionHandler

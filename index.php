@@ -8,7 +8,7 @@
 -->
 
 <?php
-require_once './php/includes/authenticate.php'
+require_once './phpControl/includes/authenticate.php'
 ?>
 
 <!Doctype html>
@@ -95,7 +95,7 @@ require_once './php/includes/authenticate.php'
                                 echo   htmlentities($_SESSION['username']);
                                 echo "</p>";
 
-                                include './php/includes/logout_button.php';
+                                include './phpControl/includes/logout_button.php';
                             
                             }
                             else{
@@ -255,7 +255,7 @@ require_once './php/includes/authenticate.php'
                             <i class=" mx-2 far fa-envelope-open"></i>
                         </h2>
                         <!-- Contact Form Start here -->
-                        <form class="contact-form " action="php/contact.php" method="post" role="form" novalidate>
+                        <form class="contact-form " action="phpControl/contact.php" method="post" role="form" novalidate>
 
                             <!-- Alert Message -->
                             <div class="messages"></div>

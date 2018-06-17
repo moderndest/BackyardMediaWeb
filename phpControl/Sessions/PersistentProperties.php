@@ -14,7 +14,7 @@
  *
  * For the full copyright and license information, please view the LICENSE
  */
-namespace php\Sessions;
+namespace phpControl\Sessions;
 
 trait PersistentProperties
 {

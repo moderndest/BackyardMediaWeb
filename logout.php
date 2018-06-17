@@ -8,10 +8,10 @@
     - For the full copyright and license information, please view the LICENSE
 -->
 <?php
-use php\Sessions\MysqlSessionHandler;
+use phpControl\Sessions\MysqlSessionHandler;
 
-require_once './php/Includes/connectDB.php';
-require_once './php/Sessions/MysqlSessionHandler.php';
+require_once './phpControl/Includes/connectDB.php';
+require_once './phpControl/Sessions/MysqlSessionHandler.php';
 
 $handler = new MysqlSessionHandler($db);
 session_set_save_handler($handler);

@@ -14,8 +14,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  */
-require_once './php/includes/init.php';
-use php\Sessions\AutoLogin;
+require_once './phpControl/includes/init.php';
+use phpControl\Sessions\AutoLogin;
 
 
 if(isset($_SESSION['authenticated']) || isset($_SESSION['backyard_auth'])) {

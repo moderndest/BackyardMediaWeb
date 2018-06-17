@@ -1,5 +1,5 @@
 <?php
-namespace php\Sessions;
+namespace phpControl\Sessions;
 
 /**
  * Backyard Media 

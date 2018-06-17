@@ -96,7 +96,7 @@
 
         <div class="container my-4">
             <div class="row">
-                <form class="col-md-12 contact-form" action="php/podcasterMail.php" method="post" role="form" enctype="multipart/form-data" novalidate >
+                <form class="col-md-12 contact-form" action="phpControl/podcasterMail.php" method="post" role="form" enctype="multipart/form-data" novalidate >
 
 
                     <!-- Contact Name -->
@@ -285,7 +285,7 @@
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-4 d-flex justify-content-end">
-                            <button type="submit" class="btn btn-outline-warning pdsubmitbtn btn-md">Submit</button>
+                            <button type="submit" name="submit" class="btn btn-outline-warning pdsubmitbtn btn-md">Submit</button>
                         </div>
                     </div>
                      <!-- Alert Message -->
@@ -312,7 +312,7 @@
 
     <!-- End of the footer  -->
     <script src="js/validator.js"></script>
-    <!-- <script src="js/contact.js"></script> -->
+     <script src="js/contact.js"></script> 
     <script src="js/podcasters.js"></script>
     
     

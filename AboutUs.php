@@ -10,7 +10,7 @@
 -->
 
 <?php
-require_once './php/includes/authenticate.php'
+require_once './phpControl/includes/authenticate.php'
 ?>
 <!Doctype html>
 <html>
@@ -92,7 +92,7 @@ require_once './php/includes/authenticate.php'
                         echo   htmlentities($_SESSION['username']);
                         echo "</p>";
 
-                        include './php/includes/logout_button.php';
+                        include './phpControl/includes/logout_button.php';
                     
                     }
                     else{

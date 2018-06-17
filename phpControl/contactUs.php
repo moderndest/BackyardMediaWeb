@@ -3,10 +3,10 @@
 /**
  * 
  * Backyard Media 
- * Filename: podcasterMail.php
+ * Filename: contact.php
  * @author Chatsuda Rattarasan
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
- * Date: June 16 2018 
+ * Date: June 1 2018 
  * 
  * For the full copyright and license information, please view the LICENSE
  */
@@ -23,85 +23,19 @@ use PHPMailer\PHPMailer\Exception;
 date_default_timezone_set('Etc/UTC');
 require '../vendor/autoload.php';
 
-
-$currentDir = getcwd();
-    $uploadDirectory = "/uploads/";
-
-    $errors = []; // Store all foreseen and unforseen errors here
-
-    $fileExtensions = ['jpeg','jpg','png']; // Get all the file extensions
-
-     
-
-
-
-// Check if it have information or not;
 if(count($_POST) == 0) {
     throw new \Exception('Form is empty');
 }
 else{
     $fromEmail = htmlentities($_POST['email']) ;
-    $fromName = htmlentities($_POST['contactname']);
-    $podname = htmlentities($_POST['podname']);
-    $link = htmlentities($_POST['link']);
-    $description = htmlentities($_POST['description']);
-    $firstrelease = htmlentities($_POST['firstrelease']);
-    $release = htmlentities($_POST['release']);
-    $download = htmlentities($_POST['download']);
-    $audienceMetrix = htmlentities($_POST['audiencemetrix']);
-    $message = htmlentities($_POST['comment']);
+    $fromName = htmlentities($_POST['name']);
+    $message = htmlentities($_POST['notes']);
 
-    if(isset($_POST['uploadfile'])){
-
-        $fileName = $_FILES['uploadfile']['name'];
-        $fileSize = $_FILES['uploadfile']['size'];
-        $fileTmpName  = $_FILES['uploadfile']['tmp_name'];
-        $fileType = $_FILES['uploadfile']['type'];
-        $fileExtension = strtolower(end(explode('.',$fileName)));
-        echo $fileName;
-        $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
-
-         // Checks to ensure that only jpeg and png files can be uploaded.
-         if (! in_array($fileExtension,$fileExtensions)) {
-            $errors[] = "This file extension is not allowed. Please upload a JPEG or PNG file";
-            
-        }
-
-        // Checks to ensure the file is not more than 2MB
-        if ($fileSize > 2000000) {
-            $errors[] = "This file is more than 2MB. Sorry, it has to be less than or equal to 2MB";
-        }
-
-        if (empty($errors)) {
-            $didUpload = move_uploaded_file($fileTmpName, $uploadPath);
-
-            if ($didUpload) {
-                echo "The file " . basename($fileName) . " has been uploaded";
-            } else {
-                echo "An error occurred somewhere. Try again or contact the admin";
-            }
-        } else {
-            foreach ($errors as $error) {
-                
-                echo $error . "These are the errors" . "\n";
-                $responseArray = array('type' => 'danger', 'message' => $error);
-            }
-        }
-    }
-     
-    
-
-       
-
-
-    // $fromEmail = 'frommail@gmail.com';
-    // $fromName = 'ssafas';
-    // $message ='sfadfasdfas';
 }
 
 
 // message that will be displayed when everything is OK :)
-$okMessage = 'Pocaster form successfully submitted. Thank you, I will get back to you soon!';
+$okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
 // If something goes wrong, we will display this message.
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
@@ -118,11 +52,7 @@ $smtpPassword = htmlentities('a91307364d02a3');
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('contactname' => $fromName, 'email' => $fromEmail, 
-                'podname' =>$podname, 'link' => $link,
-                'description' =>$description, 'firstrelease' => $firstrelease,
-                'release' =>$release, 'download' => $download,
-                'audiencemetrix' =>$audienceMetrix, 'comment' => $message); 
+$fields = array('name' => $fromName, 'email' => $fromEmail); 
 
 
 
@@ -186,60 +116,19 @@ try
   
 
     $emailTextHtml = "<div style='width:640px;'>";
-    $emailTextHtml .= "<br><h2>You have a new Podcaster Interested</h2><hr>";
+    $emailTextHtml .= "<br><h2>You have a new message from your contact form</h2><hr>";
 
     $emailTextHtml .= "<br><table>";
 
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
-            if($key === "contactname")
-            {
-                $emailTextHtml .= "<tr><th>Contact Name : </th><td> $value</td></tr>";
-            }
-            else if ($key === "email")
-            {
-                $emailTextHtml .= "<tr><th>Email : </th><td> $value</td></tr>";
-            }
-            else if ($key === "podname")
-            {
-                $emailTextHtml .= "<tr><th>Name of Podcast : </th><td> $value</td></tr>";
-            }
-            else if ($key === "link")
-            {
-                $emailTextHtml .= "<tr><th>Link to Podcast</th><td> $value</td></tr>";
-            }
-            else if ($key === "description")
-            {
-                $emailTextHtml .= "<tr><th>Podcast Description</th><td> $value</td></tr>";
-            }
-            else if ($key ==="firstrelease")
-            {
-                $emailTextHtml .= "<tr><th>Date of First Release</th><td> $value</td></tr>";
-            }
-            else if ($key === "release")
-            {
-                $emailTextHtml .= "<tr><th>Release Schedule: </th><td> $value</td></tr>";
-            }
-            else if ($key === "download")
-            {
-                $emailTextHtml .= "<tr><th>Download Per Episode : </th><td> $value</td></tr>";
-            }
-            else if ($key === "audiencemetrix")
-            {
-                $emailTextHtml .= "<tr><th>Audience Metrix  : </th><td> $value</td></tr>";
-            }
-            else{
-                $emailTextHtml .= "<tr><th>Comment : </th><td> $value</td></tr>";
-            }
+            $emailTextHtml .= "<tr><th>$key : </th><td> $value</td></tr>";
         }
     }
     $emailTextHtml .= "</table><br><hr>";
-    $emailTextHtml .="</div>";
-    $emailTextHtml .= "<p><br><br>";
-    $emailTextHtml .= "<button href='https://docs.google.com/forms/d/e/1FAIpQLSeqBCeOASS76dsTcbEej6rb9uUqv722WaYrPEgj7HQPmCSYIg/viewform' role='button'>";
-    $emailTextHtml .= "Approve here </button></button>";
-    // $emailTextHtml .= "<p><br>Bests,<br>Backyerd Media supporting team</p>";
+    $emailTextHtml .="<p><strong>message : </strong></p>";
+    $emailTextHtml .=" <p>$message </p><hr></div>";
     $emailTextHtml .= "<p><br>Bests,<br>Backyerd Media supporting team</p>";
 
 
@@ -249,8 +138,6 @@ try
     // $mail->msgHTML(file_get_contents('contents.html'), __DIR__);
     $mail->msgHTML($emailTextHtml, __DIR__);
 
-    //Attach an image file
-    $mail->addAttachment($uploadPath);
 
 
     //Send the message, check for errors

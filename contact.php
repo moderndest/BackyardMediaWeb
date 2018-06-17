@@ -9,7 +9,7 @@
 -->
 
 <?php
-require_once './php/includes/authenticate.php'
+require_once './phpControl/includes/authenticate.php'
 ?>
 
 <!Doctype html>
@@ -82,7 +82,7 @@ require_once './php/includes/authenticate.php'
                         echo   htmlentities($_SESSION['username']);
                         echo "</p>";
 
-                        include './php/includes/logout_button.php';
+                        include './phpControl/includes/logout_button.php';
                     
                     }
                     else{
@@ -106,22 +106,22 @@ require_once './php/includes/authenticate.php'
      
          
     <!-- body container-->
-        <h1 class="pagetitle">WORK WITH US</h1>
+        <h1 class="pagetitle">CONTACT US</h1>
 
          
         <div class="container">
             <div class="row justify-content-center">
-                <form class="col-9 contact-form" action="" method="post" role="form" novalidate>
+                <form class="col-9 contact-form" action="php/contactUs.php" method="post" role="form" novalidate>
                     
                     <!-- Alert Message -->
                     <div class="messages"></div>
 
                     <!-- first name -->
-                    <div class="form-group row p-2">
-                        <div class="col-sm-6 my-3 col-md-6">
+                    <div class="form-group row p-1">
+                        <div class="col-sm-6 my-2 col-md-6">
                             <h5>First Name*</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="FirstName" placeholder="First Name"  required>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="firstName" placeholder="First Name"  required>
                                 <div class="valid-feedback">
                                     Looks good!
                                 </div>
@@ -130,10 +130,10 @@ require_once './php/includes/authenticate.php'
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 my-3 offset-sm-0 col-md-6 offset-md-0">
+                        <div class="col-sm-6 my-2 offset-sm-0 col-md-6 offset-md-0">
                             <h5>Last Name*</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="LastName" placeholder="Last Name"  required>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="lastName" placeholder="Last Name"  required>
                                 <div class="valid-feedback">
                                         Looks good!
                                 </div>
@@ -145,7 +145,7 @@ require_once './php/includes/authenticate.php'
                     </div>
 
                     <!--email  -->
-                    <div class="form-group row p-2">
+                    <div class="form-group row p-1">
                         <div class="col-12">
                             <h5>Email*</h5>
                             <div>
@@ -160,7 +160,7 @@ require_once './php/includes/authenticate.php'
                         </div>
                     </div>
                     <!--nameofcontract  -->
-                    <div class="form-group row p-2">
+                    <div class="form-group row p-1">
                         <div class="col-12 ">
                             <h5>Name of Organizaiton</h5>
                             <div>
@@ -169,7 +169,7 @@ require_once './php/includes/authenticate.php'
                         </div>
                     </div>
                     <!-- are you -->
-                    <fieldset class="form-group row p-2">
+                    <fieldset class="form-group row p-1">
                         <h5 class="col-12">Are You?*</h5>
                         <div class="col-sm-5 " >
                             
@@ -196,18 +196,25 @@ require_once './php/includes/authenticate.php'
                     </fieldset>
 
                     <!-- website -->
-                    <div class="form-group row p-2">
+                    <div class="form-group row p-1">
                         <div class="col-12">
                             <h5>Website</h5>
-                            <div><input type="text" name="Website" aria-label="Default" aria-describedby="inputGroup-sizing-default" class="form-control" placeholder="Website"></div>
+                            <div><input type="url" name="website" class="form-control" pattern="https?://.+" placeholder="https://example.com/"></div>
                         </div>
                     </div>
                     <!-- message -->
-                    <div class="form-group row p-2">
+                    <div class="form-group row p-1">
                         <div class="col-12">
                             <h5>Message</h5>
                             <p><i>How can we help you?</i></p>
-                            <div><textarea class="col-12 form-control" rows="10" name="Message" placeholder="Message"></textarea></div>
+                            <div>
+                                <textarea class="col-12 form-control" rows="10" name="message" placeholder="Message" required></textarea>
+                                <div class="valid-feedback">
+                                </div>
+                                <div class="invalid-feedback">
+                                        Please,leave us a message.
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -219,6 +226,9 @@ require_once './php/includes/authenticate.php'
                             <button type="submit" class="btn btn-outline Submitbtn btn-lg">Submit</button>
                         </div>
                     </div>
+
+                    <!-- Alert Message -->
+                    <div class="messages"></div>
                 </form>
             </div>
         </div>
@@ -242,6 +252,7 @@ require_once './php/includes/authenticate.php'
     <!-- End of the footer  -->
 
     <script src="js/validator.js"></script>
+     <script src="js/contact.js"></script> 
     
     
     
