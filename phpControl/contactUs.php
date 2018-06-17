@@ -23,16 +23,25 @@ use PHPMailer\PHPMailer\Exception;
 date_default_timezone_set('Etc/UTC');
 require '../vendor/autoload.php';
 
+
+
 if(count($_POST) == 0) {
     throw new \Exception('Form is empty');
 }
 else{
     $fromEmail = htmlentities($_POST['email']) ;
     $fromName = htmlentities($_POST['name']);
+    $organizaiton = htmlentities($_POST['organizaiton']);
+    $areu = htmlentities($_POST['gridRadios']);
     $message = htmlentities($_POST['notes']);
 
-}
+    if(isset($_POST['website']))
+    {
+        $website = htmlentities($_POST['website']);
+    }
 
+
+}
 
 // message that will be displayed when everything is OK :)
 $okMessage = 'Contact form successfully submitted. Thank you, I will get back to you soon!';
@@ -43,22 +52,19 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 $smtpHost = htmlentities('smtp.mailtrap.io');
 $smtpUsername = htmlentities( '6c7f550429c56b');
 $smtpPassword = htmlentities('a91307364d02a3');
-//smtp credentials and server
-// $smtpHost = 'smtp.gmail.com';
-// $smtpUsername = 'urmail@gmail.com';
-// $smtpPassword = 'password';
-
 
 
 // form field names and their translations.
 // array variable name => Text to appear in the email
-$fields = array('name' => $fromName, 'email' => $fromEmail); 
+$fields = array('name' => $fromName, 'email' => $fromEmail,
+                'organizaiton' => $organizaiton,'gridRadios' => $areu,
+                'website' => $website); 
 
 
 
 /*
- *  LET'S DO THE SENDING
- */
+*  LET'S DO THE SENDING
+*/
 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
@@ -85,17 +91,7 @@ try
 
     //Set the encryption system to use - ssl (deprecated) or tls
     $mail->SMTPSecure = 'tls';
-    //Custom connection options
-    //Note that these settings are INSECURE
-    $mail->SMTPOptions = array(
-        // 'ssl' => [
-        //     'verify_peer' => true,
-        //     'verify_depth' => 3,
-        //     'allow_self_signed' => true,
-        //     'peer_name' => 'smtp.mailtrap.io',
-        //     'cafile' => '/opt/lampp/etc/ssl.crt/cacert.pem',
-        // ],
-    );
+  
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
     //Username to use for SMTP authentication - use full email address for gmail
@@ -113,8 +109,6 @@ try
     $mail->Subject = 'New message from contact form';
 
 
-  
-
     $emailTextHtml = "<div style='width:640px;'>";
     $emailTextHtml .= "<br><h2>You have a new message from your contact form</h2><hr>";
 
@@ -123,7 +117,26 @@ try
     foreach ($_POST as $key => $value) {
         // If the field exists in the $fields array, include it in the email
         if (isset($fields[$key])) {
-            $emailTextHtml .= "<tr><th>$key : </th><td> $value</td></tr>";
+            if($key === "name")
+            {
+                $emailTextHtml .= "<tr><th>Contact Name : </th><td> $value</td></tr>";
+            }
+            else if ($key === "email")
+            {
+                $emailTextHtml .= "<tr><th>Email : </th><td> $value</td></tr>";
+            }
+            else if ($key === "organizaiton")
+            {
+                $emailTextHtml .= "<tr><th>Organizaiton : </th><td> $value</td></tr>";
+            }
+            else if ($key === "gridRadios")
+            {
+                $emailTextHtml .= "<tr><th>Are You? : </th><td> $value</td></tr>";
+            }
+            else
+            {
+                $emailTextHtml .= "<tr><th>Website : </th><td> $value</td></tr>";
+            }
         }
     }
     $emailTextHtml .= "</table><br><hr>";
@@ -142,7 +155,6 @@ try
 
     //Send the message, check for errors
     if (!$mail->send()) {
-        //echo 'Mailer Error: ' . $mail->ErrorInfo;
         throw new \Exception('Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
     } else {
         $responseArray = array('type' => 'success', 'message' => $okMessage);
@@ -161,7 +173,6 @@ catch (\Exception $e)
 
 }
 
-
 // Section 2: IMAP
 // IMAP commands requires the PHP IMAP Extension, found at: https://php.net/manual/en/imap.setup.php
 // Function to call which uses the PHP imap_*() functions to save messages: https://php.net/manual/en/book.imap.php
@@ -176,10 +187,7 @@ function save_mail($mail)
     $result = imap_append($imapStream, $path, $mail->getSentMIMEMessage());
     imap_close($imapStream);
     return $result;
-}
-
-
-
+}   
 
 
 //if requested by AJAX request return JSON response
@@ -194,6 +202,13 @@ if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 else {
     echo $responseArray['message'];
 }
+
+
+
+
+
+
+
 
 
 

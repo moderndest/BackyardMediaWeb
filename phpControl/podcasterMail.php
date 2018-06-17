@@ -200,15 +200,15 @@ try
             }
             else if ($key === "link")
             {
-                $emailTextHtml .= "<tr><th>Link to Podcast</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Link to Podcast : </th><td> $value</td></tr>";
             }
             else if ($key === "description")
             {
-                $emailTextHtml .= "<tr><th>Podcast Description</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Podcast Description : </th><td> $value</td></tr>";
             }
             else if ($key ==="firstrelease")
             {
-                $emailTextHtml .= "<tr><th>Date of First Release</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Date of First Release : </th><td> $value</td></tr>";
             }
             else if ($key === "release")
             {

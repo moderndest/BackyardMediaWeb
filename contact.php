@@ -27,10 +27,9 @@ require_once './phpControl/includes/authenticate.php'
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
-        <script type="text/javascript" src="js/nav.js"></script>   
+        <script type="text/javascript" src="js/nav.js"></script>      
        
     </head>
     
@@ -111,34 +110,20 @@ require_once './phpControl/includes/authenticate.php'
          
         <div class="container">
             <div class="row justify-content-center">
-                <form class="col-9 contact-form" action="php/contactUs.php" method="post" role="form" novalidate>
+                <form class="col-9 contact-form" action="phpControl/contactUs.php" method="post" role="form" novalidate>
                     
-                    <!-- Alert Message -->
-                    <div class="messages"></div>
-
+            
                     <!-- first name -->
                     <div class="form-group row p-1">
-                        <div class="col-sm-6 my-2 col-md-6">
-                            <h5>First Name*</h5>
+                        <div class="col-12">
+                            <h5>Name*</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="firstName" placeholder="First Name"  required>
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="name" placeholder="FirstName LastName"  required>
                                 <div class="valid-feedback">
-                                    Looks good!
+                                    
                                 </div>
                                 <div class="invalid-feedback">
-                                    Last Name is required.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 my-2 offset-sm-0 col-md-6 offset-md-0">
-                            <h5>Last Name*</h5>
-                            <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="lastName" placeholder="Last Name"  required>
-                                <div class="valid-feedback">
-                                        Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                        Last Name is required.
+                                    Name is required.
                                 </div>
                             </div>
                         </div>
@@ -151,7 +136,7 @@ require_once './phpControl/includes/authenticate.php'
                             <div>
                                 <input type="email" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="email" placeholder="Email" required>
                                 <div class="valid-feedback">
-                                        Looks good!
+                                        
                                 </div>
                                 <div class="invalid-feedback">
                                     Valid email is required.
@@ -164,7 +149,7 @@ require_once './phpControl/includes/authenticate.php'
                         <div class="col-12 ">
                             <h5>Name of Organizaiton</h5>
                             <div>
-                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="NameOfOrganizaiton" placeholder="Name of Organization">
+                                <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" name="organizaiton" placeholder="Name of Organization">
                             </div>
                         </div>
                     </div>
@@ -179,15 +164,15 @@ require_once './phpControl/includes/authenticate.php'
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="gridRadios" value="Sponsor"  id="Sponsor" required>
-                                <label class="form-check-label" for="Sponsor">A potential Sponsor</label> 
+                                <label class="form-check-label" for="Sponsor">A Potential Sponsor</label> 
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gridRadios" value="Else"  id="Else"required >
+                                <input class="form-check-input" type="radio" name="gridRadios" value="Other"  id="Else"required >
                                 <label class="form-check-label" for="Else">Someone else</label> 
                             </div>
 
                             <div class="valid-feedback">
-                                        Looks good!
+                                    
                             </div>
                             <div class="invalid-feedback">
                                     Are you? is required.
@@ -205,10 +190,10 @@ require_once './phpControl/includes/authenticate.php'
                     <!-- message -->
                     <div class="form-group row p-1">
                         <div class="col-12">
-                            <h5>Message</h5>
+                            <h5>Message*</h5>
                             <p><i>How can we help you?</i></p>
                             <div>
-                                <textarea class="col-12 form-control" rows="10" name="message" placeholder="Message" required></textarea>
+                                <textarea class="col-12 form-control" rows="10" name="notes" placeholder="Message" required></textarea>
                                 <div class="valid-feedback">
                                 </div>
                                 <div class="invalid-feedback">
@@ -252,7 +237,7 @@ require_once './phpControl/includes/authenticate.php'
     <!-- End of the footer  -->
 
     <script src="js/validator.js"></script>
-     <script src="js/contact.js"></script> 
+    <script src="js/contact.js"></script> 
     
     
     

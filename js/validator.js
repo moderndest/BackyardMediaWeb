@@ -18,7 +18,7 @@ form.addEventListener('submit', function(event) {
               
   }
   form.classList.add('was-validated');
-});
+}, false);
 
 var pwd = document.querySelector('.pwd');
 var confirm = document.querySelector('.confirm');

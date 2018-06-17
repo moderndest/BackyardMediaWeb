@@ -19,7 +19,6 @@ $(function () {
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
            var url =  $(this).attr("action");
-
             // POST values in the background the the script URL
             $.ajax({
                 type: "POST",
@@ -27,6 +26,8 @@ $(function () {
                 data: $(this).serialize(),
                 success: function (data)
                 {
+
+                    console.log(data); 
                     // data = JSON object that contact.php returns
 
                     // we recieve the type of the message: success x danger and apply it to the 
@@ -43,7 +44,7 @@ $(function () {
                         $('.contact-form').find('.messages').html(alertBox);
                         // empty the form
                         $('.contact-form')[0].reset();
-                        //$('.custom-file-label')[0].reset();
+                        // $('.contact-form').removeClass(was-validated );
                     }
                 
 
