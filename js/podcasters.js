@@ -4,6 +4,8 @@ $('.custom-file-input').on('change',function(){
     $(this).next('.custom-file-label').addClass("selected").html(fileName);
   })
   
+
+/** AJAX SUBMIT FORM *** */
   $(function () {
 
     // when the form is submitted
@@ -17,12 +19,6 @@ $('.custom-file-input').on('change',function(){
 
            var formData = new FormData(this);
           
-            //var formData = new FormData($(this)[0]);
-            //var file = $('#uploadfile')[0].files[0];
-           // formData.append('file', file);
-            
-            // formData = new FormData();
-            // POST values in the background the the script URL
             $.ajax({
                 type: "POST",
                 url: url,
