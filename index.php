@@ -157,21 +157,23 @@ require_once './phpControl/includes/authenticate.php'
         <!-- end of section1 -->
 
         <!-- section2 Slidebar -->
-        <div class="bg-slidebar row">
+        
+        <div class="bg-slidebar">
+            <h2 class="podfeat offset-1">Featured Podcasts</h2>
             <div class="container-fluid">
             
-                <h2 class="podfeat col-12">Featured Podcasts</h2>
+                
                 <div id="my-slider" class="carousel slide  " data-ride="carousel">
                     <!-- wrapper for slides -->
-                    <div class="carousel-inner row" >
-                        <div class="carousel-item active row">
-                            <div class="media row">
-                                <div class="row">
-                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 justify-content-center" href="#">
+                    <div class="carousel-inner" >
+                        <div class="carousel-item active">
+                            <div class="media ">
+                                <div class="row w-100">
+                                    <div class="p-4 d-flex col-12 col-sm-12 offset-md-1 col-md-4  justify-content-center" href="#">
                                         <img src="img/BushLeague_logo.jpg" style="width:300px; height:300px;" alt="First slide">
                                     </div>
             
-                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7 ">
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7  ">
             
                                         <h3>Bush League   <a href="https://itunes.apple.com/us/podcast/bush-league-the-podcast/id1115373843?mt=2" class="fas fa-headphones"></a></h3>
                                         <p class="slide-description mt-4">Bush League is a narrative audio series about interesting and unheard stories from sports. We features stories that exist where sports intersects with politics, geography, culture, business and drama.
@@ -189,15 +191,15 @@ require_once './phpControl/includes/authenticate.php'
                             </div>
                         </div>
 
-                        <div class="carousel-item row">
-                            <div class="media row">
-                                <div class="row">
+                        <div class="carousel-item">
+                            <div class="media">
+                                <div class="row w-100">
                                    
-                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 justify-content-center" href="#">
+                                    <div class="p-4 d-flex col-12 col-sm-12 offset-md-1 col-md-4 justify-content-center" href="#">
                                         <img src="img/FirstMondays.png" style="width:300px; height:300px;" alt="Second slide">
                                     </div>
                                    
-                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7">
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7">
             
                                         <h3>First Mondays <a href="https://itunes.apple.com/us/podcast/first-mondays/id1161435501?mt=2" class="fas fa-headphones"></a></h3>
 
@@ -217,15 +219,15 @@ require_once './phpControl/includes/authenticate.php'
                             
                         </div>
 
-                        <div class="carousel-item row">
-                            <div class="media row">
-                                <div class="row">
+                        <div class="carousel-item">
+                            <div class="media">
+                                <div class="row w-100">
                                    
-                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 mx-lg-5 justify-content-center" href="#">
+                                    <div class="p-4 d-flex col-12 col-sm-12 offset-md-1 col-md-4 justify-content-center" href="#">
                                         <img src="img/Global.png" style="width:300px; height:300px;" alt="Third slide">
                                     </div>
                                    
-                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7">
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7">
             
                                         <h3>Global Dispatches <a href="https://itunes.apple.com/us/podcast/un-dispatch-podcast/id593535863?mt=2" class="fas fa-headphones"></a></h3>
 
