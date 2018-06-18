@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="style.css">
         <!-- Bootstrap CSS --> 
         <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/advertiser.css">
         
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <!-- Optional JavaScript -->
@@ -95,10 +96,21 @@
     
 
         <!-- Body Content Start here -->
+        
+        <h1 class="pagetitle">Podcast</h1>
+
+
+        <!-- table -->
+        <div class="gallery_gds">
+            <ul class="simplefilter">
+                <li class="active" data-filter="all">All</li>
+                <li data-filter="1">Category 1</li>
+                <li data-filter="2">Category 2</li>
+                <li data-filter="3">Category 3</li>
+            </ul>
+        </div>
+        
         <div class="container">
-            <div >
-                <center><h1>Podcast</h1></center>
-            </div>
             <table border="0" cellspacing="0" width="80%">
                 <thead>
                     <th></th>
@@ -108,26 +120,28 @@
                 <tbody>
                     <tr>
                         <td rowspan="2">
-                            <img id="#">
+                            <div class="mt-4 col-sm-12 d-flex justify-content-center">
+                                <img class="img-aboutus rounded" src="img/BushLeague_logo.jpg"> 
+                            </div>
                         </td>
                         <td colspan="2">
-                            <h1 id="#"></h1>
+                            <h2 id="#">sdfsdf</h2>
                             <div>
-                                <p id="#"></p>
+                                <p id="#">Bush League is a narrative audio series about interesting and unheard stories from sports. We features stories that exist where sports intersects with politics, geography, culture, business and drama.</p>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <ul>
-                                <li>Campaniges:<p id="#"></p></li>
-                                <li>Total listener: <p id="#"></p></li>
-                                <li>Type:<p id="#"></p></li>
-                                <li>Price:<p id="#"></p></li>
+                                <li>Campaniges:<p id="#">33</p></li>
+                                <li>Total listener: <p id="#">33</p></li>
+                                <li>Type:<p id="#">33</p></li>
+                                <li>Price:<p id="#">33</p></li>
                             </ul>
                         </td>
                         <td>
-                            <a href="#" role="button">Create</a>
+                            <a href="#" class="col-5 btn btn-outline-warning btn-md" role="button">Create</a>
                         </td>
                     </tr>
                 </tbody>
