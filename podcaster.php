@@ -117,7 +117,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!-- Contact Name -->
                     <div class="form-group row justify-content-center">
-                        <label for="inputContactName" class=" col-sm-2 col-form-label">Contact Name</label>
+                        <label for="inputContactName" class=" col-sm-2 col-form-label">Contact Name*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="text" class="form-control" name="contactname" id="inputContactName" placeholder="Contact Name" required>
                             <div class="valid-feedback">
@@ -133,7 +133,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--email  -->
                     <div class="form-group row justify-content-center">
-                        <label for="inputContactEmail" class="col-sm-2 col-form-label">Email</label>
+                        <label for="inputContactEmail" class="col-sm-2 col-form-label">Email*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="email" class="form-control" name="email" id="inputContactEmail" placeholder="Email" required>
                             <div class="valid-feedback">
@@ -149,7 +149,7 @@ require_once './phpControl/includes/authenticate.php'
                     <!--Name of podcast-->
                     </div>
                     <div class="form-group row justify-content-center">
-                        <label for="inputNameOfPodcast" class="col-sm-2 col-form-label">Name of Podcast</label>
+                        <label for="inputNameOfPodcast" class="col-sm-2 col-form-label">Name of Podcast*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="text" class="form-control" name="podname" id="inputNameOfPodcast" placeholder="Name of Podcast" required>
                             <div class="valid-feedback">
@@ -165,7 +165,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--Link to podcast-->
                     <div class="form-group row justify-content-center">
-                        <label for="inputLinktoPodcast" class="col-sm-2 col-form-label">Link to Podcast</label>
+                        <label for="inputLinktoPodcast" class="col-sm-2 col-form-label">Link to Podcast*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="url" class="form-control" name="link" id="inputLinktoPodcast" pattern="https?://.+" placeholder="https://example.com/" required>
                             <div class="valid-feedback">
@@ -181,7 +181,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--Description podcast-->
                     <div class="form-group row justify-content-center">
-                            <label for="inputPodcastDescription" class="col-sm-2 col-form-label">Podcast Description</label>
+                            <label for="inputPodcastDescription" class="col-sm-2 col-form-label">Podcast Description*</label>
                             <div class="col-sm-6 mr-2">
                                 <input type="text" class="form-control" name="description" id="inputPodcastDescription" placeholder="Podcast Description" required>
                                 <div class="valid-feedback">
@@ -218,7 +218,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--date of resealse-->
                     <div class="form-group row justify-content-center">
-                        <label for="inputDateofFirstRelease" class="col-sm-2 col-form-label">Date of First Release</label>
+                        <label for="inputDateofFirstRelease" class="col-sm-2 col-form-label">Date of First Release*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="date" class="form-control" name="firstrelease" id="inputDateofFirstReleas" required>
 
@@ -235,7 +235,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--Release Schedule-->
                     <div class="form-group row justify-content-center">
-                        <label for="inputReleaseSchedule" class="col-sm-2 col-form-label">Release Schedule</label>
+                        <label for="inputReleaseSchedule" class="col-sm-2 col-form-label">Release Schedule*</label>
                         <div class="col-sm-6 mr-2">
                             <input type="text" class="form-control" id="inputReleaseSchedule" name="release" placeholder="Release Schedule" required>
                             <div class="valid-feedback">
@@ -251,7 +251,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--Download per episode-->
                     <div class="form-group row justify-content-center">
-                        <label for="inputDownloadPerEpisode" class="col-sm-2 col-form-label">Download Per Episode</label>
+                        <label for="inputDownloadPerEpisode" class="col-sm-2 col-form-label">Download Per Episode*</label>
                             <div class="col-sm-6 mr-2">
                                 <input type="text" class="form-control" name="download" id="inputDownloadPerEpisode" placeholder="Download Per Episode" required>
                                 <div class="valid-feedback">
@@ -267,7 +267,7 @@ require_once './phpControl/includes/authenticate.php'
 
                     <!--other audience metrix-->
                     <div class="form-group row justify-content-center">
-                            <label for="inputAudienceMetrix" class="col-sm-2 col-form-label">Audience Metrix</label>
+                            <label for="inputAudienceMetrix" class="col-sm-2 col-form-label">Audience Metrix*</label>
                                 <div class="col-sm-6 mr-2">
                                     <input type="text" class="form-control" name="audiencemetrix" id="inputAudienceMetrix" placeholder="Audience Metrix" required>
                                     <div class="valid-feedback">
