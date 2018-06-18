@@ -100,10 +100,7 @@ $errorMessage = 'There was an error while submitting the form. Please try again 
 $smtpHost = htmlentities('smtp.mailtrap.io');
 $smtpUsername = htmlentities( '6c7f550429c56b');
 $smtpPassword = htmlentities('a91307364d02a3');
-//smtp credentials and server
-// $smtpHost = 'smtp.gmail.com';
-// $smtpUsername = 'urmail@gmail.com';
-// $smtpPassword = 'password';
+
 
 
 
@@ -200,15 +197,15 @@ try
             }
             else if ($key === "link")
             {
-                $emailTextHtml .= "<tr><th>Link to Podcast</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Link to Podcast : </th><td> $value</td></tr>";
             }
             else if ($key === "description")
             {
-                $emailTextHtml .= "<tr><th>Podcast Description</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Podcast Description : </th><td> $value</td></tr>";
             }
             else if ($key ==="firstrelease")
             {
-                $emailTextHtml .= "<tr><th>Date of First Release</th><td> $value</td></tr>";
+                $emailTextHtml .= "<tr><th>Date of First Release : </th><td> $value</td></tr>";
             }
             else if ($key === "release")
             {

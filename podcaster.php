@@ -1,5 +1,3 @@
-
-<!Doctype html>
 <!--
     - Backyard Media 
     - Filename: podcaster.html
@@ -9,9 +7,13 @@
     - Date: May 29 2018   
     - For the full copyright and license information, please view the LICENSE
 -->
-<html>
 
-    
+<?php
+require_once './phpControl/includes/authenticate.php'
+?>
+<!Doctype html>
+
+<html>
     <head>
         
         <meta charset="utf-8">
@@ -28,6 +30,7 @@
         <script type="text/javascript" src="js/popper.min.js"></script>
         <script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script> 
         <script type="text/javascript" src="js/nav.js"></script>   
+        <script src="http://malsup.github.com/jquery.form.js"></script> 
        
     </head>
     
@@ -70,15 +73,28 @@
                             <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
-                    <div class="loginbtn">
-                        <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
-                    </div>
-                    <!-- <i class="fas fa-user fa-2x blue"></i> -->
-                    <div class="vl mx-2"></div>
+                <?php
+                    if (isset($_SESSION['username']))
+                    {
+                        
+                        echo "<p class='blue'>";
+                        echo "<i class='fas fa-user fa-2x blue mr-2'></i>";
+                        echo   htmlentities($_SESSION['username']);
+                        echo "</p>";
 
-                    <div class="Signupbtn"> 
-                        <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
-                    </div>
+                        include './phpControl/includes/logout_button.php';
+                    
+                    }
+                    else{
+                        echo "<div class='loginbtn'>";
+                        echo "<a href='login.php' class='d-inline btnstyle' role='button'>Log in</a>";
+                        echo "</div>";
+                        echo "<div class='vl mx-2'></div>";
+                        echo "<div class='Signupbtn'> ";
+                        echo  "<a href='Signup.php' class='d-inline btnstyle' role='button'>Sign Up</a>";
+                        echo "</div>";
+                    }
+                ?>
             </div>
         </nav>
 
@@ -191,7 +207,7 @@
                                     </div>
 
                                     <div class="invalid-feedback">
-                                            password is required.
+                                            <!-- show error validate -->
                                     </div>
                                 </div>
                                 
@@ -312,7 +328,7 @@
 
     <!-- End of the footer  -->
     <script src="js/validator.js"></script>
-     <script src="js/contact.js"></script> 
+     <!-- <script src="js/contact.js"></script>  -->
     <script src="js/podcasters.js"></script>
     
     
