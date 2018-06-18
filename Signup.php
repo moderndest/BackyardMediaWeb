@@ -38,10 +38,80 @@ if (isset($_POST['register'])) {
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username);
             $stmt->execute();
+
             if($stmt->fetchColumn() != 0) {
                 $errors['failed'] = "$username is already registerd. Choose another name.";
             } else {
+
+                // Check Company hasn't already been registered
+                $sql ='SELECT COUNT(*) FROM Advertisers WHERE Name = :company';
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':company', $company);
+                $stmt->execute();
+
+                //UPDATE Avertisers table if company hasn't registered yet
+                if($stmt->fetchColumn() == 0)
+                {
+                    
+                    $sql = "SELECT * FROM runningNo WHERE Name = 'A'";
+                    $result =$db->prepare($sql);
+                    $result->execute();
+                    unset($data);
+                    $i=0;
+                    $data = array();
+                
+                    foreach ($result->fetchAll(\PDO::FETCH_ASSOC) as $row) {
+                        $prefix=$row["Name"];
+                        $number=$row["MAX"];
+                        print_r($row);
+                        }
+                    echo ($prefix);
+                    echo ($number);
+                    $number=sprintf("%03d",++$number);
+                    echo ($number);
+                    $txtIDNo=$prefix.$number;
+
+                    $sql = 'INSERT INTO Advertisers (Avertisers_ID, Name, Point_of_contact, Description, Previous_ads, Upcoming_ads, Notes)
+                            VALUES (:adid, :company, :contact, :des, :pre, :coming, :notes)';
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':adid', $txtIDNo);
+                    $stmt->bindParam(':company', $company);
+                    $stmt->bindParam(':contact',$contact,\PDO::PARAM_NULL);
+                    $stmt->bindParam(':des',$des, \PDO::PARAM_NULL);
+                    $stmt->bindParam(':pre',$pre, \PDO::PARAM_NULL);
+                    $stmt->bindParam(':coming',$coming, \PDO::PARAM_NULL);
+                    $stmt->bindParam(':notes',$notes, \PDO::PARAM_NULL);
+                    $stmt->execute();
+                   
+
+                    //UPDATE RUNNING NUMBER
+                    $sql = "SELECT * FROM runningNo WHERE Name = 'A'";
+                    $result = $db->prepare($sql);
+                    $result->execute();
+                    unset($data);
+                    $i=0;
+                    $data = array();
+                    foreach ($result->fetchAll(\PDO::FETCH_ASSOC) as $row) {
+                        $prefix=$row["Name"];
+                        $number=$row["MAX"];
+                        print_r($row);
+                        }
+                    echo ($number);
+                    $number++;
+                    echo ($number);
+               
+
+                    $sql = "UPDATE runningNo SET MAX = :max WHERE Name= 'A'";
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':max', $number,\PDO::PARAM_INT);
+                    $stmt->execute();
+
+                }
+                //End of checking Avertisers table if company hasn't registered yet
+
+                
                 try{
+                    
                     // Generate a random 8-character user key and insert values into the database
                     $user_key = hash('crc32', microtime(true) . mt_rand() . $username);
                     
@@ -77,8 +147,12 @@ if (isset($_POST['register'])) {
                     header('Location: login.php');
                     exit;
                 }
+
+                
             
             }
+
+            //end of check username
     }
 }
 ?>

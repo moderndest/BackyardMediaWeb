@@ -49,7 +49,7 @@
                     <div class="col-12 p-4">
                         <img class="mx-auto d-block" src="../img/television.png">
                     </div>
-                    <a href="listsAd.html" class="col-12  btn btn-warning" role="button">Lists of Advertisers</a>
+                    <a href="listsAd.php" class="col-12  btn btn-warning" role="button">Lists of Advertisers</a>
 
                 </div>
                 <div class="col-12 col-md-4">
