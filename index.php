@@ -47,7 +47,7 @@ require_once './phpControl/includes/authenticate.php'
         
         <!-- header starts here -->
         <header>
-            <!---  Navigation Start here---->  
+            <!---  Navigation Start here  ---->  
             <nav class="tm-content1 navbar fixed-top navbar-expand-lg bg-custom">
                 <a class="navbar-brand mx-md-2" href="index.php">
                     <img src="img/logo.png">
@@ -157,82 +157,101 @@ require_once './phpControl/includes/authenticate.php'
         <!-- end of section1 -->
 
         <!-- section2 Slidebar -->
-        <div class="bg-slidebar">
+        <div class="bg-slidebar row">
             <div class="container-fluid">
-                <h2 class="podfeat">Featured Podcasts</h2>
-                <div id="my-slider" class="carousel slide" data-ride="carousel">
-                    <!-- wrapper for slides -->
-                    <div class="carousel-inner" >
-                        <div class="carousel-item active">
-                            <div class="media">
-                                <!-- <aside class="d-flex col-md-4"> -->
-                                <a class="d-flex mx-2 mx-md-4 col-md-5 col-lg-4 justify-content-center" href="#"><img src="img/BushLeague_logo.jpg" alt="First slide"></a>
-                                <!-- </aside> -->
-                                <div class="media-body mx-md-4 ">
-        
-                                    <h3>Bush League   <a href="https://itunes.apple.com/us/podcast/bush-league-the-podcast/id1115373843?mt=2" class="fas fa-headphones"></a></h3>
-                                    <p class="slide-description mt-4">Bush League is a narrative audio series about interesting and unheard stories from sports. We features stories that exist where sports intersects with politics, geography, culture, business and drama.
-                                        <br>
-                                        <br>
-                                        Listen on <a href="https://itunes.apple.com/us/podcast/bush-league-the-podcast/id1115373843?mt=2">iTunes</a> 
-                                        or <a href="https://soundcloud.com/bushleague_thepodcast">Soundcloud</a>. Check out <a href="https://www.bushleaguethepodcast.com/">Bush League's website </a> for more content.</p>
-                                    
-                                    <a class="my-3 btn btn-warning subtitle-slide" href="#"><h6>Advertise on Bush League </h6></a>
-                                    
-                                    
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="media">
-                                <!-- <aside class="d-flex col-md-4"> -->
-                                <a class="d-flex mx-2 mx-md-4 col-md-5 col-lg-4 justify-content-center" href="#"><img src="img/Global.png" alt="Second slide"></a>
-                                <!-- </aside> -->
-                                <div class="media-body mx-2 mx-md-4 ">
-        
-                                <h3>Global Dispatches <a href="https://itunes.apple.com/us/podcast/un-dispatch-podcast/id593535863?mt=2" class="fas fa-headphones"></a></h3>
-                                
-                                <p class="slide-description mt-4">A podcast about world affairs and the people who shape it.
-                                    <br>
-                                    <br>
-                                    Listen on <a href="https://itunes.apple.com/us/podcast/un-dispatch-podcast/id593535863?mt=2">iTunes</a> 
-                                    . Check out <a href="http://www.globaldispatchespodcast.com/">Global Dispatches's website </a> for more content.</p>
-                                    
-                                    <a class="my-4 btn btn-warning" href="#"><h6>Advertise on Global Dispatches </h6></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="media">
-                                    <!-- <aside class="d-flex col-md-4"> -->
-                                    <a class="d-flex mx-2 mx-md-4 col-md-5 col-lg-4 justify-content-center" href="#"><img src="img/FirstMondays.png" alt="Third slide"></a>
-                                    <!-- </aside> -->
-                                    <div class="media-body  mx-md-4">
             
-                                    <h3>First Mondays <a href="https://itunes.apple.com/us/podcast/first-mondays/id1161435501?mt=2" class="fas fa-headphones"></a></h3>
-
-                                    <p class="slide-description mt-4">First Mondays is an entertaining podcast about the Supreme Court, co-hosted by Ian Samuel, a former law clerk for Justice Scalia, and Dan Epps, a former law clerk for Justice Kennedy. Each episode, we discuss the Court’s business that week: cases it agrees to hear, oral arguments, its opinions, and much more.
-                                        <br>
-                                        <br>
-                                        Listen on <a href="https://itunes.apple.com/us/podcast/first-mondays/id1161435501?mt=2">iTunes</a> 
-                                        . Check out <a href="http://www.firstmondays.fm/">First Mondays's website </a> for more content.</p>
-                                        <a class="my-2 btn btn-warning" href="#"><h6>Advertise on First Mondays </h6></a>
+                <h2 class="podfeat col-12">Featured Podcasts</h2>
+                <div id="my-slider" class="carousel slide  " data-ride="carousel">
+                    <!-- wrapper for slides -->
+                    <div class="carousel-inner row" >
+                        <div class="carousel-item active row">
+                            <div class="media row">
+                                <div class="row">
+                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 justify-content-center" href="#">
+                                        <img src="img/BushLeague_logo.jpg" style="width:300px; height:300px;" alt="First slide">
+                                    </div>
+            
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7 ">
+            
+                                        <h3>Bush League   <a href="https://itunes.apple.com/us/podcast/bush-league-the-podcast/id1115373843?mt=2" class="fas fa-headphones"></a></h3>
+                                        <p class="slide-description mt-4">Bush League is a narrative audio series about interesting and unheard stories from sports. We features stories that exist where sports intersects with politics, geography, culture, business and drama.
+                                            <br>
+                                            <br>
+                                            Listen on <a href="https://itunes.apple.com/us/podcast/bush-league-the-podcast/id1115373843?mt=2">iTunes</a> 
+                                            or <a href="https://soundcloud.com/bushleague_thepodcast">Soundcloud</a>. Check out <a href="https://www.bushleaguethepodcast.com/">Bush League's website </a> for more content.
+                                        </p>
+                                        
+                                        <a class="my-3 btn btn-warning subtitle-slide" href="#"><h6>Advertise on Bush League </h6></a>
+                                        
                                         
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="carousel-item row">
+                            <div class="media row">
+                                <div class="row">
+                                   
+                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 justify-content-center" href="#">
+                                        <img src="img/FirstMondays.png" style="width:300px; height:300px;" alt="Second slide">
+                                    </div>
+                                   
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7">
+            
+                                        <h3>First Mondays <a href="https://itunes.apple.com/us/podcast/first-mondays/id1161435501?mt=2" class="fas fa-headphones"></a></h3>
+
+                                        <p class="slide-description mt-4">First Mondays is an entertaining podcast about the Supreme Court, co-hosted by Ian Samuel,
+                                            a former law clerk for Justice Scalia, and Dan Epps, a former law clerk for Justice Kennedy. Each episode, we discuss
+                                            the Court’s business that week: cases it agrees to hear, oral arguments, its opinions, and much more.
+                                            <br>
+                                            <br>
+                                            Listen on <a href="https://itunes.apple.com/us/podcast/first-mondays/id1161435501?mt=2">iTunes</a> 
+                                            . Check out <a href="http://www.firstmondays.fm/">First Mondays's website </a> for more content.
+                                        </p>
+                                        <a class="my-2 btn btn-warning" href="#"><h6>Advertise on First Mondays </h6></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                        <div class="carousel-item row">
+                            <div class="media row">
+                                <div class="row">
+                                   
+                                    <div class="p-4 d-flex col-12 col-sm-12 col-md-5 col-lg-5 mx-lg-5 justify-content-center" href="#">
+                                        <img src="img/Global.png" style="width:300px; height:300px;" alt="Third slide">
+                                    </div>
+                                   
+                                    <div class="media-body p-4 col-12 col-sm-12 col-md-7 col-lg-7">
+            
+                                        <h3>Global Dispatches <a href="https://itunes.apple.com/us/podcast/un-dispatch-podcast/id593535863?mt=2" class="fas fa-headphones"></a></h3>
+
+                                        <p class="slide-description mt-4">A podcast about world affairs and the people who shape it.
+                                            <br>
+                                            <br>
+                                            Listen on <a href="https://itunes.apple.com/us/podcast/un-dispatch-podcast/id593535863?mt=2">iTunes</a> 
+                                            . Check out <a href="http://www.globaldispatchespodcast.com/">Global Dispatches's website </a> for more content.
+                                        </p>
+                                        <a class="my-2 btn btn-warning" href="#"><h6>Advertise on Global Dispatches </h6></a>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+
+
                     </div>
                     <!-- controls or next and prev buttons -->
+                   
                     <a class="carousel-control-prev" href="#my-slider" role="button" data-slide="prev">
                         <span class="fas fa-arrow-circle-left fa-3x black" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="col-md-12 carousel-control-next" href="#my-slider" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#my-slider" role="button" data-slide="next">
                         <span class="fas fa-arrow-circle-right fa-3x black" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -240,6 +259,7 @@ require_once './phpControl/includes/authenticate.php'
                 </div>
     
                         
+            
             </div>
         </div>
         <!-- end of section2 Slidebar -->
