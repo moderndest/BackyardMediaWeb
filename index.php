@@ -40,6 +40,42 @@ require_once './phpControl/includes/authenticate.php'
         <link rel="stylesheet" href="css/section1style.css">
   
         <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+        <style>
+        .container{
+    overflow: hidden;
+}
+.filterDiv {  
+    width: 100%;  
+    height: 100%;  
+    display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+    
+    display: block;
+}
+
+/* Style the buttons */
+#myBtnContainer .btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Add a light grey background on mouse-over */
+#myBtnContainer .btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+#myBtnContainer .btn.active {
+  background-color: orange;
+  color: white;
+}
+        </style>
        
     </head>
    
@@ -147,7 +183,7 @@ require_once './phpControl/includes/authenticate.php'
                 
                 
                 <div class="tm-content btn_adv_pod col-md-12 d-flex justify-content-center">
-                    <a href="advertiser.html" class="col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" role="button"  id="adv">ADVERTISER</a>
+                    <a href="advertiser.php" class="col-5 col-md-4 mr-4 btn btn-outline-warning btn-md" role="button"  id="adv">ADVERTISER</a>
                     <a href="podcaster.php" class="col-5 col-md-4 btn btn-outline-warning btn-md" role="button" id="pod">PODCASTER</a>
 
                 </div>

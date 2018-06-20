@@ -9,7 +9,7 @@
 
 <!Doctype html>
 <?php
-require_once './../phpControl/includes/connectDB.php';
+require_once './phpControl/includes/connectDB.php';
 session_start();
 // Check that the username hasn't already been registered
 $sql = 'SELECT A.Name, U.name, U.phone, U.email, A.Previous_ads, A.Upcoming_ads, A.Notes
@@ -88,7 +88,7 @@ foreach($ad as $row )
                                     $num =1;
                                     for($i = 0; $i < count($ad); ++$i )
                                     {
-                                    echo "<tr>";
+                                    echo "<tr >";
                                     echo "<th scope='row'>".$num++."</th>"; 
                                     //COMPANY
                                     echo "<td><label for='company'></label>";
