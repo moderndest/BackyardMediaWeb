@@ -225,7 +225,7 @@ foreach($pod as $row )
                                 echo "<div class='row col-md-12  p-4''>";
                                 //////////////// Image /////////////////////////////
                                 echo "<div class='my-4 col-sm-12 col-md-4 justify-content-center'>";
-                                echo "<img class='rounded' src='img/BushLeague_logo.jpg'>";
+                                echo "<img class='rounded' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
                                 echo "</div>";
 
 
