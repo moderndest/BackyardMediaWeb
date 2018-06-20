@@ -33,7 +33,7 @@
             <div class="row adminloginform">
                 <h1 class="Adminheading col-12">ADMINISTRATORS</h1>
                 <!-- Login Form Start here -->
-                <form class="col-12 mx-auto p-4" action="admindashboard.html">
+                <form class="col-12 mx-auto p-4" action="admindashboard.php">
                     <!-- email -->
                     <div class="form-group row justify-content-center">
                         <input type="email" class="form-control col-8 col-md-8 col-lg-8" id="inputAdminEmail" placeholder="email@example.com" required>

@@ -9,6 +9,15 @@
 
 <?php
 require_once './phpControl/includes/authenticate.php'
+
+if (isset($_POST['submit']))
+{
+    foreach($_POST['submit'] as $key => $value)
+    {
+        $i=$value;
+    }
+ }
+
 ?>
 
 
@@ -112,9 +121,66 @@ require_once './phpControl/includes/authenticate.php'
         <div class="container">
             <div class="row">
 
-                <img src="img/BushLeague_logo.jpg"> 
+                <?
+                    echo "<div class='row filterDiv p-5'>";
+                             
+                    echo "<div class='row col-md-12  p-4''>";
+                    //////////////// Image /////////////////////////////
+                    echo "<div class='my-4 col-sm-12 col-md-4 justify-content-center'>";
+                    echo "<img class='rounded' style='width: 300px; height: 300px;' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
+                    echo "</div>";
 
-                <form>
+
+                    //////////////// Podcast Info /////////////////////////////
+                    echo "<div class='col-sm-12 col-md-8'>";
+                    // show
+                    echo "<h3 style='color: orange;'>".$pod[$i]['Show']."</h3>";
+
+                    //Description
+                    
+                    echo "<p id='#'>".$pod[$i]['Description']."</p>";
+
+                    //Release Shedule
+                    // echo "<p id='#'> </p> ";
+                    echo "<p> <strong>Release Schedule : </strong>".$pod[$i]['Release_Schedule']."</p>";
+
+                    //Downloads per Episode
+                    echo "<p id='#'> </p> ";
+                    echo "<p id='#'> <strong>Dowloads per Episode : </strong>".$pod[$i]['Downloads_Episode']."</p>";
+
+                    // Demographic
+                    echo "<p id='#'><strong>Demographic Listenership : </strong> </p> ";
+                    echo "<p id='#'>".$pod[$i]['Demographic_listenership']."</p>";
+
+
+                    //Pre Roll Price
+                    echo "<p id='#'><strong>Pre Roll : </strong>";
+                    
+                    if (isset($pod[$i]['Total_PreRoll_Cost']))
+                    {
+                        echo "$".$pod[$i]['Total_PreRoll_Cost']."</p>";
+                    } else {
+                        echo "N/A </p>"; 
+                    }
+
+                    //Mid Roll Price
+                    echo "<p id='#'><strong>Mid Roll : </strong>";
+
+                    if (isset($pod[$i]['Total_MidRoll_Cost']))
+                    {
+                        echo "$".$pod[$i]['Total_MidRoll_Cost']."</p>";
+                    } else {
+                        echo "N/A </p>"; 
+                    }
+
+                    echo "</div>";
+        
+                    
+                    echo "</div>";
+                    echo '<hr>';
+                    echo "</div>";
+                ?>
+        
             </div>
             
         </div>

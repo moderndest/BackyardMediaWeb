@@ -7,9 +7,9 @@
     - For the full copyright and license information, please view the LICENSE
 -->
 
-<!Doctype html>
+
 <?php
-require_once './phpControl/includes/connectDB.php';
+require_once './../phpControl/includes/connectDB.php';
 session_start();
 // Check that the username hasn't already been registered
 $sql = 'SELECT A.Name, U.name, U.phone, U.email, A.Previous_ads, A.Upcoming_ads, A.Notes
@@ -24,11 +24,11 @@ $ad = $_SESSION['advertiser'];
 
 foreach($ad as $row )
 {
-    print_r( $row );
+    //print_r( $row );
 }
 	
 ?>
-
+<!Doctype html>
 <html>
     <head>
         <meta charset="utf-8">

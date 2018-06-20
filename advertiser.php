@@ -225,7 +225,7 @@ foreach($pod as $row )
                                 echo "<div class='row col-md-12  p-4''>";
                                 //////////////// Image /////////////////////////////
                                 echo "<div class='my-4 col-sm-12 col-md-4 justify-content-center'>";
-                                echo "<img class='rounded' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
+                                echo "<img class='rounded'style='width: 300px; height: 300px;' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
                                 echo "</div>";
 
 
@@ -274,7 +274,7 @@ foreach($pod as $row )
                                 // if (isset($_SESSION['username']))
                                 // {
                                     echo "<form action='advertiserform.php' method='post' role='form'>";
-                                    echo "<button type='submit' class='col-5 btn btn-outline-warning btn-md' name=".$i." role='button'>Create</button>";
+                                    echo "<button type='submit' class='col-5 btn btn-outline-warning btn-md' name='submit' value=".$i." role='button'>Create</button>";
                                     echo "</form>";
                                 
                                 // }
