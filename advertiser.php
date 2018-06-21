@@ -31,10 +31,10 @@ $pod = $_SESSION['podcasters'];
 // $pod = $_SESSION['podcasters'];
 
 
-foreach($pod as $row )
-{
-   // print_r( $row );
-}
+// foreach($pod as $row )
+// {
+//     print_r( $row );
+// }
 	
 ?>
 
@@ -211,9 +211,9 @@ foreach($pod as $row )
                         <?php
             
                         
-                        // if(){}
-                        echo "<div class='row filterDiv p-5'>";
-                        // }
+                        
+                            echo "<div class='row filterDiv p-5'>";
+                      
                             for($i = 0; $i < count($pod); ++$i )
                             {
                                 // echo "<tr class='p-4'>";

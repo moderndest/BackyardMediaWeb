@@ -8,16 +8,26 @@
 -->
 
 <?php
-require_once './phpControl/includes/authenticate.php'
+session_start();
 
-if (isset($_POST['submit']))
-{
-    foreach($_POST['submit'] as $key => $value)
-    {
-        $i=$value;
-    }
+if (isset($_POST['submit'])) {
+    $index = $int = (is_numeric($_POST['submit']) ? (int)$_POST['submit'] : 0);;
+}
+// if(isset($_POST['submit']))
+// {
+//     $submit = $_POST['submit'];
+//     foreach ($submit as $key => $value) {
+//         $i=$value;
+//         print_r($i);
+//     }
+//  }
+ //echo $i;
+ if (isset($_SESSION['podcasters'])) {
+ $pod = $_SESSION['podcasters'];
  }
-
+ else{
+     echo "not have";
+ }
 ?>
 
 
@@ -116,73 +126,139 @@ if (isset($_POST['submit']))
     
     <!-- Body content start here-->
 
-        <h1 id="pageTitle" align="center">Podcast</h1>
 
-        <div class="container">
-            <div class="row">
+        <h1 class="pagetitle" align="center">Podcast</h1>
 
-                <?
-                    echo "<div class='row filterDiv p-5'>";
-                             
-                    echo "<div class='row col-md-12  p-4''>";
-                    //////////////// Image /////////////////////////////
-                    echo "<div class='my-4 col-sm-12 col-md-4 justify-content-center'>";
-                    echo "<img class='rounded' style='width: 300px; height: 300px;' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
-                    echo "</div>";
-
-
-                    //////////////// Podcast Info /////////////////////////////
-                    echo "<div class='col-sm-12 col-md-8'>";
-                    // show
-                    echo "<h3 style='color: orange;'>".$pod[$i]['Show']."</h3>";
-
-                    //Description
-                    
-                    echo "<p id='#'>".$pod[$i]['Description']."</p>";
-
-                    //Release Shedule
-                    // echo "<p id='#'> </p> ";
-                    echo "<p> <strong>Release Schedule : </strong>".$pod[$i]['Release_Schedule']."</p>";
-
-                    //Downloads per Episode
-                    echo "<p id='#'> </p> ";
-                    echo "<p id='#'> <strong>Dowloads per Episode : </strong>".$pod[$i]['Downloads_Episode']."</p>";
-
-                    // Demographic
-                    echo "<p id='#'><strong>Demographic Listenership : </strong> </p> ";
-                    echo "<p id='#'>".$pod[$i]['Demographic_listenership']."</p>";
-
-
-                    //Pre Roll Price
-                    echo "<p id='#'><strong>Pre Roll : </strong>";
-                    
-                    if (isset($pod[$i]['Total_PreRoll_Cost']))
-                    {
-                        echo "$".$pod[$i]['Total_PreRoll_Cost']."</p>";
-                    } else {
-                        echo "N/A </p>"; 
-                    }
-
-                    //Mid Roll Price
-                    echo "<p id='#'><strong>Mid Roll : </strong>";
-
-                    if (isset($pod[$i]['Total_MidRoll_Cost']))
-                    {
-                        echo "$".$pod[$i]['Total_MidRoll_Cost']."</p>";
-                    } else {
-                        echo "N/A </p>"; 
-                    }
-
-                    echo "</div>";
-        
-                    
-                    echo "</div>";
-                    echo '<hr>';
-                    echo "</div>";
-                ?>
-        
+        <div class="container-fluid">
+         
+            <div class="row p-5">
+                <button onclick="history.go(-1);" class='mt-5 col-3 btn btn-outline-warning btn-md'>Back</button>
             </div>
+            <?php
+                
+                            
+                            
+                echo "<div class='row mx-5'>";
+        
+                for($i = 0; $i < count($pod); ++$i){
+                    if($i === $index){
+                    
+                        echo "<div class='row col-md-12 '>";
+                        //////////////// Image /////////////////////////////
+                        echo "<div class='my-4 col-sm-12 col-md-4 '>";
+                        echo "<a href='".$pod[$i]['Web']."'>";
+                        echo "<img class='rounded'style='width: 300px; height: 300px;' src='data:image/jpeg;base64,".base64_encode($pod[$i]['img'])."'>";
+                        echo "</a>";
+                        echo "</div>";
+
+
+                        //////////////// Podcast Info /////////////////////////////
+                        echo "<div class='col-sm-12 col-md-8'>";
+                        // show
+                        echo "<h3 style='color: orange;'>".$pod[$i]['Show']."</h3>";
+
+                        //Description
+                    
+                        echo "<p id='#'>".$pod[$i]['Description']."</p>";
+
+                        //Host Name
+                        echo "<p> <strong>Host Name : </strong>".$pod[$i]['Host_Names']."</p>";
+
+                        //Link
+                        echo "<p> <strong>Link : </strong> <a href='".$pod[$i]['Web']."'>".$pod[$i]['Web']."</a></p>";
+
+                        //Release Shedule
+                        echo "<p> <strong>Release Schedule : </strong>".$pod[$i]['Release_Schedule']."</p>";
+
+                        //Downloads per Episode
+                        echo "<p id='#'> </p> ";
+                        echo "<p id='#'> <strong>Dowloads per Episode : </strong>".$pod[$i]['Downloads_Episode']."</p>";
+
+                        //1st episode date
+                        echo "<p id='#'> </p> ";
+                        echo "<p id='#'> <strong>Publish Date First Episode : </strong>".$pod[$i]['Publish_date_of_first_episode']."</p>";
+
+                        // Demographic
+                        echo "<p id='#'><strong>Demographic Listenership : </strong> </p> ";
+                        echo "<p id='#'>".$pod[$i]['Demographic_listenership']."</p>";
+
+
+                        //Pre Roll Price
+                        echo "<p id='#'><strong>Pre Roll : </strong>";
+                        
+                        if (isset($pod[$i]['Total_PreRoll_Cost']))
+                        {
+                            echo "$".$pod[$i]['Total_PreRoll_Cost']."</p>";
+                        } else {
+                            echo "N/A </p>"; 
+                        }
+
+                        //Mid Roll Price
+                        echo "<p id='#'><strong>Mid Roll : </strong>";
+
+                        if (isset($pod[$i]['Total_MidRoll_Cost']))
+                        {
+                            echo "$".$pod[$i]['Total_MidRoll_Cost']."</p>";
+                        } else {
+                            echo "N/A </p>"; 
+                        }
+                        
+                        
+                        echo "</div>";
             
+                    
+                        echo "</div>";
+                        echo '<hr>';
+                    }   
+                }
+                echo "</div>";
+            ?>
+
+            <div class="row bg-slidebar">
+                <form>
+                    <h3> Advertises with This Show</h3>
+                    <p> I'm interested in </p>
+                    <div class="form-group">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck2">
+                            Preroll
+                        </label>
+                        </div>
+                    </div> 
+                    <div class="form-group">
+                        <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                        <label class="form-check-label" for="invalidCheck2">
+                            Midroll
+                        </label>
+                        </div>
+                    </div> 
+
+                    <div class="form-group">
+                        <label for="inputNote" class="col-sm-2 col-form-label">Notes</label>
+                        <div class="col-sm-8">
+                            <textarea type="text" class="form-control" name="notes" id="inputNote" rows="5" required></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please,leave us a message.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- submit button -->
+                    <div class="form-group row">
+                        <div class="col-sm-8"></div>
+                        <div class="col-sm-2 d-flex justify-content-end">
+                            <button type="submit" value="Send message" class="submitemail btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                
+                </form>
+        
+            
+            </div>
         </div>
     
     <!--- Footer part -->
