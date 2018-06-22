@@ -127,18 +127,19 @@ if (isset($_POST['submit'])) {
     <!-- Body content start here-->
 
 
-        <h1 class="pagetitle" align="center">Podcast</h1>
+        <h1 class="pagetitle">Podcast</h1>
+        <div class="row mx-5 my-4">
+            <button onclick="history.go(-1);" class='col-3 btn btn-outline-warning btn-md'>Back</button>
+        </div>
 
         <div class="container-fluid">
          
-            <div class="row p-5">
-                <button onclick="history.go(-1);" class='mt-5 col-3 btn btn-outline-warning btn-md'>Back</button>
-            </div>
+           
             <?php
                 
                             
                             
-                echo "<div class='row mx-5'>";
+                echo "<div class='row p-5'>";
         
                 for($i = 0; $i < count($pod); ++$i){
                     if($i === $index){
@@ -215,47 +216,60 @@ if (isset($_POST['submit'])) {
             ?>
 
             <div class="row bg-slidebar">
-                <form>
-                    <h3> Advertises with This Show</h3>
-                    <p> I'm interested in </p>
-                    <div class="form-group">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                        <label class="form-check-label" for="invalidCheck2">
-                            Preroll
-                        </label>
-                        </div>
-                    </div> 
-                    <div class="form-group">
-                        <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
-                        <label class="form-check-label" for="invalidCheck2">
-                            Midroll
-                        </label>
-                        </div>
-                    </div> 
+                <div class="col-md-12 p-5">
+                    <h3 class="d-flex justify-content-center"> Advertises with This Show</h3>
 
-                    <div class="form-group">
-                        <label for="inputNote" class="col-sm-2 col-form-label">Notes</label>
-                        <div class="col-sm-8">
-                            <textarea type="text" class="form-control" name="notes" id="inputNote" rows="5" required></textarea>
-                            <div class="valid-feedback">
-                                Looks good!
+                    <form class="contact-form col-md-12 " action="phpControl/contact.php" method="post" role="form" novalidate>
+                        
+                        
+                        
+                        <div class="form-group row d-flex justify-content-center">
+                            <div class="row col-md-5">
+                            <p class="col-md-12"> I'm interested in </p>
+                            <!-- Pre roll Check -->
+                                <div class="form-check mr-5 ml-2">
+                                
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Preroll
+                                    </label>
+                                </div>
+
+                            <!-- Mid roll Check -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                                    <label class="form-check-label" for="invalidCheck2">
+                                        Midroll
+                                    </label>
+                                </div>
                             </div>
-                            <div class="invalid-feedback">
-                                Please,leave us a message.
+                        </div> 
+
+                        <!-- Notes -->
+                        <div class="form-group row d-flex justify-content-center">
+                            
+                            <div class="col-md-5">
+                            <label for="inputNote" class="col-md-12 col-form-label">Notes: </label>
+                                <textarea type="text" class="form-control" name="notes" id="inputNote" rows="5" required></textarea>
+                                <div class="valid-feedback">
+                                 
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please,leave us a message.
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- submit button -->
-                    <div class="form-group row">
-                        <div class="col-sm-8"></div>
-                        <div class="col-sm-2 d-flex justify-content-end">
-                            <button type="submit" value="Send message" class="submitemail btn btn-primary">Submit</button>
-                        </div>
-                    </div>
-                
-                </form>
+
+                        <!-- submit button -->
+                        <div class="form-group row d-flex justify-content-center">
+                            
+                            <div class="col-md-5 row d-flex justify-content-center">
+                                <button type="submit" value="Send message" class="col-md-12 submitemail btn btn-warning btn-md">Submit</button>
+                            </div>
+                        
+                    
+                    </form>
+                </div>
         
             
             </div>
