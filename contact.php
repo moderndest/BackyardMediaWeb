@@ -1,6 +1,7 @@
 <!--
     - Backyard Media 
     - Filename: contact.html
+    - this is the contact form for people to create contact with the company 
     - @author: Haocheng Li
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -38,7 +39,7 @@
         
      <!-- header starts here -->
         <header>
-            
+            <!-- logo image -->
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
@@ -48,13 +49,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
+                <!-- about us tab -->
                     <li class="nav-item mr-md-4 mx-0">
                         <a class="nav-link" href="AboutUs.php">AboutUs</a>
                     </li>
+                    <!-- podcast tab -->
                     <li class="nav-item dropdown mr-md-4 mx-0">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Podcast
                             </a>
+                            <!-- drop down list -->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
                                 <a class="dropdown-item" href="#">Laws</a>
@@ -62,17 +66,21 @@
                                 <a class="dropdown-item" href="#">Art</a>
                                 <a class="dropdown-item" href="#">All</a>
                             </li>
+                            <!-- blog tab -->
                     <li class="nav-item mr-md-4 mx-0">
                             <a class="nav-link" href="#">Blog</a>
                         </li>
+                        <!-- Faqs tab -->
                     <li class="nav-item mr-md-4 mx-0">
                         <a class="nav-link" href="Faqs.php">Faqs</a>
                     </li>
+                    <!-- Contact us tab -->
                     <li class="nav-item mr-md-4 mx-0">
                             <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
                 <?php
+                // user can log in if having an account
                     if (isset($_SESSION['username']))
                     {
                         
@@ -85,6 +93,7 @@
                     
                     }
                     else{
+                        // if not, create the account here 
                         echo "<div class='loginbtn'>";
                         echo "<a href='login.php' class='d-inline btnstyle' role='button'>Log in</a>";
                         echo "</div>";

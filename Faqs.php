@@ -2,6 +2,7 @@
 <!--
     - Backyard Media 
     - Filename: Faqs.html
+    - this is for common questions and asnwers relating to the company 
     - @author: Chatsuda Rattarasan
     - @author: Ngoc Tran
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -43,6 +44,7 @@
   <!-- header starts here -->
         <header>
             <!---  Navigation Start here---->
+            <!-- company logo -->
             <nav class="navbar fixed-top navbar-expand-lg bg-custom">
                 <a class="navbar-brand mx-md-2" href="index.php">
                     <img src="img/logo.png">
@@ -53,12 +55,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item mr-md-4 mx-0">
+                        <!-- About Us tab -->
                             <a class="nav-link" href="AboutUs.php">AboutUs</a>
                         </li>
+                        <!-- Podcast tab -->
                         <li class="nav-item dropdown mr-md-4 mx-0">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Podcasts
                                 </a>
+                                <!-- drop down list for podcast -->
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">News</a>
                                     <a class="dropdown-item" href="#">Laws</a>
@@ -66,17 +71,21 @@
                                     <a class="dropdown-item" href="#">Art</a>
                                     <a class="dropdown-item" href="#">All</a>
                                 </li>
+                                <!-- blog tab -->
                         <li class="nav-item mr-md-4 mx-0">
                                 <a class="nav-link" href="#">Blog</a>
                             </li>
+                            <!-- Faqs tab -->
                         <li class="nav-item mr-md-4 mx-0">
                             <a class="nav-link" href="Faqs.php">Faqs</a>
                         </li>
+                        <!-- contact us tab -->
                         <li class="nav-item mr-md-4 mx-0">
                                 <a class="nav-link" href="contact.php">Contact Us</a>
                         </li>
                     </ul>
                     <?php
+                    // user can log in if has an account 
                         if (isset($_SESSION['username']))
                         {
                             
@@ -86,7 +95,7 @@
                             echo "</p>";
 
                             include './phpControl/includes/logout_button.php';
-                        
+                        // if not, create an account 
                         }
                         else{
                             echo "<div class='loginbtn'>";
