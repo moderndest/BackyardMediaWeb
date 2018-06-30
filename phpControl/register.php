@@ -7,7 +7,7 @@
  * 
  * Credits
  * 
- * Created for the Everything About Backyard Media Sites
+ * Created for register user
  * 
  * Date created: June 13 2018 
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -84,6 +84,8 @@ if (isset($_POST['register'])) {
     <body id="create">
         <h1> Create Account </h1>
         <form action ="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+
+            <!-- username input -->
             <p>
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username"
@@ -100,6 +102,8 @@ if (isset($_POST['register'])) {
                 }
                 ?>
             </p>
+
+            <!-- Password input -->
             <p>
                 <label for ="pwd"> Password:<label>
                 <input type ="password" name="pwd" id="pwd">
@@ -109,6 +113,8 @@ if (isset($_POST['register'])) {
                 }
                 ?>
             </p>
+
+            <!-- Comfirm password input -->
             <p> 
                 <label for ="confirm">Confirm Password:</label>
                 <input type="password" name="confirm" id="confirm">

@@ -1,6 +1,7 @@
 <!--
     - Backyard Media 
-    - Filename: Faqs.html
+    - Filename: advertiserform.php
+    - this file is for advertiser to submit form.
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: May 29 2018   
@@ -10,18 +11,11 @@
 <?php
 session_start();
 
+// Check if it have information from the advertiser page
 if (isset($_POST['submit'])) {
     $index = $int = (is_numeric($_POST['submit']) ? (int)$_POST['submit'] : 0);;
 }
-// if(isset($_POST['submit']))
-// {
-//     $submit = $_POST['submit'];
-//     foreach ($submit as $key => $value) {
-//         $i=$value;
-//         print_r($i);
-//     }
-//  }
- //echo $i;
+
  if (isset($_SESSION['podcasters'])) {
  $pod = $_SESSION['podcasters'];
  }
@@ -75,6 +69,7 @@ if (isset($_POST['submit'])) {
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Podcasts
                                 </a>
+                                <!-- drop down -->
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="#">News</a>
                                     <a class="dropdown-item" href="#">Laws</a>
@@ -93,8 +88,10 @@ if (isset($_POST['submit'])) {
                         </li>
                     </ul>
                     <?php
+                        //check whether user log in or not
                         if (isset($_SESSION['username']))
                         {
+                            // if log in
                             
                             echo "<p class='blue'>";
                             echo "<i class='fas fa-user fa-2x blue mr-2'></i>";
@@ -105,6 +102,7 @@ if (isset($_POST['submit'])) {
                         
                         }
                         else{
+                            // if not
                             echo "<div class='loginbtn'>";
                             echo "<a href='login.php' class='d-inline btnstyle' role='button'>Log in</a>";
                             echo "</div>";
@@ -215,6 +213,8 @@ if (isset($_POST['submit'])) {
                 echo "</div>";
             ?>
 
+
+            <!-- -------------  Advertiser Submission form Start here  ---------- -->
             <div class="row bg-slidebar">
                 <div class="col-md-12 p-5">
                     <h3 class="d-flex justify-content-center"> Advertises with This Show</h3>
@@ -273,6 +273,8 @@ if (isset($_POST['submit'])) {
         
             
             </div>
+
+            <!-- -------------  End of Advertiser Submission form here  ---------- -->
         </div>
     
     <!--- Footer part -->

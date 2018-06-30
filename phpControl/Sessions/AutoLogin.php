@@ -9,7 +9,7 @@ namespace phpControl\Sessions;
  * 
  * Credits
  * 
- * Created for the Everything About Backyard Media Sites
+ * Created for Auto Login
  * 
  * Date created: June 13 2018 
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -150,7 +150,7 @@ class AutoLogin
     }
 
     /**
-     * 
+     * logout
      */
     public function logout($all = true)
     {
@@ -282,7 +282,7 @@ class AutoLogin
     }
 
      /**
-     * 
+     *  claar old session
      */
     protected function clearOld()
     {
@@ -320,7 +320,7 @@ class AutoLogin
     }
 
     /**
-     * 
+     * delete all session
      */
     protected function deleteAll()
     {
@@ -331,7 +331,7 @@ class AutoLogin
     }
 
     /**
-     * 
+     *  cookie login
      */
     protected function cookieLogin($token)
     {
@@ -362,8 +362,6 @@ class AutoLogin
         
 
     }
-
-
 
 }
 

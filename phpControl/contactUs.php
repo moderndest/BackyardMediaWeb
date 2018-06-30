@@ -3,7 +3,10 @@
 /**
  * 
  * Backyard Media 
- * Filename: contact.php
+ * Filename: contactUS.php
+ * 
+ * This file is for sending email and used to call in Contact us page
+ * 
  * @author Chatsuda Rattarasan
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 1 2018 

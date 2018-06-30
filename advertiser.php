@@ -21,21 +21,6 @@ $stmt->execute();
 $_SESSION['podcasters'] = $stmt->fetchAll(\PDO::FETCH_ASSOC);
 
 $pod = $_SESSION['podcasters'];
-
-// Check that the username hasn't already been registered
-// $sql = 'SELECT * FROM PodcastsType ';
-// $stmt = $db->prepare($sql);
-// $stmt->execute();
-
-// $_SESSION['podcasters'] = $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-// $pod = $_SESSION['podcasters'];
-
-
-// foreach($pod as $row )
-// {
-//     print_r( $row );
-// }
 	
 ?>
 

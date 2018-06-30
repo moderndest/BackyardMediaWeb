@@ -3,6 +3,7 @@
 <!--
     - Backyard Media 
     - Filename: login.php
+    - This file is Log in form page
     - @author: Haocheng Li
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -12,9 +13,10 @@
 
 
 <?php
-//require_once './phpControl/Includes/init.php';
+require_once './phpControl/Includes/init.php';
 use php\Sessions\AutoLogin;
 
+//When user click submit, it will come here
 if (isset($_POST['login'])){
     $username = trim($_POST['username']);
     $pwd = trim($_POST['pwd']);
@@ -75,6 +77,7 @@ if (isset($_POST['login'])){
      <!-- header starts here -->
         <header>
             
+        <!-- Navigation bar start here -->
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
 
             <a class="navbar-brand mx-md-2" href="index.php">
@@ -95,6 +98,8 @@ if (isset($_POST['login'])){
                                 Podcasts
 
                             </a>
+
+                            <!-- dropdown -->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">News</a>
                                 <a class="dropdown-item" href="#">Laws</a>
@@ -112,21 +117,22 @@ if (isset($_POST['login'])){
                             <a class="nav-link" href="contact.php">Contact Us</a>
                     </li>
                 </ul>
+
+                    <!-- login button -->
                     <div class="loginbtn">
                         <a href="login.php" class="d-inline btnstyle" role="button">Log in</a>
                     </div>
 
-
-
                     <div class="vl mx-2"></div>
 
+                    <!-- Sign up button -->
                     <div class="Signupbtn"> 
                         <a href="Signup.php" class="d-inline btnstyle" role="button">Sign Up</a>
                     </div>
             </div>
         </nav>
 
-        <!--- end of header Navigation---->
+        <!--- end of header Navigation bar -->
         
         </header>
         

@@ -1,6 +1,7 @@
 <!--
     - Backyard Media 
     - Filename: Signup.php
+    - This file is Sign up form page
     - @author: Haocheng Li
     - @author: Chatsuda Rattarasan
     - (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -11,6 +12,8 @@
 
 <?php 
 $errors = [];
+
+// When user click submit
 if (isset($_POST['register'])) {
     require_once './phpControl/Includes/connectDB.php';
      // insert a row
@@ -71,6 +74,7 @@ if (isset($_POST['register'])) {
                     echo ($number);
                     $txtIDNo=$prefix.$number;
 
+                    //Insert to database
                     $sql = 'INSERT INTO Advertisers (Avertisers_ID, Name, Point_of_contact, Description, Previous_ads, Upcoming_ads, Notes)
                             VALUES (:adid, :company, :contact, :des, :pre, :coming, :notes)';
                     $stmt = $db->prepare($sql);

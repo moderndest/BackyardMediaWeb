@@ -1,7 +1,8 @@
 
 <!--
     - Backyard Media 
-    - Filename: login.php
+    - Filename: logout.php
+    - this file is for logout
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: June 15 2018    

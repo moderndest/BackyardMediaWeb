@@ -2,6 +2,7 @@
  * 
  * Backyard Media 
  * Filename: podcasters.js
+ * This file is for showing the alert
  *  @author Chatsuda Rattarasan
  * (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 15 2018 
@@ -22,7 +23,6 @@ $('.custom-file-input').on('change',function(){
     // when the form is submitted
     $('.contact-form').on('submit', function (e) {
 
-      // $('.contact-form').validator();
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
          // e.preventDefault();

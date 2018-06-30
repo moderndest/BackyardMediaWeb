@@ -2,6 +2,9 @@
  * 
  * Backyard Media 
  * Filename: contact.js
+ * 
+ * This file is for showing the alert
+ * 
  *  @author Chatsuda Rattarasan
  * (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 1 2018 
@@ -15,7 +18,6 @@ $(function () {
     // when the form is submitted
     $('.contact-form').on('submit', function (e) {
 
-      // $('.contact-form').validator();
         // if the validator does not prevent form submit
         if (!e.isDefaultPrevented()) {
            var url =  $(this).attr("action");
@@ -44,7 +46,7 @@ $(function () {
                         $('.contact-form').find('.messages').html(alertBox);
                         // empty the form
                         $('.contact-form')[0].reset();
-                        // $('.contact-form').removeClass(was-validated );
+                        
                     }
                 
 
