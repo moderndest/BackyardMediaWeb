@@ -2,12 +2,13 @@
 <!--
     - Backyard Media 
     - Filename: Aboutus.html
+    - created for about us page
     - @author: Chatsuda Rattarasan
     - @author: Ngoc Tran
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
     - Date: May 29 2018   
     - For the full copyright and license information, please view the LICENSE
--->
+--> 
 
 <?php
 //require_once './phpControl/includes/authenticate.php'
@@ -49,7 +50,8 @@
        
      <!-- header starts here -->
         <header>
-            
+
+        <!-- navigation bar start here  -->
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
@@ -84,9 +86,10 @@
                     </li>
                 </ul>
                 <?php
+                    // check if user login or not
                     if (isset($_SESSION['username']))
                     {
-                        
+                        // if user already login, it will come here
                         echo "<p class='blue'>";
                         echo "<i class='fas fa-user fa-2x blue mr-2'></i>";
                         echo   htmlentities($_SESSION['username']);
@@ -96,6 +99,7 @@
                     
                     }
                     else{
+                        //if not
                         echo "<div class='loginbtn'>";
                         echo "<a href='login.php' class='d-inline btnstyle' role='button'>Log in</a>";
                         echo "</div>";
@@ -107,7 +111,6 @@
                 ?>
             </div>
         </nav>
-
         <!--- end of header Navigation---->
         
         </header>

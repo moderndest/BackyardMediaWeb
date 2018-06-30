@@ -1,5 +1,6 @@
 <!--
     - Backyard Media 
+    - this file is for podcasters to submit information
     - Filename: podcaster.html
     - @author: Chatsuda Rattarasan
     - @author: Ngoc Tran
@@ -39,7 +40,7 @@
         
      <!-- header starts here -->
      <header>
-            
+            <!--navigation bar starts here -->
         <nav class="navbar fixed-top navbar-expand-lg bg-custom">
             <a class="navbar-brand mx-md-2" href="index.php">
                 <img src="img/logo.png">
@@ -76,14 +77,14 @@
                 <?php
                     if (isset($_SESSION['username']))
                     {
-                        
+                        // user log in if already has account 
                         echo "<p class='blue'>";
                         echo "<i class='fas fa-user fa-2x blue mr-2'></i>";
                         echo   htmlentities($_SESSION['username']);
                         echo "</p>";
 
                         include './phpControl/includes/logout_button.php';
-                    
+                    // if not, create an account 
                     }
                     else{
                         echo "<div class='loginbtn'>";

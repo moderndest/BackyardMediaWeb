@@ -2,6 +2,7 @@
 <!--
     - Backyard Media 
     - Filename: index.html
+    - this is the Advertiser page
     - @author: Haocheng Li
     - @author: Chatsuda Rattarasan
     - Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -140,8 +141,9 @@ $pod = $_SESSION['podcasters'];
                     </ul>
 
                         
-                      
+                
                         <?php
+                        // check if user has account to log in
                             if (isset($_SESSION['username']))
                             {
                                 
@@ -151,7 +153,7 @@ $pod = $_SESSION['podcasters'];
                                 echo "</p>";
 
                                 include './phpControl/includes/logout_button.php';
-                            
+                            // if not, create an account 
                             }
                             else{
                                 echo "<div class='loginbtn'>";
