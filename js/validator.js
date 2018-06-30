@@ -2,6 +2,8 @@
  * 
  * Backyard Media 
  * Filename: validator.js
+ * this file is for checking form validation
+ * 
  *  @author Chatsuda Rattarasan
  * (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 1 2018 
@@ -113,8 +115,8 @@ if(confirm){
         match.classList.remove("invalid");
         match.classList.add("valid");
     } else {
-    match.classList.remove("valid");
-    match.classList.add("invalid");
+        match.classList.remove("valid");
+        match.classList.add("invalid");
     }
     });
 }

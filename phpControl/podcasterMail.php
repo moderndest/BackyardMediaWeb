@@ -4,6 +4,9 @@
  * 
  * Backyard Media 
  * Filename: podcasterMail.php
+ * 
+ * This file is for sending email and used to call in podcaster page
+ * 
  * @author Chatsuda Rattarasan
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 16 2018 

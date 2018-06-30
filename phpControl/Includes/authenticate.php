@@ -7,7 +7,7 @@
  * 
  * Credits
  * 
- * Created for the Everything About Backyard Media Sites
+ * Created for checking user authenticate
  * 
  * Date created: June 13 2018 
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
@@ -19,14 +19,14 @@ require_once './phpControl/Includes/init.php';
 use phpControl\Sessions\AutoLogin;
 
 
+//Check user authenticate
 if(isset($_SESSION['authenticated']) || isset($_SESSION['backyard_auth'])) {
     //we're ok
 }else {
     $autologin = new AutoLogin($db);
     $autologin->checkCredentials();
     if(!isset($_SESSION['backyard_auth'])){
-        //header('Location: index.php');
-       // exit;
+
     }
 }
 ?>

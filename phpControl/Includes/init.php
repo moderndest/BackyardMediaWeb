@@ -5,9 +5,10 @@
  * 
  * @author Chatsuda Rattarasan
  * 
- * Credits
+ * Created for calling every file
  * 
- * Created for the Everything About Backyard Media Sites
+ * 
+ * Credits
  * 
  * Date created: June 13 2018 
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)

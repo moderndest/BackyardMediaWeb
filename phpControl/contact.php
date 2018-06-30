@@ -8,6 +8,7 @@
  * Copyright (c) 2018 Backyard Media Company & XN TEAM (Chatsuda Rattarasan, Ngoc Tran, Haocheng Li)
  * Date: June 1 2018 
  * 
+ * This contac.php is created fo sending email
  * For the full copyright and license information, please view the LICENSE
  */
 
@@ -40,13 +41,14 @@ $okMessage = 'Contact form successfully submitted. Thank you, I will get back to
 $errorMessage = 'There was an error while submitting the form. Please try again later';
 
 //smtp credentials and server
-$smtpHost = htmlentities('smtp.mailtrap.io');
-$smtpUsername = htmlentities( '6c7f550429c56b');
-$smtpPassword = htmlentities('a91307364d02a3');
 //smtp credentials and server
 // $smtpHost = 'smtp.gmail.com';
 // $smtpUsername = 'urmail@gmail.com';
 // $smtpPassword = 'password';
+$smtpHost = htmlentities('stmphost'); //stmp host
+$smtpUsername = htmlentities( 'username'); //username
+$smtpPassword = htmlentities('pass'); //pass
+
 
 
 
@@ -85,17 +87,7 @@ try
 
     //Set the encryption system to use - ssl (deprecated) or tls
     $mail->SMTPSecure = 'tls';
-    //Custom connection options
-    //Note that these settings are INSECURE
-    $mail->SMTPOptions = array(
-        // 'ssl' => [
-        //     'verify_peer' => true,
-        //     'verify_depth' => 3,
-        //     'allow_self_signed' => true,
-        //     'peer_name' => 'smtp.mailtrap.io',
-        //     'cafile' => '/opt/lampp/etc/ssl.crt/cacert.pem',
-        // ],
-    );
+
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
     //Username to use for SMTP authentication - use full email address for gmail
@@ -114,7 +106,7 @@ try
 
 
   
-
+    //-------- Emal Content start here ------------------
     $emailTextHtml = "<div style='width:640px;'>";
     $emailTextHtml .= "<br><h2>You have a new message from your contact form</h2><hr>";
 
@@ -130,7 +122,7 @@ try
     $emailTextHtml .="<p><strong>message : </strong></p>";
     $emailTextHtml .=" <p>$message </p><hr></div>";
     $emailTextHtml .= "<p><br>Bests,<br>Backyerd Media supporting team</p>";
-
+    //-------- End of Emal Content here ------------------
 
 
     //Read an HTML message body from an external file, convert referenced images to embedded,
