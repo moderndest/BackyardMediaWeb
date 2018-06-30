@@ -11,7 +11,7 @@
 -->
 
 <?php
-//require_once './phpControl/Includes/authenticate.php'
+require_once './phpControl/Includes/authenticate.php'
 ?>
 
 
