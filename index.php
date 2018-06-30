@@ -8,7 +8,7 @@
 -->
 
 <?php
-require_once './phpControl/includes/authenticate.php'
+//require_once './phpControl/Includes/authenticate.php'
 ?>
 
 <!Doctype html>

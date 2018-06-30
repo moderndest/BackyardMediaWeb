@@ -12,7 +12,7 @@
 <?php 
 $errors = [];
 if (isset($_POST['register'])) {
-    require_once './phpControl/includes/connectDB.php';
+    require_once './phpControl/Includes/connectDB.php';
      // insert a row
     $expected = ['username', 'pwd', 'confirm','name','email','company'];
     $phone = htmlentities($_POST['phone']);

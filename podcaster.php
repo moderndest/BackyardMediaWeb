@@ -9,7 +9,7 @@
 -->
 
 <?php
-require_once './phpControl/includes/authenticate.php'
+//require_once './phpControl/includes/authenticate.php'
 ?>
 <!Doctype html>
 

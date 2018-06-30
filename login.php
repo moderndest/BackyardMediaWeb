@@ -12,7 +12,7 @@
 
 
 <?php
-require_once './phpControl/includes/init.php';
+//require_once './phpControl/Includes/init.php';
 use php\Sessions\AutoLogin;
 
 if (isset($_POST['login'])){

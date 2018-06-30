@@ -14,7 +14,8 @@
  *
  * For the full copyright and license information, please view the LICENSE
  */
-require_once './phpControl/includes/init.php';
+
+require_once './phpControl/Includes/init.php';
 use phpControl\Sessions\AutoLogin;
 
 

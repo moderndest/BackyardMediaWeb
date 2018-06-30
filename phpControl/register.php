@@ -16,7 +16,7 @@
  */
 $errors = [];
 if (isset($_POST['register'])) {
-    require_once './includes/connectDB.php';
+    require_once './Includes/connectDB.php';
     $expected = ['username', 'pwd', 'confirm'];
     // Assign $_POST variables to simple variables and check all fields have values
     foreach ($_POST as $key => $value){

@@ -10,7 +10,7 @@
 -->
 
 <?php
-require_once './phpControl/includes/connectDB.php';
+require_once './phpControl/Includes/connectDB.php';
 session_start();
 // Check that the username hasn't already been registered
 $sql = 'SELECT * FROM Podcasters';
