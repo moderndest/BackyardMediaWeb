@@ -16,3 +16,9 @@ This file is include
 - Advertiser admin page
 - Podcaster admin page
 - Advertisement admin page
+
+
+To run the application
+- you need to have a local server install you computer (XAMPP is the suggestion for using) or Host Server
+- set htaccess on local host or Host Server
+- Now you can run the code
